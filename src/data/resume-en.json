@@ -1,0 +1,517 @@
+{
+    "info": {
+        "name": "Luis Romero",
+        "title": "Engineer, Full Stack Developer, MBA",
+        "email": "mail.me@luiseduromp.com",
+        "phone": "+34 600 00 62 37",
+        "location": {
+            "postalCode": "08860",
+            "city": "Castelldefels",
+            "region": "Barcelona",
+            "latlng": "41.38879,2.15899",
+            "country": "Spain"
+        }
+    },
+
+    "summary": "Creative Full Stack Developer, with over 5 years of experience delivering robust, reliable and elegant web applications. Currently focused on Web Applications and AI-integrated systems using Python, JavaScript, TypeScript and cloud technologies. Experienced in Full Stack development, UX/UI design, LLMs, Retrieval-Augmented Generation (RAG), and modern frameworks like LangChain, FastAPI and Next.js. Experienced in deploying web applications, especially on AWS infrastructure. Passionate about building reliable applications with intuitive interfaces and seamless user experience. Committed to continuous learning and self-improvement.",
+
+    "about2": "I am a builder by nature. I like to deliver flawless and unique designs and experiences through web applications. I believe we are experiencing a technology revolution that is shaping the future and helping solve some of the toughest challenges of modern times, and I am eager to be part of it.\nI have shifted my career from hardware to software, focusing in fullstack development, especially with JavaScript and Python, and now I am looking to get fully into AI. I like to keep continuously learning to improve my skills and stay up-to-date on new technologies.\nMy goal is to use my skills and knowledge to develop beautiful and functional products that can benefit people or businesses.",
+
+    "contact": [       
+        {
+            "slug": "linkedin",
+            "network": "LinkedIn",
+            "username": "luiseduromp",
+            "url": "https://linkedin.com/in/luiseduromp"
+        },
+        {
+            "slug": "github",
+            "network": "GitHub",
+            "username": "luiseduromp",
+            "url": "https://github.com/luiseduromp"
+        },
+        {
+            "slug": "gmail",
+            "network": "Gmail",
+            "username": "luiseduromp",
+            "url": "mailto:luiseduromp@gmail.com"
+        },
+        {
+            "slug": "whatsapp",
+            "network": "WhatsApp",
+            "username": "Luis Eduardo Romero",
+            "url": "https://wa.me/34600006237"
+        },
+        {
+            "slug": "instagram",
+            "network": "Instagram",
+            "username": "luiseduromp",
+            "url": "https://instagram.com/luiseduromp/"
+        }
+    ],
+    
+    "work": [
+        {
+            "slug": "midokura",
+            "company": "Midokura",
+            "companyUrl": "https://midokura.com/",
+            "position": "AI Software Engineer Intern",
+            "startDate": "2024-09-16",
+            "endDate": "2025-02-05",
+            "summary": "Improving engineering efficiency through AI tools.",
+            "tasks": [
+                "Research and integration of LLM based systems for internal developer workflows.",
+                "Contribute, develop and maintain LLM-powered AI applications.",
+                "Improve the Retrieval Augmented Generation application."
+            ],
+            "location": {
+                "city": "Barcelona",
+                "region": "Barcelona",
+                "country": "Spain"
+            }
+        },
+        {
+            "slug": "freelance",
+            "company": "Freelance",
+            "position": "Full Stack Developer",
+            "startDate": "2018-01-16",
+            "endDate": "2023-12-21",
+            "summary": "Web design and development.",
+            "tasks": [
+                "Web applications design and development.",
+                "Responsive web app development.",
+                "User Interfaces and User Experience design and enhancement.",
+                "API development and integrations.",
+                "Maintenance and updates of existing projects."
+            ],
+            "location": {
+                "city": "Quito",
+                "region": "Pichincha",
+                "country": "Ecuador"
+            }
+        },
+        {
+            "slug": "ingelin",
+            "company": "Ingelin",
+            "companyUrl": "https://www.ingelin.com.ec/",
+            "position": "Senior Service Engineer and IT Engineer",
+            "startDate": "2014-08-15",
+            "endDate": "2023-08-20",
+            "summary": "Engineering and Technical Service for Medical Equipment.",
+            "tasks": [
+                "Site planning and installation of medical imaging devices, such as X-Ray Systems, CT Scanners, MRI Scanners, Ultrasound Systems",
+                "Maintenance and repair of medical imaging devices.",
+                "Customer support and customer success engineer.",
+                "IT support for internal processes, applications and tools."
+            ],
+            "location": {
+                "city": "Quito",
+                "region": "Pichincha",
+                "country": "Ecuador"
+            }
+        }
+    ],
+
+    "projects": [
+        {
+            "slug": "ingelin-clients",
+            "name": "Ingelin Clients Platform",
+            "type": "Freelance",
+            "company": "Ingelin",
+            "description": "Web Platform for Ingelin's clients. Through the platform clients can check their devices status, service reports and more.",
+            "year": "In Progress",
+            "technologies": [
+                "next", "react", "typescript", "tailwind", "shadcn", "aws"
+            ]
+        },
+        {
+            "slug": "portfolio",
+            "name": "Personal Portfolio",
+            "type": "Personal",
+            "company": "Personal",
+            "description": "My personal portfolio with my most important projects.",
+            "url": "https://luiseduromp.com",
+            "repoUrl": "https://github.com/luiseduromp/portfolio",
+            "year": "2025",
+            "technologies": [
+                "next", "react", "typescript", "tailwind", "gsap", "vercel"
+            ]
+        },
+        {
+            "slug": "workhub",
+            "name": "WorkHub Jobs App",
+            "type": "Personal",
+            "company": "Personal",
+            "description": "Simple job board application with job post filtering and job entry page.",
+            "repoUrl": "https://github.com/luiseduromp/workhub",
+            "year": "2025",
+            "technologies": [
+                "next", "react", "typescript", "tailwind", "shadcn"
+            ]
+        },
+        {
+            "slug": "bayas-freire-website",
+            "name": "Bayas Freire Website",
+            "type": "Freelance",
+            "company": "Bayas Freire",
+            "description": "Website for Bayas Freire architecture and construction firm.",
+            "year": "2025",
+            "url": "https://bayasfreire.com/",
+            "technologies": [
+                "next", "react", "typescript", "tailwind", "motion", "shadcn", "vercel", "aws"
+            ]
+        },
+        {
+            "slug": "midokura-rag",
+            "name": "Internal RAG System",
+            "type": "Corporate",
+            "company": "Midokura",
+            "description": "Contributed in a Retrieval Augmented Generation (RAG) system to enhance development efficiency.",
+            "year": "2025",
+            "technologies": [
+                "python", "langchain", "fastapi", "ollama", "openwebui", "docker", "kubernetes", "git", "github", "jira"
+            ]
+
+        },
+        {
+            "slug": "gesture-detection",
+            "name": "Gesture Detection System",
+            "type": "Academic",
+            "company": "Universitat Politècnica de Catalunya",
+            "description": "Project for my Master Thesis at UPC. Development of a Gesture recognition system based on an inertial sensor.",
+            "year": "2025",
+            "repoUrl": "https://github.com/luiseduromp/gesture-recognition",
+            "technologies": [
+                "python", "tensorflow", "fastapi", "arduino", "vite", "react", "freertos", "mbedos", "docker"
+            ]
+        },
+        {
+            "slug": "ingelin-website",
+            "name": "Ingelin Website",
+            "type": "Freelance",
+            "company": "Ingelin",
+            "description": "Website for Ingelin. A medical imaging devices distribution firm in Ecuador",
+            "year": "2024",
+            "url": "https://ingelin.com.ec/",
+            "technologies": [
+                "next", "react", "typescript", "tailwind", "motion", "shadcn", "vercel", "aws"
+            ]
+        },
+        {
+            "slug": "advmedical-website",
+            "name": "ADV Medical Website",
+            "type": "Freelance",
+            "company": "ADV Medical",
+            "description": "Website for ADV Medical. A medical imaging devices distribution firm in Ecuador",
+            "year": "2023",
+            "url": "https://advmedical.com.ec/",
+            "technologies": [
+                "node", "javascript", "html", "css", "bootstrap", "aws"
+            ]
+        },
+        {
+            "slug": "ingelin-management",
+            "name": "Ingelin Management System",
+            "type": "Freelance",
+            "company": "Ingelin",
+            "description": "Platform for engineering and management support. Based on the API developed for Ingelin.",
+            "year": "2023",
+            "url": "https://servicio.ingelin.com.ec/",
+            "technologies": [
+                "javascript", "html", "angularjs", "aws", "bootstrap", "css"
+            ]
+        },
+        {
+            "slug": "ingelin-api",
+            "name": "Ingelin API",
+            "type": "Freelance",
+            "company": "Ingelin",
+            "description": "API developed for the service support application for Ingelin.",
+            "year": "2023",
+            "technologies": [
+                "php", "mysql", "aws"
+            ]
+        },
+        {
+            "slug": "aprosar-web",
+            "name": "Aprosar Website",
+            "type": "Freelance",
+            "company": "Aprosar",
+            "description": "Website for Aprosar, an insurance company in Ecuador",
+            "year": "2020",
+            "url": "https://aprosar.com/",
+            "technologies": [
+                "php", "angularjs", "html", "css", "aws", "bootstrap"
+            ]
+        }
+    ],
+
+    "education": [
+        {
+            "slug": "upc",
+            "institution": "Universitat Politècnica de Catalunya",
+            "major": "Automatic Systems and Industrial Electronics",
+            "minor": "Intelligent Systems",
+            "degree": "Master",
+            "startDate": "2023-09-15",
+            "endDate": "2025-02-05",
+            "content": [
+                "Artificial Intelligence", "Embedded Systems", "IoT", "Digital Systems", "Internet Technologies", "Mobile Devices Programming", 
+                "Advanced Control", "Robotics and Computer Vision"
+            ],
+            "location": {
+                "city": "Barcelona",
+                "region": "Catalunya",
+                "country": "Spain"
+            }
+        },
+        {
+            "slug": "udla",
+            "institution": "Universidad de las Américas",
+            "major": "Business Administration",
+            "minor": "Finance",
+            "degree": "Master",
+            "startDate": "2018-03-15",
+            "endDate": "2020-02-15",
+            "content": [
+                "Financial Analysis", "Corporate Finance", "Economic Analysis", "Cash Management", "Leadership", "Statistics and Numerical Models"
+            ],
+            "location": {
+                "city": "Quito",
+                "region": "Pichincha",
+                "country": "Ecuador"
+            }
+        },
+        {
+            "slug": "epn",
+            "institution": "Escuela Politécnica Nacional",
+            "major": "Electronics and Control Systems",
+            "minor": "Automation and Industrial Control",
+            "degree": "Bachelor",
+            "startDate": "2007-09-15",
+            "endDate": "2014-09-15",
+            "content": [
+                "Embedded Systems", "Microprocessors", "Electronics", "Machine Control", "Industrial Control", "Electrical Machines", "Power Electronics", 
+                "Instrumentation", "Networks and Communications", "Control Systems"
+            ],
+            "location": {
+                "city": "Quito",
+                "region": "Pichincha",
+                "country": "Ecuador"
+            }
+        }
+    ],
+
+    "courses": [
+        {
+            "institution": "Escuela Politécnica Nacional",
+            "professor": {
+                "name": "Prof. Ángel García Olaya",
+                "institution": "Universidad Carlos III de Madrid"
+            },
+            "title": "Intelligent Systems",
+            "type": "onsite",
+            "location": {
+                "city": "Quito",
+                "region": "Pichincha",
+                "country": "Ecuador"
+            },
+            "year": "2013",
+            "content": [
+                "Artificial Intelligence", "Search algorithms", "Introduction to Neural Networks"
+            ]
+        },
+        {
+            "institution": "Escuela Politécnica Nacional",
+            "professor": {
+                "name": "Prof. Pedro Albertos",
+                "institution": "Universidad Politécnica de Valencia"
+            },
+            "title": "Multi-variable Control Systems",
+            "type": "onsite",
+            "location": {
+                "city": "Quito",
+                "region": "Pichincha",
+                "country": "Ecuador"
+            },
+            "year": "2013",
+            "content": [
+                "Analysis and design of linear and non-linear controllers for MIMO systems"
+            ]
+        },
+        {
+            "platform": "platzi.com",
+            "type": "online",
+            "title": "AWS Cloud Practitioner Certification",
+            "year": "2024"
+        },
+        {
+            "platform": "platzi.com",
+            "type": "online",
+            "title": "EMbeddings and Vector Databases",
+            "year": "2024"
+        },
+        {
+            "platform": "platzi.com",
+            "type": "online",
+            "title": "Advanced React",
+            "year": "2023"
+        },
+        {
+            "platform": "platzi.com",
+            "type": "online",
+            "title": "TypeScript",
+            "year": "2023"
+        },
+        {
+            "platform": "platzi.com",
+            "type": "online",
+            "title": "Next.JS",
+            "year": "2023"
+        },
+        {
+            "platform": "platzi.com",
+            "type": "online",
+            "title": "TailwindCSS",
+            "year": "2023"
+        },
+        {
+            "platform": "platzi.com",
+            "type": "online",
+            "title": "FastAPI",
+            "year": "2023"
+        },
+        {
+            "platform": "platzi.com",
+            "type": "online",
+            "title": "Backend with Node.js",
+            "year": "2021"
+        },
+        {
+            "platform": "platzi.com",
+            "type": "online",
+            "title": "Git and GitHub",
+            "year": "2020"
+        },
+        {
+            "platform": "udacity.com",
+            "type": "online",
+            "title": "Relational Databases",
+            "year": "2018"
+        },
+        {
+            "platform": "udacity.com",
+            "type": "online",
+            "title": "Object Oriented JavaScript",
+            "year": "2018"
+        },
+        {
+            "platform": "udacity.com",
+            "type": "online",
+            "title": "JavaScript Basics",
+            "year": "2018"
+        },
+        {
+            "platform": "udacity.com",
+            "type": "online",
+            "title": "HTML and CSS",
+            "year": "2018"
+        },
+        {
+            "platform": "edx.org",
+            "type": "online",
+            "title": "Intro to Computer Science CS50",
+            "year": "2018"
+        }
+    ],
+
+    "softskills": [
+        "Perseverance", "Resilient", "Creative", "Curious", "Autonomous", "Adaptable",
+        "Organized", "Passionate", "Committed", "Responsible", "Proactive", "Team player", 
+        "Leadership", "Self-learner", "Problem-solver", "Positive", "Critical Thinking", 
+        "Goal-oriented"
+    ],
+
+    "skills": [
+        {
+            "category": "Full Stack Development",
+            "skills": [
+                "Python", "JavaScript", "TypeScript", "PHP", "SQL", "HTML", "CSS", 
+                "React", "Next.js", "Node.js", "FastAPI", "TailwindCSS", "GSAP",
+                "Shadcn/ui", "Docker", "Kubernetes", "MySQL", "PostgreSQL", "MongoDB", 
+                "Vercel", "AWS S3", "AWS EC2", "AWS Lambda", "AWS Lightsail"
+            ]
+        },
+        {
+            "category": "Software & Tools",
+            "skills": [
+                "Git", "GitHub", "Supabase", "Firebase", "Cloudflare", "Appwrite", "n8n"
+            ]
+        },
+        {
+            "category": "AI & ML",
+            "skills": [
+                "TensorFlow", "Pandas", "NumPy", "LangChain", "Scikit-learn", "NLTK", 
+                "Ollama", "RAG (Retrieval Augmented Generation)", "LLMs", "Open WebUI",
+                "Vector Databases", "ChromaDB"
+            ]
+        },
+        {
+            "category": "Embedded Systems",
+            "skills": [
+                "Arduino", "Raspberry Pi", "Mbed OS", "FreeRTOS", "IoT", "TinyML", 
+                "TensorFlow Lite"
+            ]
+        },
+        {
+            "category": "Office and Design",
+            "skills": [
+                "Jira", "Microsoft Excel", "Microsoft365", "Google Workspace", 
+                "Adobe Illustrator", "Adobe Photoshop", "Adobe Premiere Pro"
+            ]
+        }
+    ],
+
+    "languages": [
+        {
+            "language": "English",
+            "fluency": "Fluent"
+        },
+        {
+            "language": "Spanish",
+            "fluency": "Native speaker"
+        },
+        {
+            "language": "German",
+            "fluency": "Beginner"
+        },
+        {
+            "language": "Catalan",
+            "fluency": "Beginner"
+        }
+    ],
+
+    "hobbies": [
+        {
+            "name": "Reading",
+            "keywords": [
+                "Business", "Science & Technology", "Environment & Renewable Energies", 
+                "History", "Geopolitics", "Philosophy"
+            ]
+        },
+        {
+            "name": "Business",
+            "keywords": [
+                "Entrepreneurship", "Business Generation", "Global Economy", "Stock Market"
+            ]
+        },
+        {
+            "name": "AI and Robotics",
+            "keywords": [
+                "LLMs", "Artificial Intelligence", "Data Science", "Machine Learning", "Deep Learning", 
+                "Business Intelligence", "AI for Business", "Digital Electronics", "Sensors and motor control", 
+                "DIY projects", "Robotics", "Computer Vision"
+            ]
+        }
+    ]
+}
