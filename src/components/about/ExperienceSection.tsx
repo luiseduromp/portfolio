@@ -4,12 +4,10 @@ import React, { useRef } from 'react'
 import { Container } from '@/components/shared/containers'
 import Image from 'next/image'
 import { companyLogos, universityLogos } from '@/lib/logos'
-
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from 'gsap/SplitText';
-
 import type { Education, Work } from '@/lib/definitions'
 
 

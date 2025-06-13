@@ -7,7 +7,6 @@ interface GradientButtonProps extends React.AnchorHTMLAttributes<HTMLAnchorEleme
 }
 
 export const GlowButton = ({ href, className, children, ...props }: GradientButtonProps) => {
-    // before:bg-linear-to-bl before:from-violet-500 before:to-fuchsia-500
     return (
         <Link href={href} className={cn("px-5 py-3 dark:bg-black rounded-xl relative transition-all duration-100 ",
             "before:absolute before:inset-0 before:bg-linear-to-bl before:from-sky-400 before:to-emerald-400 before:blur-lg ",

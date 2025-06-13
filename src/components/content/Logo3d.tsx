@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useRef } from 'react'
-import { LogoDesign } from '@/components/logos/Logo'
+import { LogoDesign } from '@/components/icons/Logo'
 import { cn } from '@/lib/utils';
 
 

@@ -31,7 +31,7 @@ import {
     VercelLogo,
     ViteLogo,
     GsapLogo
-} from "@/components/icons/logos";
+} from "@/components/icons/brandIcons";
 import { pub } from "@/lib/config";
 
 export interface IconType {

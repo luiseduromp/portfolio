@@ -1,7 +1,7 @@
 {
     "info": {
         "name": "Luis Romero",
-        "title": "Engineer, Full Stack Developer, MBA",
+        "title": "Full Stack Developer, Engineer, MBA",
         "email": "mail.me@luiseduromp.com",
         "phone": "+34 600 00 62 37",
         "location": {
@@ -15,35 +15,30 @@
 
     "summary": "Creative Full Stack Developer, with over 5 years of experience delivering robust, reliable and elegant web applications. Currently focused on Web Applications and AI-integrated systems using Python, JavaScript, TypeScript and cloud technologies. Experienced in Full Stack development, UX/UI design, LLMs, Retrieval-Augmented Generation (RAG), and modern frameworks like LangChain, FastAPI and Next.js. Experienced in deploying web applications, especially on AWS infrastructure. Passionate about building reliable applications with intuitive interfaces and seamless user experience. Committed to continuous learning and self-improvement.",
 
-    "about2": "I am a builder by nature. I like to deliver flawless and unique designs and experiences through web applications. I believe we are experiencing a technology revolution that is shaping the future and helping solve some of the toughest challenges of modern times, and I am eager to be part of it.\nI have shifted my career from hardware to software, focusing in fullstack development, especially with JavaScript and Python, and now I am looking to get fully into AI. I like to keep continuously learning to improve my skills and stay up-to-date on new technologies.\nMy goal is to use my skills and knowledge to develop beautiful and functional products that can benefit people or businesses.",
+    "about": "I am a builder by nature. I like to deliver flawless and unique designs and experiences through web applications. I believe we are experiencing a technology revolution that is shaping the future and helping solve some of the toughest challenges of modern times, and I am eager to be part of it.\nI have shifted my career from hardware to software, focusing in fullstack development, especially with JavaScript and Python, and now I am looking to get fully into AI. I like to keep continuously learning to improve my skills and stay up-to-date on new technologies.\nMy goal is to use my skills and knowledge to develop beautiful and functional products that can benefit people or businesses.",
 
-    "contact": [       
+    "contact": [
         {
-            "slug": "linkedin",
-            "network": "LinkedIn",
-            "username": "luiseduromp",
-            "url": "https://linkedin.com/in/luiseduromp"
+            "network": "Gmail",
+            "username": "Luis Romero",
+            "url": "mailto:luiseduromp@gmail.com"
         },
         {
-            "slug": "github",
             "network": "GitHub",
             "username": "luiseduromp",
             "url": "https://github.com/luiseduromp"
         },
         {
-            "slug": "gmail",
-            "network": "Gmail",
+            "network": "LinkedIn",
             "username": "luiseduromp",
-            "url": "mailto:luiseduromp@gmail.com"
+            "url": "https://linkedin.com/in/luiseduromp"
         },
         {
-            "slug": "whatsapp",
             "network": "WhatsApp",
             "username": "Luis Eduardo Romero",
             "url": "https://wa.me/34600006237"
         },
         {
-            "slug": "instagram",
             "network": "Instagram",
             "username": "luiseduromp",
             "url": "https://instagram.com/luiseduromp/"
@@ -63,6 +58,11 @@
                 "Research and integration of LLM based systems for internal developer workflows.",
                 "Contribute, develop and maintain LLM-powered AI applications.",
                 "Improve the Retrieval Augmented Generation application."
+            ],
+            "highlights": [
+                "Contributed to the development and improvement of a Retrieval Augmented Generation (RAG) application, that uses internal technical documentation, to enhance engineer's efficiency, using LLMs, LangChain and FastAPI.",
+                "Optimized system performance, code readability and maintainability by refactoring the code and implementing best practices.",
+                "Improved the performance of the application by integrating novel techniques to enhance the RAG pipeline."
             ],
             "location": {
                 "city": "Barcelona",
@@ -84,6 +84,11 @@
                 "API development and integrations.",
                 "Maintenance and updates of existing projects."
             ],
+            "highlights": [
+                "Developed custom applications for clients from scratch, with custom databases, APIs, user interfaces and deployed in AWS Cloud.",
+                "Developed several websites for a wide variety of clients, from an insurance company to an architecture and construction company.",
+                "Helped many customers to build a strong position online developing their websites and enhancing its SEO."
+            ],
             "location": {
                 "city": "Quito",
                 "region": "Pichincha",
@@ -104,6 +109,11 @@
                 "Customer support and customer success engineer.",
                 "IT support for internal processes, applications and tools."
             ],
+            "highlights": [
+                "Helped several customers with their needs and problems related to medical imaging devices, and the infrastructure required to operate them properly.",
+                "Directed and collaborated in the planning and installation of several medical imaging devices.",
+                "Incorporated IT systems and services in the company, optimizing the productivity and removing the need for manual work and paper usage."
+            ],
             "location": {
                 "city": "Quito",
                 "region": "Pichincha",
@@ -118,7 +128,9 @@
             "name": "Ingelin Clients Platform",
             "type": "Freelance",
             "company": "Ingelin",
-            "description": "Web Platform for Ingelin's clients. Through the platform clients can check their devices status, service reports and more.",
+            "summary": "Web Platform for Ingelin's clients. Through the platform clients can check their devices status, service reports and more.",
+            "description": 
+                "A web platform developed for Ingelin's customers.\nThe platform lets customers check their service related data, such as the devices' status, the active contracts and orders placed, and the devices' service reports.\nThe platform also lets customers place service tickets, and request contract renewals.",
             "year": "In Progress",
             "technologies": [
                 "next", "react", "typescript", "tailwind", "shadcn", "aws"
@@ -129,7 +141,9 @@
             "name": "Personal Portfolio",
             "type": "Personal",
             "company": "Personal",
-            "description": "My personal portfolio with my most important projects.",
+            "summary": "My personal portfolio with my most important projects.",
+            "description": 
+                "My personal portfolio showing my experience, education, and the most recent or important projects I have developed during my work as Full Stack Developer.\nThe website features an elegant design with a fully animated interface.",
             "url": "https://luiseduromp.com",
             "repoUrl": "https://github.com/luiseduromp/portfolio",
             "year": "2025",
@@ -142,7 +156,9 @@
             "name": "WorkHub Jobs App",
             "type": "Personal",
             "company": "Personal",
-            "description": "Simple job board application with job post filtering and job entry page.",
+            "summary": "Simple job board application with job post filtering and job entry page.",
+            "description": 
+                "A simple job board application that uses a third party job post API.\nThe application has filtering options and a dedicated job entry page.\nThis simple application has been developed as a technical test during a job interview process.",
             "repoUrl": "https://github.com/luiseduromp/workhub",
             "year": "2025",
             "technologies": [
@@ -154,7 +170,9 @@
             "name": "Bayas Freire Website",
             "type": "Freelance",
             "company": "Bayas Freire",
-            "description": "Website for Bayas Freire architecture and construction firm.",
+            "summary": "Website for Bayas Freire architecture and construction firm.",
+            "description": 
+                "This website has been developed for Bayas Freire, an important architecture and construction firm in Ecuador.\nThe website was developed mainly for marketing purposes, showcasing their projects, but it also shows their current and on sale projects, with all technical information about them.",
             "year": "2025",
             "url": "https://bayasfreire.com/",
             "technologies": [
@@ -166,7 +184,9 @@
             "name": "Internal RAG System",
             "type": "Corporate",
             "company": "Midokura",
-            "description": "Contributed in a Retrieval Augmented Generation (RAG) system to enhance development efficiency.",
+            "summary": "Contributed in a Retrieval-Augmented Generation (RAG) system to enhance development efficiency.",
+            "description": 
+                "Contributed to the development of a Retrieval-Augmented Generation (RAG) system that uses internal technical documentation to enhance engineers' efficiency, using LLMs, LangChain, FastAPI and Python.\nOptimized system performance, code readability and maintainability by refactoring the code and implementing best practices.\nImproved the performance of the application by integrating new techniques to enhance the RAG pipeline.",
             "year": "2025",
             "technologies": [
                 "python", "langchain", "fastapi", "ollama", "openwebui", "docker", "kubernetes", "git", "github", "jira"
@@ -178,7 +198,9 @@
             "name": "Gesture Detection System",
             "type": "Academic",
             "company": "Universitat Politècnica de Catalunya",
-            "description": "Project for my Master Thesis at UPC. Development of a Gesture recognition system based on an inertial sensor.",
+            "summary": "Project for my Master Thesis at UPC. Development of a Gesture recognition system based on an inertial sensor.",
+            "description": 
+                "Project developed for my master thesis at UPC. Development of a gesture detection system based on an inertial sensor.\nThe goal of the project was to evaluate the performance of different neural network sizes and architectures on diverse embedded systems, running on real-time.\nThis project was founded by the 'Siemens Energy AI Chair: Energy Sustainability for a Decarbonized Society 5.0' (TSI-100930-2023-5), funded by the Secretary of State for Digitalization and Artificial Intelligence through the ENIA 2022 Chairs call, and co-funded by the European Union-Next Generation EU.",
             "year": "2025",
             "repoUrl": "https://github.com/luiseduromp/gesture-recognition",
             "technologies": [
@@ -190,7 +212,9 @@
             "name": "Ingelin Website",
             "type": "Freelance",
             "company": "Ingelin",
-            "description": "Website for Ingelin. A medical imaging devices distribution firm in Ecuador",
+            "summary": "Website for Ingelin. A medical imaging devices distribution firm in Ecuador",
+            "description": 
+                "This website was developed for Ingelin, a medical equipment technical service and distribution firm based in Ecuador.\nThe website was developed mainly for marketing purposes, showing their protfolio of products and services.",
             "year": "2024",
             "url": "https://ingelin.com.ec/",
             "technologies": [
@@ -202,7 +226,9 @@
             "name": "ADV Medical Website",
             "type": "Freelance",
             "company": "ADV Medical",
-            "description": "Website for ADV Medical. A medical imaging devices distribution firm in Ecuador",
+            "summary": "Website for ADV Medical. A medical imaging devices distribution firm in Ecuador",
+            "description": 
+                "This website was developed for ADVmedical, a medical equipment distribution firm based in Ecuador.\nADVmedical is the official distributor of Samsung Healthcare in Ecuador.\nThe website was developed mainly for marketing purposes, showing their portfolio of products and services.",
             "year": "2023",
             "url": "https://advmedical.com.ec/",
             "technologies": [
@@ -214,7 +240,9 @@
             "name": "Ingelin Management System",
             "type": "Freelance",
             "company": "Ingelin",
-            "description": "Platform for engineering and management support. Based on the API developed for Ingelin.",
+            "summary": "Platform for engineering and management support. Based on the API developed for Ingelin.",
+            "description": 
+                "Application developed to support engineering and management tasks for Ingelin.\nThis project covers the user interface, which is based in the API developed for Ingelin.\nThe application lets users manage clients, clients' devices, spare parts, contracts and fill digital service reports. The system sends automatically the reports to the customers via email, once they are completed. The system has improved the company efficiency and eliminated the need for manual work and paper usage.",
             "year": "2023",
             "url": "https://servicio.ingelin.com.ec/",
             "technologies": [
@@ -226,7 +254,9 @@
             "name": "Ingelin API",
             "type": "Freelance",
             "company": "Ingelin",
-            "description": "API developed for the service support application for Ingelin.",
+            "summary": "API developed for the service support application for Ingelin.",
+            "description": 
+                "This project is the backend service for the management and engineering support application for Ingelin and the clients' platform.\nThe backend was developed as an API REST, with the whole databased designed and developed from scratch.",
             "year": "2023",
             "technologies": [
                 "php", "mysql", "aws"
@@ -237,7 +267,9 @@
             "name": "Aprosar Website",
             "type": "Freelance",
             "company": "Aprosar",
-            "description": "Website for Aprosar, an insurance company in Ecuador",
+            "summary": "Website for Aprosar, an insurance company in Ecuador",
+            "description": 
+                "Website developed for Aprosar, an insurance broker firm in Ecuador.\nThe website shows their complete products' portfolio and it lets users select request specific products according to their needs.",
             "year": "2020",
             "url": "https://aprosar.com/",
             "technologies": [
@@ -261,7 +293,7 @@
             ],
             "location": {
                 "city": "Barcelona",
-                "region": "Catalunya",
+                "region": "Catalonia",
                 "country": "Spain"
             }
         },

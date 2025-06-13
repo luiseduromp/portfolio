@@ -3,7 +3,7 @@
 import { cn } from '@/lib/utils'
 import Link from 'next/link'
 import React from 'react'
-import { Logo } from '@/components/logos/Logo'
+import { Logo } from '@/components/icons/Logo'
 import { NavMenu } from '@/components/navbar/NavMenu'
 
 

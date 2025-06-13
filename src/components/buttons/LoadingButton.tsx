@@ -9,9 +9,9 @@ interface LoadingButtonInterface extends React.ButtonHTMLAttributes<HTMLButtonEl
 
 export const LoadingButton: React.FC<LoadingButtonInterface> = ({isLoading, children, className, ...props}) => {
     return (
-        <button className={cn("border border-teal-200 rounded-full px-4 py-2 flex items-center group text-teal-200 hover:bg-teal-300",
+        <button className={cn("border border-teal-100 rounded-full px-4 py-2 flex items-center group text-teal-100 hover:bg-teal-300",
             "hover:border-teal-300 hover:text-black transition-colors duration-200 cursor-pointer ",
-            "disabled:opacity-50 disabled disabled:bg-teal-300 disabled:text-black disabled:border-teal-300", className
+            "disabled:opacity-50 disabled disabled:bg-teal-300 disabled:text-black disabled:border-teal-300 disabled:cursor-not-allowed", className
         )} {...props} disabled={isLoading}>
             { isLoading ? <><LoaderCircle className="animate-spin me-2 h-5" /> Sending...</> 
                 : <><Send strokeWidth={1.5} className="me-2 h-5" /> {children}</> 

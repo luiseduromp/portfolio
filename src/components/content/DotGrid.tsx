@@ -4,7 +4,7 @@ import React, { useRef, useEffect } from 'react'
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 
-const DotGrid = () => {
+export const DotGrid = () => {
     const containerRef = useRef<HTMLDivElement>(null);
     const dotsRef = useRef<HTMLDivElement[]>([]);
     const centresRef = useRef<{el:HTMLDivElement, x:number, y:number}[]>([]);
@@ -26,7 +26,7 @@ const DotGrid = () => {
         
         const cols = Math.floor((w + GAP) / (DOT_SIZE + GAP));
         const rows = Math.floor((h + GAP) / (DOT_SIZE + GAP));
-        //console.log(`w:${w}, h:${h}, cols:${cols}, rows:${rows}`)
+
         const total = cols * rows;
 
         for(let i=0; i<total; i++){
@@ -74,5 +74,3 @@ const DotGrid = () => {
         
     )
 }
-
-export default DotGrid

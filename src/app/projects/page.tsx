@@ -1,5 +1,6 @@
 
 import { ProjectsSection } from "@/components/projects/ProjectsSection";
+import { Container } from "@/components/shared/containers";
 import { PageTitle } from "@/components/shared/titles";
 import { getCurriculumData } from "@/data/curriculum";
 
@@ -10,7 +11,11 @@ export default async function Projects() {
         <main>
             <PageTitle>Projects</PageTitle>
 
-            {/* <DotGrid /> */}
+            <Container className="mb-12">
+                <p className="text-lg md:text-xl lg:text-2xl text-neutral-300 w-full md:w-3/4 lg:w-1/2 mx-auto text-center">
+                    A selection of my most recent and important projects
+                </p>
+            </Container>
 
             <ProjectsSection projects={profile.projects} />
 

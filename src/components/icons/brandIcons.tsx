@@ -1,4 +1,5 @@
 import type { SVGProps } from "react";
+import React from "react";
 
 export const AngularjsLogo = (props: SVGProps<SVGSVGElement>) => (
     <svg viewBox="0 0 128 128" {...props}>
@@ -229,7 +230,7 @@ export const ViteLogo = (props: SVGProps<SVGSVGElement>) => (
 
 export interface LogoType {
     name: string
-    category: "hardware" | "software" | "language" | "framework" | "library" | "database" | "social"
+    category?: "hardware" | "software" | "language" | "framework" | "library" | "database" | "social"
     baseColor?: string
     logo?: React.FC<React.SVGProps<SVGSVGElement>>
     img?: string
@@ -305,12 +306,12 @@ export const InstagramLogo = (props: SVGProps<SVGSVGElement>) => (
 )
 
 
-export const SocialLogos: Record<string, LogoType> = {
-    linkedin: { name: "LinkedIn", category: "social", baseColor: "#0a66c2", logo: LinkedInLogo },
-    github: { name: "GitHub", category: "social", baseColor: "#181616", logo: GitHubLogo },
-    gmail: { name: "Gmail", category: "social", baseColor: "#ea4335", logo: GmailLogo },
-    whatsapp: { name: "WhatsApp", category: "social", baseColor: "#25d366", logo: WhatsAppLogo },
-    instagram: { name: "Instagram", category: "social", baseColor: "#ff0069", logo: InstagramLogo },
+export const ContactIcons: Record<string, React.FC<React.SVGProps<SVGSVGElement>>> = {
+    LinkedIn: LinkedInLogo,
+    GitHub: GitHubLogo,
+    Gmail: GmailLogo,
+    WhatsApp: WhatsAppLogo,
+    Instagram: InstagramLogo,
 
 }
 

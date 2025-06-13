@@ -27,7 +27,6 @@ export const LogoAnimated = ({ variant, ...props }: { variant: 'light' | 'dark' 
         if (!container) return
 
         const svg = container.querySelector('svg') as SVGElement
-        //if (!svg) return
 
         const intro = container.querySelector('h3') as HTMLHeadElement
         const hero = container.querySelector('#hero') as HTMLDivElement
@@ -36,8 +35,6 @@ export const LogoAnimated = ({ variant, ...props }: { variant: 'light' | 'dark' 
         const borders = svg.querySelectorAll('.bor') as NodeListOf<SVGPathElement>
         const frame = svg.querySelectorAll('.rect') as NodeListOf<SVGRectElement>
         const chars = svg.querySelectorAll('.char') as NodeListOf<SVGPathElement>
-
-
 
         // gsap.to(intro, {
         //     opacity: 0,

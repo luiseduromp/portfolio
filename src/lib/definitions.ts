@@ -1,7 +1,6 @@
 export interface ContactLink {
-    slug: string
     network: string
-    username: string
+    username?: string
     url: string
 }
 
@@ -42,8 +41,9 @@ export interface Project {
     type: string
     url?: string
     infoUrl?: string
-    repoUrl?: string,
+    repoUrl?: string
     company?: string
+    summary?: string
     description: string
     year?: string
     technologies?: string[]

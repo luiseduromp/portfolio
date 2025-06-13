@@ -3,13 +3,12 @@ import { cn } from "@/lib/utils"
 interface ToggleButtonInterface extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   isOpen: boolean
   isLight?: boolean
-  isScrolled?: boolean
 }
 
-export const MenuToggle = ({ isOpen, isLight, isScrolled, className, ...props }: ToggleButtonInterface) => {
+export const MenuToggle = ({ isOpen, isLight, className, ...props }: ToggleButtonInterface) => {
   return (
-    <button className={cn("text-neutral-800 h-8 absolute right-8 z-70 ml-auto transition-all duration-200 opacity-100 top-8",
-      isScrolled ? "" : "", 
+    <button className={cn("text-neutral-800 size-14 absolute right-5 z-70 ml-auto transition-all duration-200 opacity-100 top-5 rounded-sm",
+      isOpen ? "bg-transparent" : "bg-black/50 backdrop-blur-sm", 
         className)} { ...props }
     >
       <div className="w-8 h-[24px] relative mx-auto cursor-pointer">

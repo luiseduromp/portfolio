@@ -17,17 +17,17 @@ gsap.registerPlugin(useGSAP, ScrollTrigger, SplitText);
 const workContent = [
     {
         title: "Full Stack",
-        desc: "I build web apps from scratch, from Websites and User Interfaces with complete service integrations, to APIs and backend services.",
+        desc: "Experienced in development of custom web applications, from Websites and User Interfaces with complete service integrations, to APIs and backend services.",
         stack: ["TypeScript", "JavaScript", "Python", "PHP", "Next.js", "React", "FastAPI", "Node.js", "MySQL", "PostgreSQL", "Git", "GitHub", "Docker", "Kubernetes", "AWS"]
     },
     {
         title: "UX/UI Design",
-        desc: "Great applications come with a pleasant design and a seamless user experience. I take care of every detail to deliver the best outcome possible.",
+        desc: "I take care of every detail to deliver the best outcome possible, so that the application meets its functionality expectations with an outstanding design.",
         stack: ["HTML", "CSS", "GSAP", "Motion", "TailwindCSS", "Bootstrap", "Shadcn/ui", "Adobe Photoshop", "Adobe Illustrator"]
     },
     {
         title: "AI & Data",
-        desc: "I have worked with AI and integrated LLMs and advanced processing in applications to enhance experience and productivity.",
+        desc: "Experienced in ML, AI and LLMs, integrating advanced processing in applications to enhance experience and productivity.",
         stack: ["LangChain", "Vercel AI SDK", "NumPy", "Pandas", "TesorFlow", "Scikit-learn", "Ollama", "Open WebUI"]
     },
 
@@ -80,23 +80,20 @@ export const WorkSection = () => {
                 <Container className="">                    
                     <SectionTitle>My Work</SectionTitle>               
                     <p className="text-2xl md:text-3xl text-neutral-300">
-                        I design and develop full stack applications, taking care of the core functionality, the design and making sure the user experience is smooth.
+                        I design and develop full stack applications, taking care of its functionality, the design and a smooth user experience.
                     </p>                   
                 </Container>
             </div>
 
             {workContent.map((category, index) => {
-                // const offset = `top-${initialOffset + index*22}`
-                // console.log(offset);
-
                 return (
                     <div key={category.title} className={cn("frame border-t border-neutral-600 pb-30 bg-black w-full")}>
                         <Container >
                             <div className="flex gap-4 items-center mb-6">
-                                <div className="w-16 h-16 lg:w-22 lg:h-22 font-mono bg-neutral-900 text-teal-300 flex items-center justify-center text-3xl lg:text-3xl">0{index+1}</div>
+                                <div className="size-16 lg:size-22 font-mono bg-neutral-900 text-teal-200 flex items-center justify-center text-3xl lg:text-3xl">0{index+1}</div>
                                 <h4 className="font-bold text-3xl lg:text-4xl xl:text-5xl">{category.title}</h4>
                             </div>
-                            {/* <h4 className="font-bold text-5xl mb-8"><span className="font-mono font-normal text-neutral-500">01</span> Full Stack</h4> */}
+
                             <div className="md:flex gap-8">
                                 <p className="md:w-1/2 mb-4 text-xl text-neutral-300">
                                     {category.desc}
@@ -114,76 +111,6 @@ export const WorkSection = () => {
                     </div>
                 )
             })}
-
-            {/* <div className="frame border-t border-neutral-600 pb-30 bg-black top-56 w-full">
-                <Container >
-                    <div className="flex gap-4 items-center mb-6">
-                        <div className="w-22 h-22 font-mono bg-neutral-900 text-teal-300 flex items-center justify-center text-4xl">01</div>
-                        <h4 className="font-bold text-5xl">Full Stack</h4>
-                    </div>
-                    <div className="flex gap-8">
-                        <p className="w-1/2 mb-4 text-xl text-neutral-400">
-                            I build web apps from scratch, from Websites and User Interfaces with complete service integrations, to APIs and backend services.
-                        </p>
-                        <div className="flex-1">
-                            <p className="font-bold mb-2 uppercase text-neutral-500">Main Technologies</p>
-                            <ul className="text-2xl text-neutral-200 font-semibold">                               
-                                <li className="border-b border-neutral-700 py-2">Python, TypeScript, JavaScript, PHP</li>
-                                <li className="border-b border-neutral-700 py-2">Next.js, React, FastAPI, Node.js</li>
-                                <li className="border-b border-neutral-700 py-2">MySQL, PostgreSQL, Git, GitHub</li>
-                                <li className="border-b border-neutral-700 py-2">Docker, Kubernetes, AWS</li>
-                            </ul>                          
-                        </div>
-                    </div>
-                </Container>
-            </div>
-
-            <div className="frame border-t border-neutral-600 pb-30 bg-black top-78 w-full">
-                <Container>
-                    <div className="flex gap-4 items-center mb-6">
-                        <div className="w-22 h-22 font-mono bg-neutral-900 text-teal-300 flex items-center justify-center text-4xl">02</div>
-                        <h4 className="font-bold text-5xl">UI/UX Design</h4>
-                    </div>
-                    <div className="flex gap-8">
-                        <p className="w-1/2 mb-4 text-xl text-neutral-400">
-                            Great applications come with a pleasant design and a seamless user experience. I take care of every detail to deliver the best outcome possible.
-                        </p>
-
-                        <div className="flex-1">
-                            <p className="font-bold mb-2 uppercase text-neutral-500">Main Technologies</p>
-                            <ul className="text-2xl text-neutral-200 font-semibold">
-                                <li className="border-b border-t border-neutral-700 py-2">GSAP, Bootstrap</li>
-                                <li className="border-b border-neutral-700 py-2">TailwindCSS, Bootstrap</li>
-                                <li className="border-b border-neutral-700 py-2">A. Photoshop, A. Illustrator</li>
-                            </ul>                        
-                        </div>
-                        
-                    </div>
-                </Container>
-            </div>
-
-            <div className="frame border-t border-neutral-600 pb-30 bg-black top-100 w-full">
-                <Container>
-                    <div className="flex gap-4 items-center mb-6">
-                        <div className="w-22 h-22 font-mono bg-neutral-900 text-teal-300 flex items-center justify-center text-4xl">03</div>
-                        <h4 className="font-bold text-5xl">AI & Data</h4>
-                    </div>
-                    <div className="flex gap-8">
-                        <p className="w-1/2 mb-4 text-xl text-neutral-400">
-                            I have worked in ML and AI projects integrating LLMs and advanced processing, to enhance productivity.                               
-                        </p> 
-
-                        <div className="flex-1">
-                            <p className="font-bold mb-2 uppercase text-neutral-500">Main Technologies</p>
-                            <ul className="text-2xl text-neutral-200 font-semibold">
-                                <li className="border-b border-t border-neutral-700 py-2">Python, LangChain, Vercel AI SDK</li>
-                                <li className="border-b border-neutral-700 py-2">NumPy, Pandas, TensorFlow</li>
-                                <li className="border-b border-neutral-700 py-2">Ollama, Open WebUI</li>
-                            </ul>                          
-                        </div> 
-                    </div>
-                </Container>
-            </div> */}
 
         </section>
     )

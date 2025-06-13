@@ -13,7 +13,7 @@ const keyNames = {
     message: 'Mensaje'
 }
 
-const MEDIA_URL = "https://d2ajrhz4pdxgd1.cloudfront.net"
+const MEDIA_URL = "https://cdn.luiseduromp.com"
 
 export function EmailTemplate( contactFormData:ContactFormInterface ) {
     return (
@@ -21,14 +21,14 @@ export function EmailTemplate( contactFormData:ContactFormInterface ) {
             <Tailwind>
                 <Body>
                     <Container className="border border-neutral-900 rounded-xl px-8 pt-8 pb-4 bg-neutral-50">
-                        <Section className="mt-2 mb-8">
-                            <Img src={`${MEDIA_URL}/logo.png`} height="40" width="120" alt="luiseduromp.com" />
+                        <Section className="mt-2 mb-8 px-4 py-4 bg-neutral-900">
+                            <Img src={`${MEDIA_URL}/logo-lr-dark.svg`} height="40" width="120" alt="luiseduromp.com" />
                         </Section>
                         <Heading as="h1" className="text-2xl">
-                            Message from Website
+                            Message from Portfolio Website
                         </Heading>
                         <Text className="text-neutral-600">
-                            New message from the Portfolio Website
+                            A new message has been submitted from the portfolio website.
                         </Text>
                         <Heading as="h3" className="text-lg">
                             Contact Data

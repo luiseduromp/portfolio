@@ -12,6 +12,11 @@ import { SplitText } from 'gsap/SplitText';
 
 gsap.registerPlugin(useGSAP, ScrollTrigger, SplitText);
 
+const titles = ['Developer', 'Engineer', 'Designer']
+const about = `Creative Full Stack Developer, with over 5 years of experience delivering robust, reliable and elegant web applications.
+                Currently focused on Web Applications and AI-integrated systems using mainly Python, TypeScript and AWS infrastructure.
+                I like to take care of all the details in a project to make it totally functional, and beautiful.`
+
 export const AboutIntro = () => {
     const containerRef = useRef<HTMLDivElement>(null)
 
@@ -19,6 +24,7 @@ export const AboutIntro = () => {
         const container = containerRef.current
         if(!container) return
 
+        //const titles = SplitText.create(container.querySelectorAll('.about-title'), { type: 'lines', mask: 'lines' })
         const titles = container.querySelectorAll('.about-title')
         const descriptions = container.querySelectorAll('.about-description')
 
@@ -26,13 +32,13 @@ export const AboutIntro = () => {
             scrollTrigger: {
                 trigger: container,
                 start: 'top 70%',
-                markers: true,
                 toggleActions: 'play none none reverse'
             }
         })
         .from(titles, {
             xPercent: -100,
             stagger: 0.2,
+            mask: 'lines',
             autoAlpha: 0,
             ease: 'power1.out',
         })
@@ -50,18 +56,16 @@ export const AboutIntro = () => {
                 <SectionTitle>About Me</SectionTitle>
 
                 <div ref={containerRef} className="md:flex gap-8 py-6 md:py-12 items-center">
-                    <div className="w-full mb-8 md:mb-0 md:w-1/2">
-                        <p className="about-title text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold">Developer</p>
-                        <p className="about-title text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold">Engineer</p>
-                        <p className="about-title text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold">Designer</p>
+                    <div className="w-full mb-8 md:mb-0 md:w-1/2 ">
+                        {titles.map((title, index) => (
+                            <p key={`title-${index}`} className="about-title text-6xl/18 lg:text-7xl/21 font-bold bg-linear-to-br from-teal-300 to-purple-400 text-transparent bg-clip-text">{title}</p>
+                        ))}
                     </div>
 
                     <div className="w-full md:flex-1">
-                        <p className="about-description mb-4 font-light text-lg lg:text-xl text-neutral-300">I consider myself a creative builder by nature and I have found my passion in software development.</p>
-                        <p className="about-description mb-4 font-light text-lg lg:text-xl text-neutral-300">I like to take care of all the details in a project to make it totally functional, and beautiful.</p>
-                        <p className="about-description font-light text-lg lg:text-xl text-neutral-300">Having worked as a full stack developer for over 5 years has helped me develop strong skills for optimal 
-                            developments and a good taste for beautiful designs 
-                        </p>
+                        {about.split('\n').map((paragraph, index) => (
+                            <p key={`par-${index}`} className="about-description mb-4 text-lg lg:text-xl xl:text-2xl text-neutral-300">{paragraph}</p>
+                        ))}
                     </div>
 
                 </div>

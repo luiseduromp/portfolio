@@ -1,6 +1,6 @@
 import { ContactForm } from "@/components/contact/ContactForm";
 import { GlobeSection } from "@/components/contact/GlobeSection";
-import { SocialLogos } from "@/components/icons/logos";
+import { ContactIcons } from "@/components/icons/brandIcons";
 import { Container } from "@/components/shared/containers";
 import { PageTitle } from "@/components/shared/titles";
 import { getCurriculumData } from "@/data/curriculum";
@@ -47,10 +47,10 @@ export default async function Contact() {
 
             <div className="flex items-center justify-center gap-4 mb-6 flex-wrap">
                 {profile.contact.map((link) => {
-                    const Icon = SocialLogos[link.slug].logo!
+                    const Icon = ContactIcons[link.network]
                     
                     return (
-                        <a key={link.slug} href={link.url} target="_blank" className={cn("relative text-neutral-100 flex gap-2 px-2 items-center rounded-lg size-25 justify-center group",
+                        <a key={link.network} href={link.url} target="_blank" className={cn("relative text-neutral-100 flex gap-2 px-2 items-center rounded-lg size-25 justify-center group",
                           "bg-transparent hover:bg-linear-to-br from-teal-200 to-teal-500 hover:text-neutral-800 transition-all duration-200"
                         )}>
                             <Icon className="h-12" />

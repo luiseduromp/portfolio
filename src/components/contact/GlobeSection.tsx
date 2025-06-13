@@ -26,7 +26,7 @@ export const GlobeSection = () => {
         const text = container.querySelector('.location-text')
         const status = container.querySelector('.work-status')
 
-        gsap.set(globe, {yPercent:10, scale:0.95, opacity:0.2})
+        gsap.set(globe, {yPercent:15, scale:0.95, opacity:0.2})
         gsap.set(pin, {yPercent:-200, opacity:0})
         gsap.set(city.lines, {yPercent:100, autoAlpha:0})
         gsap.set(text, {yPercent:-100, autoAlpha:0})
@@ -39,9 +39,21 @@ export const GlobeSection = () => {
             ease: "sine.out",
             scrollTrigger: {
                 trigger: container,
-                start: "-20% center",
+                start: "top 80%",
                 scrub: true,                
                 markers: true,
+                end: () => `+=${container.offsetHeight*0.7}`,
+            }
+        })
+
+        gsap.to(pin, {
+            yPercent:0, 
+            opacity:1, 
+            ease: 'power1.out',
+            scrollTrigger: {
+                trigger: container,
+                start: "top 80%",
+                scrub: true,                
                 end: () => `+=${container.offsetHeight*0.7}`,
             }
         })
@@ -54,8 +66,7 @@ export const GlobeSection = () => {
             }
         })
 
-        tl.to(pin, {yPercent:0, opacity:1, ease: 'power1.out'}, "<")
-            .to(text, {yPercent: 0, autoAlpha:1}, "<")
+        tl.to(text, {yPercent: 0, autoAlpha:1}, "<")
             .to(city.lines, {yPercent:0, autoAlpha:1, mask:'lines'}, "<")
             .to(status, {yPercent: 0, opacity:1}, "<")
 
@@ -65,14 +76,13 @@ export const GlobeSection = () => {
     })
 
     return (
-        <section id="smooth-wrapper" >
-            <div id="smooth-content" ref={containerRef} className="relative overflow-hidden h-130 md:h-160">
-                <div className="globe absolute top-56 sm:top-54 md:top-60 size-250 sm:size-300 md:size-380 lg:size-420 xl:size-480 rounded-full left-1/2 -translate-x-1/2 bg-radial border-1 border-teal-200/50 from-black from-50% to-teal-300 z-20 overflow-hidden">
-                    <Image src={`${pub.BUCKET_URL}/world-map.svg`} width={2000} height={900} className="mx-auto h-full relative w-3/4 -top-82 sm:-top-100 md:-top-124 lg:-top-140 xl:-top-164 opacity-60" alt="world Map"/>
+        <section>
+            <div ref={containerRef} className="relative overflow-hidden h-100 md:h-120">
+                <div className="globe absolute top-40 size-250 sm:size-300 md:size-380 lg:size-420 xl:size-480 rounded-full left-1/2 -translate-x-1/2 bg-radial-[at_60%_60%] border-1 border-teal-200/50 from-black from-45% to-teal-300/80 z-20 overflow-hidden">
+                    <Image src={`${pub.BUCKET_URL}/world-map.svg`} width={2000} height={900} className="mx-auto h-full relative w-3/4 -top-82 sm:-top-100 md:-top-124 lg:-top-140 xl:-top-164 opacity-40" alt="world Map"/>
                 </div>
 
-                <div className="globe absolute top-56 sm:top-54 md:top-60 size-250 sm:size-300 md:size-380 lg:size-420 xl:size-480 rounded-full left-1/2 -translate-x-1/2 bg-radial from-black/30 from-60% to-teal-50/90 z-20" />
-                <div className="globe absolute top-56 sm:top-54 md:top-60 size-250 sm:size-300 md:size-380 lg:size-420 xl:size-480 rounded-full left-1/2 -translate-x-1/2 bg-teal-200/80 blur-2xl z-10" />
+                <div className="globe absolute top-40 size-250 sm:size-300 md:size-380 lg:size-420 xl:size-480 rounded-full left-1/2 -translate-x-1/2 bg-teal-200/80 blur-3xl z-10" />
 
                 <div className="absolute inset-0 flex justify-center items-center gap-4 z-30">                           
                     <MapPin className="location-pin" strokeWidth={0.75} size={80} />

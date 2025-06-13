@@ -9,7 +9,7 @@ import { ProjectCard, RenderCover } from '@/components/projects/ProjectCard';
 import { cn } from '@/lib/utils';
 import { icons } from '@/lib/logos';
 import Link from 'next/link';
-import { Box, SquareArrowOutUpRight } from 'lucide-react';
+import { Box, SquareArrowOutUpRight, X } from 'lucide-react';
 import { Container } from '@/components/shared/containers';
 
 
@@ -73,7 +73,7 @@ export const ProjectsSection = ({ projects }: { projects: Project[] }) => {
             ease: 'power1.out',
             scrollTrigger: {
                 trigger: container,
-                start: 'top center',
+                start: 'top 80%',
             }
         })
     })
@@ -86,17 +86,23 @@ export const ProjectsSection = ({ projects }: { projects: Project[] }) => {
                 ))}
             </Container>
 
-            <div className={cn("fixed inset-0 bg-black/90 transition-all duration-300 flex justify-center items-center", (openProject !== null) ? "visible opacity-100": "invisible opacity-0")}>
-                <dialog ref={dialogRef} className={cn("relative bg-neutral-900 border border-neutral-800 text-white overflow-hidden rounded-xl w-9/10 mx-auto md:w-lg lg:w-xl")} open>
+            <div className={cn("fixed inset-0 bg-black/90 transition-all duration-300 flex justify-center overflow-y-scroll", (openProject !== null) ? "visible opacity-100": "invisible opacity-0")}>
+                <dialog ref={dialogRef} className={cn("relative bg-neutral-900 border border-neutral-800 text-white overflow-hidden rounded-xl w-9/10 mx-auto my-12 md:w-lg lg:w-xl")} open>
+                    <button className="absolute top-2 right-2 cursor-pointer bg-black/70 rounded-md p-1 group" onClick={closeDialog}>
+                        <X size={28} className="text-neutral-400 group-hover:text-white"/>
+                    </button>
                     <div className="h-50 mb-2">
                         {openProject && <RenderCover slug={openProject.slug}/>}
                     </div>
                     <div className="px-5 py-5">
-                        <p className="font-mono text-teal-300 mb-1">{openProject?.type} Project</p>
-                        <h3 className="text-3xl font-bold mb-1">{openProject?.name}</h3>
-                        <p className="font-mono text-teal-300 mb-3">{openProject?.year}, {openProject?.company}</p>
-                        <p className="text-neutral-300 mb-4">{openProject?.description}</p>
-
+                        <p className="font-mono text-amber-500 mb-1">{openProject?.type} Project</p>
+                        <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2">{openProject?.name}</h3>
+                        <p className="font-mono text-teal-300 mb-6">{openProject?.year}, {openProject?.company}</p>
+                        <div className="mb-4">
+                            {openProject?.description.split(`\n`).map((paragraph, index) => (
+                                <p key={`p-${index}`} className="text-neutral-300 mb-2">{paragraph}</p>
+                            ))}
+                        </div>
                     </div>
 
                     <div className="px-5 py-5 border-t border-dashed border-teal-300">

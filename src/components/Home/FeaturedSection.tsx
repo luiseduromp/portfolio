@@ -3,23 +3,19 @@
 import type { Project } from '@/lib/definitions'
 import React, { useRef } from 'react'
 import { Container } from '@/components/shared/containers'
-
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
-    
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from 'gsap/SplitText';
-
-import { featuredCovers } from '@/lib/media';
 import Image from 'next/image';
-import { Info, LinkIcon } from 'lucide-react';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
+import { featuredCovers } from '@/lib/media';
+import { Info, LinkIcon } from 'lucide-react';
 import { useTapHover } from '@/hooks/useTapHover';
-import { GitHubLogo } from '../icons/logos';
+import { GitHubLogo } from '../icons/brandIcons';
 import { NavButton } from '../buttons/NavButton';
 import { SectionTitle } from '../shared/titles';
-
 
 
 gsap.registerPlugin(useGSAP, ScrollTrigger, SplitText);
@@ -86,7 +82,7 @@ const ProjectItem = ({ project }: { project: Project } & React.HTMLAttributes<HT
             <div className="mb-6 lg:mb-0 lg:w-1/3">
                 <p className="project-info font-mono text-teal-400 mb-1 text-xl">{project.type}</p>
                 <h5 className="project-info text-4xl sm:text-5xl font-bold mb-2">{project.name}</h5>
-                <p className="project-info text-neutral-400 text-lg mb-3">{project.description}</p>
+                <p className="project-info text-neutral-400 text-lg mb-3">{project.summary}</p>
                 <p className="project-info font-mono text-teal-400 mb-1 text-xl">{project.year}, {project.company}</p>
             </div>
 

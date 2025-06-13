@@ -29,7 +29,7 @@ const TextScroll = ({ children, className, ...props }: React.HTMLAttributes<HTML
         gsap.from(split.words, {
             //y: 50,
             //autoAlpha: 0.3,
-            opacity: 0.3,
+            opacity: 0.2,
             stagger: 1,
             scrollTrigger: {
                 trigger: container,
@@ -39,13 +39,12 @@ const TextScroll = ({ children, className, ...props }: React.HTMLAttributes<HTML
                 end: () => `+=${container.scrollHeight}`,
             }
         })
-
     })
 
     return (
         <Container ref={containerRef} className={cn(" h-screen flex flex-col justify-center gap-4", className)} {...props}>
             <h4 className="text-teal-400 font-mono uppercase text-xl lg:text-3xl">My Work</h4>
-            <p className="pe-20 text-4xl md:text-5xl lg:text-7xl">{children}</p>
+            <p className="pe-20 text-4xl md:text-5xl lg:text-7xl font-semibold">{children}</p>
         </Container>
     )
 }
