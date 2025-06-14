@@ -6,12 +6,12 @@ export interface ContactLink {
 
 export interface Location {
     city: string;
-    region: string;
+    region?: string;
     country: string;
 }
 
 export interface Work {
-    slug: string;
+    id: string;
     company: string;
     companyUrl?: string;
     position: string;
@@ -24,7 +24,7 @@ export interface Work {
 }
 
 export interface Education {
-    slug: string;
+    id: string;
     institution: string;
     major: string;
     minor: string;
@@ -36,7 +36,7 @@ export interface Education {
 }
 
 export interface Project {
-    slug: string
+    id: string
     name: string
     type: string
     url?: string

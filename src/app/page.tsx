@@ -15,7 +15,7 @@ import { cn } from "@/lib/utils"
 export default async function Home() {
   const profile = await getCurriculumData()
   const featured = ['bayas-freire-website', 'midokura-rag', 'ingelin-website', 'ingelin-management']
-  const featuredProjects = profile.projects.filter((project) => featured.includes(project.slug))
+  const featuredProjects = profile.projects.filter((project) => featured.includes(project.id))
 
   return (
     <main>

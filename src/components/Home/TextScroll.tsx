@@ -1,10 +1,8 @@
 'use client'
 
 import React, { useRef } from 'react'
-
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
-    
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { cn } from '@/lib/utils';
 import { SplitText } from 'gsap/SplitText';
@@ -27,8 +25,6 @@ const TextScroll = ({ children, className, ...props }: React.HTMLAttributes<HTML
         })
 
         gsap.from(split.words, {
-            //y: 50,
-            //autoAlpha: 0.3,
             opacity: 0.2,
             stagger: 1,
             scrollTrigger: {

@@ -33,9 +33,9 @@ const SkillItem = ({skill, ind, ...props}: {skill:SkillSet, ind:number} & React.
                 toggleActions: 'play none none reverse',
             }
         })
-            .from(divider, {opacity: 0, xPercent:-100, duration:0.3})
+            .from(divider, {opacity: 0, xPercent:-100, duration:0.5})
             .from(category, {yPercent:50, opacity:0, stagger:0.1, duration:0.2}, "<")
-            .from(item, {yPercent: 50, opacity: 0, duration:0.05, stagger:0.05})
+            .from(item, {yPercent: 50, opacity: 0, duration:0.05, stagger:0.02})
     })
 
     return (

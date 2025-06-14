@@ -86,8 +86,8 @@ const ProjectItem = ({ project }: { project: Project } & React.HTMLAttributes<HT
                 <p className="project-info font-mono text-teal-400 mb-1 text-xl">{project.year}, {project.company}</p>
             </div>
 
-            <div ref={coverRef} key={`img-${project.slug}`} className="lg:flex-1 project-img flex items-center justify-center w-full rounded-xl relative group overflow-hidden">
-                <RenderCover slug={project.slug} />
+            <div ref={coverRef} key={`img-${project.id}`} className="lg:flex-1 project-img flex items-center justify-center w-full rounded-xl relative group overflow-hidden">
+                <RenderCover slug={project.id} />
 
                 {(project.url || project.infoUrl || project.repoUrl) && 
                     <div className="absolute inset-0 p-4 opacity-0 bg-black/70 group-hover:opacity-100 group-data-hover:opacity-100 transition-opacity duration-200 flex gap-4 justify-center items-center">
@@ -130,7 +130,7 @@ export const FeaturedSection = ({projects}: {projects:Project[]}) => {
 
             <Container>
                 {projects.map((project) => (
-                    <ProjectItem key={project.slug} project={project} />
+                    <ProjectItem key={project.id} project={project} />
                 ))}
             </Container>
 

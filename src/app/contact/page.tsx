@@ -6,8 +6,13 @@ import { PageTitle } from "@/components/shared/titles";
 import { getCurriculumData } from "@/data/curriculum";
 import { pub } from "@/lib/config";
 import { cn } from "@/lib/utils";
+import type { Metadata } from "next";
 import { ReCaptchaProvider } from "next-recaptcha-v3"
 
+export const metadata: Metadata = {
+    title: `Contact - luiseduromp.com`,
+    description: "Have an idea in mind? Let's build it together",
+};
 
 export default async function Contact() {
   const profile = await getCurriculumData()

@@ -47,7 +47,7 @@
     
     "work": [
         {
-            "slug": "midokura",
+            "id": "midokura",
             "company": "Midokura",
             "companyUrl": "https://midokura.com/",
             "position": "AI Software Engineer Intern",
@@ -71,7 +71,7 @@
             }
         },
         {
-            "slug": "freelance",
+            "id": "freelance",
             "company": "Freelance",
             "position": "Full Stack Developer",
             "startDate": "2018-01-16",
@@ -96,7 +96,7 @@
             }
         },
         {
-            "slug": "ingelin",
+            "id": "ingelin",
             "company": "Ingelin",
             "companyUrl": "https://www.ingelin.com.ec/",
             "position": "Senior Service Engineer and IT Engineer",
@@ -124,7 +124,7 @@
 
     "projects": [
         {
-            "slug": "ingelin-clients",
+            "id": "ingelin-clients",
             "name": "Ingelin Clients Platform",
             "type": "Freelance",
             "company": "Ingelin",
@@ -137,7 +137,7 @@
             ]
         },
         {
-            "slug": "portfolio",
+            "id": "portfolio",
             "name": "Personal Portfolio",
             "type": "Personal",
             "company": "Personal",
@@ -152,7 +152,7 @@
             ]
         },
         {
-            "slug": "workhub",
+            "id": "workhub",
             "name": "WorkHub Jobs App",
             "type": "Personal",
             "company": "Personal",
@@ -166,7 +166,7 @@
             ]
         },
         {
-            "slug": "bayas-freire-website",
+            "id": "bayas-freire-website",
             "name": "Bayas Freire Website",
             "type": "Freelance",
             "company": "Bayas Freire",
@@ -180,7 +180,7 @@
             ]
         },
         {
-            "slug": "midokura-rag",
+            "id": "midokura-rag",
             "name": "Internal RAG System",
             "type": "Corporate",
             "company": "Midokura",
@@ -194,7 +194,7 @@
 
         },
         {
-            "slug": "gesture-detection",
+            "id": "gesture-detection",
             "name": "Gesture Detection System",
             "type": "Academic",
             "company": "Universitat Politècnica de Catalunya",
@@ -208,7 +208,7 @@
             ]
         },
         {
-            "slug": "ingelin-website",
+            "id": "ingelin-website",
             "name": "Ingelin Website",
             "type": "Freelance",
             "company": "Ingelin",
@@ -222,7 +222,7 @@
             ]
         },
         {
-            "slug": "advmedical-website",
+            "id": "advmedical-website",
             "name": "ADV Medical Website",
             "type": "Freelance",
             "company": "ADV Medical",
@@ -236,7 +236,7 @@
             ]
         },
         {
-            "slug": "ingelin-management",
+            "id": "ingelin-management",
             "name": "Ingelin Management System",
             "type": "Freelance",
             "company": "Ingelin",
@@ -250,7 +250,7 @@
             ]
         },
         {
-            "slug": "ingelin-api",
+            "id": "ingelin-api",
             "name": "Ingelin API",
             "type": "Freelance",
             "company": "Ingelin",
@@ -263,7 +263,7 @@
             ]
         },
         {
-            "slug": "aprosar-web",
+            "id": "aprosar-web",
             "name": "Aprosar Website",
             "type": "Freelance",
             "company": "Aprosar",
@@ -280,7 +280,7 @@
 
     "education": [
         {
-            "slug": "upc",
+            "id": "upc",
             "institution": "Universitat Politècnica de Catalunya",
             "major": "Automatic Systems and Industrial Electronics",
             "minor": "Intelligent Systems",
@@ -298,7 +298,7 @@
             }
         },
         {
-            "slug": "udla",
+            "id": "udla",
             "institution": "Universidad de las Américas",
             "major": "Business Administration",
             "minor": "Finance",
@@ -315,7 +315,7 @@
             }
         },
         {
-            "slug": "epn",
+            "id": "epn",
             "institution": "Escuela Politécnica Nacional",
             "major": "Electronics and Control Systems",
             "minor": "Automation and Industrial Control",

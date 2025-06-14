@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inconsolata, Raleway } from "next/font/google";
 import { Navbar } from "@/components/navbar/Navbar";
 import { Footer } from "@/components/shared/Footer"
-import "./globals.css";
+import "@/app/globals.css";
 
 
 const raleway = Raleway({
@@ -19,8 +19,8 @@ const inconsolata = Inconsolata({
 })
 
 export const metadata: Metadata = {
-  title: "Luis Romero Portfolio",
-  description: "My personal Portfolio",
+  title: "Web Portfolio - Luis Romero ",
+  description: "My personal website and portfolio",
 };
 
 export default function RootLayout({

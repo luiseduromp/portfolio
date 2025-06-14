@@ -82,22 +82,22 @@ export const ProjectsSection = ({ projects }: { projects: Project[] }) => {
         <section ref={containerRef}>
             <Container className="flex justify-center gap-6 flex-wrap py-16">
                 {projects.map((project) => (
-                    <ProjectCard key={project.slug} project={project} className="projectCard" onClick={() => {openDialog(project)}} />
+                    <ProjectCard key={project.id} project={project} className="projectCard" onClick={() => {openDialog(project)}} />
                 ))}
             </Container>
 
             <div className={cn("fixed inset-0 bg-black/90 transition-all duration-300 flex justify-center overflow-y-scroll", (openProject !== null) ? "visible opacity-100": "invisible opacity-0")}>
-                <dialog ref={dialogRef} className={cn("relative bg-neutral-900 border border-neutral-800 text-white overflow-hidden rounded-xl w-9/10 mx-auto my-12 md:w-lg lg:w-xl")} open>
-                    <button className="absolute top-2 right-2 cursor-pointer bg-black/70 rounded-md p-1 group" onClick={closeDialog}>
-                        <X size={28} className="text-neutral-400 group-hover:text-white"/>
-                    </button>
-                    <div className="h-50 mb-2">
-                        {openProject && <RenderCover slug={openProject.slug}/>}
+                <dialog ref={dialogRef} className={cn("relative bg-neutral-900 border border-neutral-800 overflow-hidden rounded-xl w-9/10 mx-auto my-12 md:w-lg lg:w-xl")} open>
+                    <div className="h-50 mb-2 relative">
+                        <button className="absolute top-2 right-2 cursor-pointer bg-black/50 rounded-md p-[2px] group/btn" onClick={closeDialog}>
+                            <X size={28} className="text-neutral-400 group-hover/btn:text-white"/>
+                        </button>
+                        {openProject && <RenderCover id={openProject.id}/>}
                     </div>
                     <div className="px-5 py-5">
-                        <p className="font-mono text-amber-500 mb-1">{openProject?.type} Project</p>
-                        <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2">{openProject?.name}</h3>
-                        <p className="font-mono text-teal-300 mb-6">{openProject?.year}, {openProject?.company}</p>
+                        <p className="font-mono text-xl text-teal-100 mb-1">{openProject?.type} Project</p>
+                        <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 text-white">{openProject?.name}</h3>
+                        <p className="font-mono text-lg text-teal-300 mb-6">{openProject?.year}, {openProject?.company}</p>
                         <div className="mb-4">
                             {openProject?.description.split(`\n`).map((paragraph, index) => (
                                 <p key={`p-${index}`} className="text-neutral-300 mb-2">{paragraph}</p>

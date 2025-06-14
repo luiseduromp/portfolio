@@ -2,7 +2,6 @@
 import React, { useRef } from 'react'
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
-  
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from 'gsap/SplitText';
 import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin';
@@ -26,7 +25,6 @@ export const Hero = ({ variant, ...props }: { variant: 'light' | 'dark' } & Reac
         if (!container) return
 
         const svg = container.querySelector('svg') as SVGElement
-
         const intro = container.querySelector('#intro') as HTMLHeadElement
         const hero = container.querySelector('#hero') as HTMLDivElement
 
@@ -99,7 +97,7 @@ export const Hero = ({ variant, ...props }: { variant: 'light' | 'dark' } & Reac
     return (
         <section ref={containerRef} className={cn("w-full bg-black h-screen relative overflow-hidden")} {...props}>
             <div id="intro" className="absolute left-0 top-0 right-0 h-screen flex flex-col justify-center items-center pointer-events-none perspective-normal">
-                <h3 className="text-center lg:text-2xl">Welcome to <span className="font-bold">Luis Romero&apos;s </span> Portfolio</h3>
+                <h3 className="text-center lg:text-2xl">Welcome to my Web Portfolio - <span className="font-bold">Luis Romero</span></h3>
                 <p className="text-teal-300 font-mono">[ Scroll Down ]</p>
             </div>
 
@@ -136,9 +134,7 @@ export const Hero = ({ variant, ...props }: { variant: 'light' | 'dark' } & Reac
                         <rect className="rect  " fill="none" stroke={col[variant].line} x="1.34" y="-.34" width="998.31" height="1000" transform="translate(1000.15 -.84) rotate(90)"/>
                     </g>
                 </svg>
-
             </div>
-            
 
             <header id="hero" className="absolute left-0 top-0 right-0 h-screen perspective-normal opacity-0 scale-20">
                 <Container id="intro" className="relative flex flex-col h-full gap-12 my-auto justify-center">

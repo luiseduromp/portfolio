@@ -2,16 +2,13 @@
 
 import React, { useRef } from 'react'
 import { Container } from '@/components/shared/containers'
-
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
-    
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { SplitText } from 'gsap/SplitText';
 import { cn } from '@/lib/utils';
-import { SectionTitle } from '../shared/titles';
+import { SectionTitle } from '@/components/shared/titles';
 
-gsap.registerPlugin(useGSAP, ScrollTrigger, SplitText);
+gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 
 const workContent = [
@@ -35,8 +32,6 @@ const workContent = [
 
 export const WorkSection = () => {
     const containerRef = useRef<HTMLDivElement>(null)
-
-    
 
     useGSAP(() => {
         const container = containerRef.current

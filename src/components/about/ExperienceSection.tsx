@@ -63,7 +63,7 @@ const WorkItem = ({ item, ...props }: { item: Work } & React.HTMLAttributes<HTML
             <div className="timeline-dot absolute left-2 md:left-60 lg:left-80 top-16 -translate-x-1/2 size-6 bg-neutral-300 rounded-full"></div>
 
             <div className="timeline-date flex items-center py-6 px-8 md:block md:w-60 lg:w-80 md:text-center">
-                <Image src={companyLogos[item.slug]} height={100} width={100} alt={item.company} className="h-16 mx-auto mb-1" />
+                <Image src={companyLogos[item.id]} height={100} width={100} alt={item.company} className="h-16 mx-auto mb-1" />
                 <div className="flex-1 px-4 lg:px-0">
                     <h4 className="text-6xl lg:text-8xl text-neutral-500 font-light">{item.endDate.split('-')[0]}</h4>
                     <p className="text-xl">{item.startDate.split('-')[0]} - {item.endDate.split('-')[0]}</p>                 
@@ -72,13 +72,13 @@ const WorkItem = ({ item, ...props }: { item: Work } & React.HTMLAttributes<HTML
 
             <div className="flex-1 md:py-16 px-8 ">
                 <h4 className="timeline-info text-3xl font-bold mb-1">{item.company}</h4>
-                <p className="timeline-info text-xl mb-1">{item.location.city}, {item.location.country}</p>
-                <p className="timeline-info mb-4 text-xl text-teal-300">{item.position}</p>
+                <p className="timeline-info text-xl mb-1 text-neutral-300">{item.location.city}, {item.location.country}</p>
+                <p className="timeline-info mb-4 text-2xl text-teal-300 font-bold">{item.position}</p>
 
-                <h5 className="timeline-info text-neutral-500 uppercase font-bold mb-1">Description</h5>
+                <h5 className="timeline-info text-neutral-500 uppercase font-bold mb-2">Highlights</h5>
                 <ul>
-                    {item.tasks && item.tasks.map((task, index) => (
-                        <li key={`t-${index}`} className="timeline-info text-neutral-300 text-lg">{task}</li>
+                    {item.highlights && item.highlights.map((highlight, index) => (
+                        <li key={`hl-${index}`} className="timeline-info text-neutral-300 text-lg mb-3">{highlight}</li>
                     ))}
                 </ul>
             </div>
@@ -137,7 +137,7 @@ const EducationItem = ({ item, ...props }: { item: Education } & React.HTMLAttri
             <div className="timeline-dot absolute left-2 md:left-60 lg:left-80 top-16 -translate-x-1/2 size-6 bg-neutral-300 rounded-full"></div>
 
             <div className="timeline-date flex items-center py-6 px-8 md:block md:w-60 lg:w-80 md:text-center">
-                <Image src={universityLogos[item.slug]} height={100} width={100} alt={item.institution} className="h-16 md:mx-auto mb-1" />
+                <Image src={universityLogos[item.id]} height={100} width={100} alt={item.institution} className="h-16 md:mx-auto mb-1" />
                 <div className="flex-1 px-4 lg:px-0">
                     <h4 className="text-6xl lg:text-8xl text-neutral-500 font-light">{item.endDate.split('-')[0]}</h4>
                     <p className="text-xl">{item.startDate.split('-')[0]} - {item.endDate.split('-')[0]}</p>                 
@@ -145,10 +145,10 @@ const EducationItem = ({ item, ...props }: { item: Education } & React.HTMLAttri
             </div>
 
             <div className="flex-1 md:py-16 ps-8">
-                <h4 className="timeline-info text-3xl font-bold mb-1">{item.institution}</h4>
-                <p className="timeline-info text-xl mb-1">{item.location.city}, {item.location.country}</p>
-                <p className="timeline-info mb-1 text-xl text-teal-300">{item.degree}, {item.major}</p>
-                <p className="timeline-info mb-3 text-neutral-300">Specialized in {item.minor}</p>
+                <h4 className="timeline-info text-3xl font-bold mb-2">{item.institution}</h4>
+                <p className="timeline-info text-xl text-neutral-300 mb-2">{item.location.city}, {item.location.country}</p>
+                <p className="timeline-info text-xl text-teal-300">{item.degree}, {item.major}</p>
+                <p className="timeline-info mb-3 text-lg text-teal-100">Specialized in {item.minor}</p>
             </div>
         </div>
     )
@@ -166,9 +166,10 @@ export const ExperienceSection = ({ type, work, education }: { type: 'work' | 'e
 
         gsap.from(line, {
             height: 0,
+            ease: 'none',
             scrollTrigger: {
                 trigger: container,
-                start: 'top center',
+                start: 'top 70%',
                 end: () => `+=${container.scrollHeight}`,
                 scrub: true
             }
@@ -180,11 +181,11 @@ export const ExperienceSection = ({ type, work, education }: { type: 'work' | 'e
             <div className="timeline-line absolute w-11 h-full border-l-2 border-dotted border-neutral-500 left-6 md:left-60 lg:left-80"></div>
 
             {type === 'work' && work && work.map((exp) => (
-                <WorkItem key={exp.slug} item={exp} />
+                <WorkItem key={exp.id} item={exp} />
             ))}
 
             {type === 'education' && education && education.map((exp) => (
-                <EducationItem key={exp.slug} item={exp} />
+                <EducationItem key={exp.id} item={exp} />
             ))}
 
         </Container>
