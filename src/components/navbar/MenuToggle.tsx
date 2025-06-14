@@ -7,7 +7,7 @@ interface ToggleButtonInterface extends React.ButtonHTMLAttributes<HTMLButtonEle
 
 export const MenuToggle = ({ isOpen, isLight, className, ...props }: ToggleButtonInterface) => {
   return (
-    <button className={cn("text-neutral-800 size-14 absolute right-5 z-70 ml-auto transition-all duration-200 opacity-100 top-5 rounded-sm",
+    <button className={cn("text-neutral-800 size-14 absolute right-5 z-50 ml-auto transition-all duration-200 opacity-100 top-5 rounded-sm",
       isOpen ? "bg-transparent" : "bg-black/50 backdrop-blur-sm", 
         className)} { ...props }
     >

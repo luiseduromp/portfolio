@@ -29,7 +29,7 @@ export const ContactCard = ({className, ...props}: React.HTMLAttributes<HTMLDivE
         const text = container.querySelector('.location-text')
         const status = container.querySelector('.work-status')
 
-        gsap.set(globe, {yPercent:15, opacity:0.2})
+        gsap.set(globe, {yPercent:20, opacity:0.2})
         gsap.set(pin, {yPercent:-200, opacity:0})
         gsap.set(city.lines, {yPercent:100, autoAlpha:0})
         gsap.set(text, {yPercent:-100, autoAlpha:0})
@@ -38,6 +38,7 @@ export const ContactCard = ({className, ...props}: React.HTMLAttributes<HTMLDivE
         gsap.to(globe, {
             yPercent: 0,
             opacity: 1,
+            ease: 'sine.out',
             scrollTrigger: {
                 trigger: container,
                 start: "top 70%", 
@@ -73,7 +74,7 @@ export const ContactCard = ({className, ...props}: React.HTMLAttributes<HTMLDivE
                 </div>
                 <div className="globe absolute top-56 sm:top-54 md:top-60 size-250 sm:size-300 md:size-380 lg:size-420 xl:size-480 rounded-full left-1/2 -translate-x-1/2 bg-teal-300/80 blur-2xl z-10" />
 
-                <div className="absolute inset-0 flex justify-center items-center gap-4 z-30">                           
+                <div className="absolute inset-0 flex justify-center items-center gap-4 z-40">                           
                     <MapPin className="location-pin" strokeWidth={0.75} size={80} />
                     
                     <div>
@@ -86,7 +87,7 @@ export const ContactCard = ({className, ...props}: React.HTMLAttributes<HTMLDivE
                     </div>
                 </div>
 
-                <div className="relative z-50 py-16 px-4 flex flex-col justify-between h-full">
+                <div className="relative z-30 py-16 px-4 flex flex-col justify-between h-full">
                     <div className="">
                         <p className="text-2xl sm:text-4xl md:text-5xl text-center text-neutral-300 font-bold">Have an idea in mind?</p>
                         <p className="text-2xl sm:text-4xl md:text-5xl text-center text-neutral-300 font-bold">Let&apos;s build it together</p>

@@ -35,7 +35,7 @@ export const Hero = ({ variant, ...props }: { variant: 'light' | 'dark' } & Reac
         const frame = svg.querySelectorAll('.rect') as NodeListOf<SVGRectElement>
         const chars = svg.querySelectorAll('.char') as NodeListOf<SVGPathElement>
 
-        gsap.from(intro, {opacity:0, duration:0.8, filter: 'blur(10px)'})
+        gsap.to(intro, {opacity:1, duration:0.5, filter: 'blur(0)', ease:'power1.out', scale:1})
 
         gsap.timeline({
             scrollTrigger: {
@@ -96,8 +96,8 @@ export const Hero = ({ variant, ...props }: { variant: 'light' | 'dark' } & Reac
 
     return (
         <section ref={containerRef} className={cn("w-full bg-black h-screen relative overflow-hidden")} {...props}>
-            <div id="intro" className="absolute left-0 top-0 right-0 h-screen flex flex-col justify-center items-center pointer-events-none perspective-normal">
-                <h3 className="text-center lg:text-2xl">Welcome to my Web Portfolio - <span className="font-bold">Luis Romero</span></h3>
+            <div id="intro" className="absolute left-0 top-0 right-0 h-screen flex flex-col justify-center items-center pointer-events-none perspective-normal opacity-0 blur-sm scale-80">
+                <h3 className="text-center lg:text-2xl">Welcome to <span className="font-bold">Luis Romero&apos;s</span> Portfolio</h3>
                 <p className="text-teal-300 font-mono">[ Scroll Down ]</p>
             </div>
 

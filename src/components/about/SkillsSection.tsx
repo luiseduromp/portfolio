@@ -40,7 +40,7 @@ const SkillItem = ({skill, ind, ...props}: {skill:SkillSet, ind:number} & React.
 
     return (
         <div ref={skillRef} key={skill.category} className="skill-set md:flex items-center gap-4 py-16 relative overflow-hidden" {...props}>
-            <div className="w-full justify-center md:w-1/2 md:justify-start xl:w-1/3 flex items-center gap-3 mb-4 md:mb-0">
+            <div className="w-full justify-start md:w-1/2 xl:w-1/3 flex items-center gap-3 mb-4 md:mb-0">
                 <h3 className="skill-category font-mono text-2xl text-teal-300 md:text-4xl lg:text-6xl">0{ind}/</h3>
                 <h3 className="skill-category text-2xl md:text-3xl font-bold">{skill.category}</h3>               
             </div>

@@ -80,14 +80,14 @@ export const ProjectsSection = ({ projects }: { projects: Project[] }) => {
 
     return (
         <section ref={containerRef}>
-            <Container className="flex justify-center gap-6 flex-wrap py-16">
+            <Container className="flex justify-center gap-6 flex-wrap py-2 md:py-8 lg:py-12">
                 {projects.map((project) => (
                     <ProjectCard key={project.id} project={project} className="projectCard" onClick={() => {openDialog(project)}} />
                 ))}
             </Container>
 
-            <div className={cn("fixed inset-0 bg-black/90 transition-all duration-300 flex justify-center overflow-y-scroll", (openProject !== null) ? "visible opacity-100": "invisible opacity-0")}>
-                <dialog ref={dialogRef} className={cn("relative bg-neutral-900 border border-neutral-800 overflow-hidden rounded-xl w-9/10 mx-auto my-12 md:w-lg lg:w-xl")} open>
+            <div className={cn("fixed inset-0 bg-black/90 transition-all duration-300 flex justify-center overflow-y-scroll z-80", (openProject !== null) ? "visible opacity-100": "invisible opacity-0")}>
+                <dialog ref={dialogRef} className={cn("relative bg-neutral-900 border border-neutral-800 overflow-hidden rounded-xl w-9/10 mx-auto my-16 md:w-lg lg:w-xl")} open>
                     <div className="h-50 mb-2 relative">
                         <button className="absolute top-2 right-2 cursor-pointer bg-black/50 rounded-md p-[2px] group/btn" onClick={closeDialog}>
                             <X size={28} className="text-neutral-400 group-hover/btn:text-white"/>

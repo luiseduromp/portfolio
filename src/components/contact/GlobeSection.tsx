@@ -26,7 +26,7 @@ export const GlobeSection = () => {
         const text = container.querySelector('.location-text')
         const status = container.querySelector('.work-status')
 
-        gsap.set(globe, {yPercent:15, scale:0.95, opacity:0.2})
+        gsap.set(globe, {yPercent:20, scale:0.95, opacity:0.2})
         gsap.set(pin, {yPercent:-200, opacity:0})
         gsap.set(city.lines, {yPercent:100, autoAlpha:0})
         gsap.set(text, {yPercent:-100, autoAlpha:0})
@@ -41,7 +41,6 @@ export const GlobeSection = () => {
                 trigger: container,
                 start: "top 80%",
                 scrub: true,                
-                markers: true,
                 end: () => `+=${container.offsetHeight*0.7}`,
             }
         })

@@ -62,7 +62,7 @@ export const NavMenu = ({ className }: React.HTMLAttributes<HTMLDivElement>) => 
             <MenuToggle isOpen={isOpen} onClick={() => {setIsOpen(!isOpen)}} />
 
             <div className={cn("overflow-hidden flex flex-col transition-all duration-300", 
-                isOpen ? "visible w-70 h-120 md:w-80 lg:w-100 bg-neutral-900/80 backdrop-blur-md pt-16 pb-6  rounded-lg": "invisible h-12 w-12"
+                isOpen ? "visible w-70 h-120 md:w-80 lg:w-100 bg-neutral-900/80 backdrop-blur-md pt-16 pb-6  rounded-lg": "invisible size-14"
             )}
             >
                 <ul className="overflow-hidden px-8">
