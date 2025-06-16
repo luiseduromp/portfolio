@@ -147,7 +147,7 @@ const EducationItem = ({ item, ...props }: { item: Education } & React.HTMLAttri
             <div className="flex-1 md:py-16 ps-8">
                 <h4 className="timeline-info text-3xl font-bold mb-2">{item.institution}</h4>
                 <p className="timeline-info text-xl text-neutral-300 mb-2">{item.location.city}, {item.location.country}</p>
-                <p className="timeline-info text-xl text-teal-300">{item.degree}, {item.major}</p>
+                <p className="timeline-info text-2xl text-teal-300 font-bold">{item.degree} in {item.major}</p>
                 <p className="timeline-info mb-3 text-lg text-teal-100">Specialized in {item.minor}</p>
             </div>
         </div>

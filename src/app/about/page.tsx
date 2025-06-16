@@ -23,7 +23,7 @@ export default async function About() {
 
       <section id="container">
         <Container>
-          <h3 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-center mb-8 font-bold text-teal-200">Developer/ Engineer/ Designer/</h3>
+          <h3 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-center mb-8 lg:mb-12 font-bold text-teal-200">Developer/ Engineer/ Designer/</h3>
           {about.split('\n').map((paragraph, index) => (
             <p key={`p-${index}`} className="mb-3 font-light text-lg lg:text-xl text-neutral-300">{paragraph}</p>
           ))}

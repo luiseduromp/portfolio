@@ -14,7 +14,7 @@ export const featuredCovers: Record<string, ProjectCover> = {
     "midokura-rag": {
         type: "logo",
         background: 'bg-linear-to-br from-neutral-100 to-neutral-300',
-        src: "/logo_midokura.svg"
+        src: `${pub.BUCKET_URL}/logo-midokura.svg`,
     },
     "ingelin-website": {
         type: "video",
@@ -24,7 +24,6 @@ export const featuredCovers: Record<string, ProjectCover> = {
         type: "video",
         src: `${pub.BUCKET_URL}/projects/video-ingelin-management.mp4`
     },
-
 }
 
 export const projectCovers: Record<string, ProjectCover> = {

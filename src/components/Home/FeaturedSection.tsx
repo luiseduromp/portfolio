@@ -13,32 +13,32 @@ import { cn } from '@/lib/utils';
 import { featuredCovers } from '@/lib/media';
 import { Info, LinkIcon } from 'lucide-react';
 import { useTapHover } from '@/hooks/useTapHover';
-import { GitHubLogo } from '../icons/brandIcons';
-import { NavButton } from '../buttons/NavButton';
-import { SectionTitle } from '../shared/titles';
+import { GitHubLogo } from '@/components/icons/brandIcons';
+import { NavButton } from '@/components/buttons/NavButton';
+import { SectionTitle } from '@/components/shared/titles';
 
 
 gsap.registerPlugin(useGSAP, ScrollTrigger, SplitText);
 
-const RenderCover = ({slug}: {slug: string}) => {
-    const cover = featuredCovers[slug]
+const RenderCover = ({id}: {id: string}) => {
+    const cover = featuredCovers[id]
     switch(cover.type){
         case 'logo':
             return (
                 <div className="bg-linear-to-br from-white to-neutral-300 flex items-center justify-center w-full py-8 aspect-12/7">
-                    <Image src={cover.src} alt={slug} width={300} height={300} className="size-30" />
+                    <Image src={cover.src} alt={id} width={300} height={300} className="size-30" />
                 </div>
             )
         case 'image':
             return (
-                <div className="flex items-center justify-center w-full apect-12/7">
-                    <Image src={cover.src} alt={slug} width={300} height={300} className="object-cover" />
+                <div className="flex items-center justify-center w-full aspect-12/7">
+                    <Image src={cover.src} alt={id} width={300} height={300} className="object-cover" />
                 </div>
             )
         case 'video':
             const ext = cover.src.split('.').at(-1)
             return (
-                <video muted loop autoPlay preload='auto' className="w-full h-auto rounded-lg">
+                <video muted loop autoPlay playsInline preload='auto' className="w-full h-auto rounded-lg">
                     <source src={cover.src} type={`${cover.type}/${ext}`} />
                 </video>
             )
@@ -87,7 +87,7 @@ const ProjectItem = ({ project }: { project: Project } & React.HTMLAttributes<HT
             </div>
 
             <div ref={coverRef} key={`img-${project.id}`} className="lg:flex-1 project-img flex items-center justify-center w-full rounded-xl relative group overflow-hidden">
-                <RenderCover slug={project.id} />
+                <RenderCover id={project.id} />
 
                 {(project.url || project.infoUrl || project.repoUrl) && 
                     <div className="absolute inset-0 p-4 opacity-0 bg-black/70 group-hover:opacity-100 group-data-hover:opacity-100 transition-opacity duration-200 flex gap-4 justify-center items-center">

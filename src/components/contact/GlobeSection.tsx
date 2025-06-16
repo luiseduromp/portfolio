@@ -27,7 +27,7 @@ export const GlobeSection = () => {
         const status = container.querySelector('.work-status')
 
         gsap.set(globe, {yPercent:20, scale:0.95, opacity:0.2})
-        gsap.set(pin, {yPercent:-200, opacity:0})
+        gsap.set(pin, {yPercent:-150, opacity:0})
         gsap.set(city.lines, {yPercent:100, autoAlpha:0})
         gsap.set(text, {yPercent:-100, autoAlpha:0})
         gsap.set(status, {yPercent:100, opacity:0})
@@ -48,7 +48,7 @@ export const GlobeSection = () => {
         gsap.to(pin, {
             yPercent:0, 
             opacity:1, 
-            ease: 'power1.out',
+            ease: 'sine.out',
             scrollTrigger: {
                 trigger: container,
                 start: "top 80%",
