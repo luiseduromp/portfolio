@@ -82,7 +82,13 @@ export const ContactForm = ({className}: React.HTMLAttributes<HTMLDivElement>) =
                         }
                     </div>}
 
-                    <LoadingButton isLoading={isLoading} type="submit" className="w-full justify-center mt-8" >Send</LoadingButton>
+                    <LoadingButton isLoading={isLoading} type="submit" className="w-full justify-center mt-8 mb-6" >Send</LoadingButton>
+
+                    <div className="text-neutral-400 text-xs">
+                        This site is protected by reCAPTCHA and the Google&nbsp;
+                        <a href="https://policies.google.com/privacy" className="underline  underline-offset-2 ">Privacy Policy</a> and&nbsp;
+                        <a href="https://policies.google.com/terms" className="underline  underline-offset-2">Terms of Service</a> apply.
+                    </div>
 
                 </form>
             </Form>
