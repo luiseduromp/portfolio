@@ -1,8 +1,8 @@
 {
     "info": {
         "name": "Luis Romero",
-        "title": "Full Stack Developer, Engineer, MBA",
-        "email": "mail.me@luiseduromp.com",
+        "title": "Full Stack Developer",
+        "email": "luiseduromp@gmail.com",
         "phone": "+34 600 00 62 37",
         "location": {
             "postalCode": "08860",
@@ -14,8 +14,6 @@
     },
 
     "summary": "Creative Full Stack Developer, with over 5 years of experience delivering robust, reliable and elegant web applications. Currently focused on Web Applications and AI-integrated systems using Python, JavaScript, TypeScript and cloud technologies. Experienced in Full Stack development, UX/UI design, LLMs, Retrieval-Augmented Generation (RAG), and modern frameworks like LangChain, FastAPI and Next.js. Experienced in deploying web applications, especially on AWS infrastructure. Passionate about building reliable applications with intuitive interfaces and seamless user experience. Committed to continuous learning and self-improvement.",
-
-    "about": "I am a builder by nature. I like to deliver flawless and unique designs and experiences through web applications. I believe we are experiencing a technology revolution that is shaping the future and helping solve some of the toughest challenges of modern times, and I am eager to be part of it.\nI have shifted my career from hardware to software, focusing in fullstack development, especially with JavaScript and Python, and now I am looking to get fully into AI. I like to keep continuously learning to improve my skills and stay up-to-date on new technologies.\nMy goal is to use my skills and knowledge to develop beautiful and functional products that can benefit people or businesses.",
 
     "contact": [
         {
@@ -131,9 +129,9 @@
             "summary": "Web Platform for Ingelin's clients. Through the platform clients can check their devices status, service reports and more.",
             "description": 
                 "A web platform developed for Ingelin's customers.\nThe platform lets customers check their service related data, such as the devices' status, the active contracts and orders placed, and the devices' service reports.\nThe platform also lets customers place service tickets, and request contract renewals.",
-            "year": "In Progress",
+            "year": "2025",
             "technologies": [
-                "next", "react", "typescript", "tailwind", "shadcn", "aws"
+                "next", "react", "typescript", "tailwind", "shadcn", "vercel", "aws"
             ]
         },
         {
@@ -259,7 +257,7 @@
                 "This project is the backend service for the management and engineering support application for Ingelin and the clients' platform.\nThe backend was developed as an API REST, with the whole databased designed and developed from scratch.",
             "year": "2023",
             "technologies": [
-                "php", "mysql", "aws"
+                "php", "mysql", "aws", "python", "fastapi"
             ]
         },
         {
@@ -469,7 +467,7 @@
             "category": "Full Stack Development",
             "skills": [
                 "Python", "JavaScript", "TypeScript", "PHP", "SQL", "HTML", "CSS", 
-                "React", "Next.js", "Node.js", "FastAPI", "TailwindCSS", "GSAP",
+                "React", "Next.js", "Node.js", "FastAPI", "Django", "TailwindCSS", "GSAP",
                 "Shadcn/ui", "Docker", "Kubernetes", "MySQL", "PostgreSQL", "MongoDB", 
                 "Vercel", "AWS S3", "AWS EC2", "AWS Lambda", "AWS Lightsail"
             ]

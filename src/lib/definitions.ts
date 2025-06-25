@@ -1,3 +1,11 @@
+export interface Info {
+    name: string;
+    title: string;
+    email: string;
+    phone: string;
+    location: Location;
+}
+
 export interface ContactLink {
     network: string
     username?: string
@@ -8,6 +16,8 @@ export interface Location {
     city: string;
     region?: string;
     country: string;
+    postalCode?: string;
+    latlng?: string;
 }
 
 export interface Work {
@@ -47,4 +57,20 @@ export interface Project {
     description: string
     year?: string
     technologies?: string[]
+}
+
+export interface Course {
+    institution: string;
+    professor?: {
+        name: string;
+        url?: string;
+    };
+    name: string;
+    endDate: string;
+    url?: string;
+}
+  
+export interface SkillCategory {
+    category: string;
+    skills: string[];
 }
