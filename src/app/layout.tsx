@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next"
 import { Inconsolata, Raleway } from "next/font/google";
 import { Navbar } from "@/components/navbar/Navbar";
 import { Footer } from "@/components/shared/Footer"
@@ -36,6 +37,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
+        <Analytics />
       </body>
     </html>
   );

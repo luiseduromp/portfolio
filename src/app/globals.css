@@ -121,7 +121,7 @@
   }
   .grecaptcha-badge { 
     visibility: hidden !important;
-}
+  }
 }
 
 @layer components {
