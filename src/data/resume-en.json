@@ -185,7 +185,7 @@
             "summary": "Contributed in a Retrieval-Augmented Generation (RAG) system to enhance development efficiency.",
             "description": 
                 "Contributed to the development of a Retrieval-Augmented Generation (RAG) system that uses internal technical documentation to enhance engineers' efficiency, using LLMs, LangChain, FastAPI and Python.\nOptimized system performance, code readability and maintainability by refactoring the code and implementing best practices.\nImproved the performance of the application by integrating new techniques to enhance the RAG pipeline.",
-            "year": "2025",
+            "year": "2024",
             "technologies": [
                 "python", "langchain", "fastapi", "ollama", "openwebui", "docker", "kubernetes", "git", "github", "jira"
             ]
@@ -346,7 +346,7 @@
                 "region": "Pichincha",
                 "country": "Ecuador"
             },
-            "year": "2013",
+            "year": "2014",
             "content": [
                 "Artificial Intelligence", "Search algorithms", "Introduction to Neural Networks"
             ]
@@ -364,7 +364,7 @@
                 "region": "Pichincha",
                 "country": "Ecuador"
             },
-            "year": "2013",
+            "year": "2014",
             "content": [
                 "Analysis and design of linear and non-linear controllers for MIMO systems"
             ]
@@ -378,7 +378,7 @@
         {
             "platform": "platzi.com",
             "type": "online",
-            "title": "EMbeddings and Vector Databases",
+            "title": "Embeddings and Vector Databases",
             "year": "2024"
         },
         {
@@ -409,7 +409,7 @@
             "platform": "platzi.com",
             "type": "online",
             "title": "FastAPI",
-            "year": "2023"
+            "year": "2022"
         },
         {
             "platform": "platzi.com",
@@ -439,19 +439,19 @@
             "platform": "udacity.com",
             "type": "online",
             "title": "JavaScript Basics",
-            "year": "2018"
+            "year": "2017"
         },
         {
             "platform": "udacity.com",
             "type": "online",
             "title": "HTML and CSS",
-            "year": "2018"
+            "year": "2017"
         },
         {
             "platform": "edx.org",
             "type": "online",
             "title": "Intro to Computer Science CS50",
-            "year": "2018"
+            "year": "2016"
         }
     ],
 
