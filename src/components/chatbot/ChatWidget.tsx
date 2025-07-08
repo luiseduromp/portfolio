@@ -205,15 +205,15 @@ export const ChatWidget = () => {
                 </form>
             </div>
 
-            <button className={cn("rounded-xl size-12 xl:size-14 flex items-center justify-center cursor-pointer transition-all duration-300 group", 
-                "fixed bottom-4 right-4 md:bottom-0 md:right-0 bg-linear-to-bl from-sky-400 to-emerald-400 text-white",
+            <button className={cn("rounded-xl size-12 lg:size-14 flex items-center justify-center cursor-pointer transition-all duration-300 group", 
+                "fixed bottom-6 right-6 bg-linear-to-bl from-sky-400 to-emerald-400 text-white",
                 "before:absolute before:inset-0 before:bg-linear-to-bl before:from-sky-400 before:to-emerald-400 before:blur-lg ",
                 "before:-z-10 before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-200",
                 isOpen ? "invisible opacity-0" : "visible opacity-100")} 
                 onClick={() => setIsOpen(true)}
             >
-                <ChatbotIcon className="size-7 xl:size-9 text-neutral-900"/>
-                <span className={cn("absolute bottom-14 xl:bottom-16 text-sm right-0 font-semibold bg-linear-to-bl from-sky-400 to-emerald-400 w-30 text-neutral-900",
+                <ChatbotIcon className="size-7 lg:size-9 text-neutral-900"/>
+                <span className={cn("absolute bottom-14 lg:bottom-16 text-sm right-0 font-semibold bg-linear-to-bl from-sky-400 to-emerald-400 w-30 text-neutral-900",
                     "px-3 py-1 rounded-full group-hover:opacity-100 opacity-0 transition-opacity duration-200 group-hover:delay-1000 delay-200")}
                 >
                     Chat with Me
