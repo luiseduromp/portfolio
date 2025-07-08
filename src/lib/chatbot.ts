@@ -2,7 +2,7 @@
 
 import { env } from "@/lib/config";
 import { cookies } from 'next/headers'
-import { Message } from '@/stores/chatStore'
+import { ChatMessage } from '@/stores/chatStore'
 
 export const chatInit = async () => {
     try {
@@ -18,7 +18,8 @@ export const chatInit = async () => {
         })
 
         if(!response.ok){
-            throw new Error('Error in chatbot initialization')
+            console.log(response)
+            return { success: false, message: 'Error in chatbot initialization' }
         }
 
         const data = await response.json()
@@ -43,7 +44,7 @@ export const chatInit = async () => {
 }
 
 
-export const chatMessage = async (message: string, chatHistory: Message[]) => {
+export const chatMessage = async (message: string, chatHistory: ChatMessage[]) => {
     const cookieStore = await cookies()
     const cookie = cookieStore.get('chatbotJWT')
 
@@ -64,7 +65,8 @@ export const chatMessage = async (message: string, chatHistory: Message[]) => {
         })
 
         if(!response.ok){
-            throw new Error('Error in chatbot message')
+            console.log(response)
+            return { success: false, message: 'Error in chatbot message' }
         }
 
         const data = await response.json()
