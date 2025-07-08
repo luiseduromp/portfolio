@@ -122,6 +122,20 @@
 
     "projects": [
         {
+            "id": "personal-rag",
+            "name": "Personal RAG Chatbot",
+            "type": "Personal",
+            "company": "Personal",
+            "summary": "Personal RAG Chatbot that answers questions about my professional background, skills, and experience.",
+            "description": 
+                "This is a Retrieval-Augmented Generation (RAG) system that works as a personal AI bot, capable of answering questions about my professional background, skills, and experience.\nIt uses an LLM to process and generate responses based on documents provided to the system.\nThis project is the backend for the system, and it has been integrated in my web portfolio as a chat bot.\nThe project has been built with Python, FastAPI, LangChain and the OpenAI API, using the gpt-4o-mini model. ",
+            "repoUrl": "https://github.com/luiseduromp/personal-rag",
+            "year": "2025",
+            "technologies": [
+                "python", "fastapi", "langchain", "openai", "docker", "jwt", "chromadb", "railway"
+            ]
+        },
+        {
             "id": "ingelin-clients",
             "name": "Ingelin Clients Platform",
             "type": "Freelance",
@@ -187,7 +201,7 @@
                 "Contributed to the development of a Retrieval-Augmented Generation (RAG) system that uses internal technical documentation to enhance engineers' efficiency, using LLMs, LangChain, FastAPI and Python.\nOptimized system performance, code readability and maintainability by refactoring the code and implementing best practices.\nImproved the performance of the application by integrating new techniques to enhance the RAG pipeline.",
             "year": "2024",
             "technologies": [
-                "python", "langchain", "fastapi", "ollama", "openwebui", "docker", "kubernetes", "git", "github", "jira"
+                "python", "langchain", "fastapi", "ollama", "openwebui", "docker", "kubernetes", "git", "github", "jira", "chromadb"
             ]
 
         },

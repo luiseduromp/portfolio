@@ -27,6 +27,10 @@ export const featuredCovers: Record<string, ProjectCover> = {
 }
 
 export const projectCovers: Record<string, ProjectCover> = {
+    "personal-rag": {
+        type: "image",
+        src: `${pub.BUCKET_URL}/projects/cover-personal-rag.webp`,
+    },
     "ingelin-clients": {
         type: "image",
         src: `${pub.BUCKET_URL}/projects/cover-ingelin-clients.webp`

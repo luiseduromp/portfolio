@@ -30,7 +30,9 @@ import {
     TypeScriptLogo,
     VercelLogo,
     ViteLogo,
-    GsapLogo
+    GsapLogo,
+    OpenaiLogo,
+    RailwayLogo
 } from "@/components/icons/brandIcons";
 import { pub } from "@/lib/config";
 
@@ -47,6 +49,7 @@ export const icons: Record<string, IconType> = {
     arduino: { name: "Arduino", category: "hardware", baseColor: "#00979c", logo: ArduinoLogo },
     aws: { name: "AWS", category: "software", baseColor: "#252f3e", logo: AwsLogo, img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"},
     bootstrap: { name: "Bootstrap", category: "framework", baseColor: "#6c11f4", logo: BootstrapLogo, img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" },
+    chromadb: { name: "ChromaDB", category: "database", baseColor: "#ffffff" },
     css: { name: "CSS", category: "language", baseColor: "#1572b6", logo: CssLogo, img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" },
     docker: { name: "Docker", category: "software", baseColor: "#019bC6", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg", logo: DockerLogo },
     fastapi: { name: "FastAPI", category: "framework", baseColor: "#049688", logo: FastapiLogo },
@@ -66,11 +69,13 @@ export const icons: Record<string, IconType> = {
     next: { name: "Next.js", category: "framework", baseColor: "#000000", logo: NextjsLogo, img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" },
     node: { name: "Node.js", category: "library", baseColor: "#5fa04e", logo: NodejsLogo, img: "" },
     ollama: { name: "Ollama", category: "software", baseColor: "#ffffff", logo: OllamaLogo },
+    openai: { name: "OpenAI API", category: "software", baseColor: "#ffffff", logo: OpenaiLogo },
     openwebui: { name: "Open WebUI", category: "software", baseColor: "#ffffff" },
     php: { name: "PHP", category: "language", baseColor: "#ffffff", logo: PhpLogo },
     postgresq: { name: "PostgreSQL", category: "database", baseColor: "#336791", logo: PostgreSQLLogo, img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" },
     python: { name: "Python", category: "language", baseColor: "#ffd845", logo: PythonLogo, img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" },
-    raspberrypi: { name: "RaspberryPi", category: "hardware", baseColor: "#c51850", logo: RaspberryPiLogo, img: "" },
+    railway: { name: "Railway", category: "software", baseColor: "#ffffff", logo: RailwayLogo },
+    raspberrypi: { name: "RaspberryPi", category: "hardware", baseColor: "#c51850", logo: RaspberryPiLogo },
     react: { name: "React", category: "library", baseColor: "#61dafb", logo: ReactLogo },
     shadcn: { name: "Shadcn/ui", category: "library", baseColor: "", logo: ShadcnUiLogo },
     tailwind: { name: "TailwindCSS", category: "framework", baseColor: "#38bdf8", logo: TailwindLogo },
