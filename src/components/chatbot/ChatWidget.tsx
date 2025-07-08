@@ -114,9 +114,9 @@ export const ChatWidget = () => {
     }
       
     return ( 
-        <div className={cn("fixed inset-0 md:bottom-6 md:right-6 md:top-auto md:left-auto z-60")}
-        >
-            <div className={cn("relative p-4 flex flex-col transition-all md:rounded-2xl bg-neutral-900 duration-300 overflow-hidden md:border border-neutral-800", 
+        <>
+            <div className={cn("fixed p-4 flex flex-col transition-all md:rounded-2xl bg-neutral-900 duration-300 overflow-hidden md:border border-neutral-800", 
+                "inset-0 md:bottom-6 md:right-6 md:top-auto md:left-auto z-60",
                 isOpen ? "visible opacity-100 w-full h-full md:w-md md:h-130": "invisible opacity-0 w-12 h-12 bottom-0 right-0")}
             >
                 <div className="absolute right-4 top-4 flex gap-1 items-center">
@@ -206,7 +206,7 @@ export const ChatWidget = () => {
             </div>
 
             <button className={cn("rounded-xl size-12 xl:size-14 flex items-center justify-center cursor-pointer transition-all duration-300 group", 
-                "absolute bottom-4 right-4 md:bottom-0 md:right-0 bg-linear-to-bl from-sky-400 to-emerald-400 text-white",
+                "fixed bottom-4 right-4 md:bottom-0 md:right-0 bg-linear-to-bl from-sky-400 to-emerald-400 text-white",
                 "before:absolute before:inset-0 before:bg-linear-to-bl before:from-sky-400 before:to-emerald-400 before:blur-lg ",
                 "before:-z-10 before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-200",
                 isOpen ? "invisible opacity-0" : "visible opacity-100")} 
@@ -220,7 +220,7 @@ export const ChatWidget = () => {
                 </span>
             </button>
 
-        </div>  
+        </>  
     )
 }
 
