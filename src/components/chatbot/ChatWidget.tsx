@@ -7,12 +7,13 @@ import { ChatMessage, useChatStore } from '@/stores/chatStore'
 import { chatInit, chatMessage } from '@/lib/chatbot'
 import styles from './ChatWidget.module.css'
 import { ChatbotIcon, ChatbotOutIcon } from '@/components/icons/chatbotIcons'
+import { MarkdownRenderer } from './MarkdownRenderer'
 
 const INIT_MESSAGE = 'Hello, this is my personal chatbot, feel free to ask me anything as if it was me'
 const SAMPLE_MESSAGES = [
-    'What are your preferred programming languages?',
     'What is your latest project?',
-    'What are your strengths?'
+    'What are your strengths?',
+    '¿En qué universidad estudiaste?'
 ]
 
 export const ChatWidget = () => {
@@ -101,7 +102,7 @@ export const ChatWidget = () => {
     const sendMessage = async (message: string) => {
         setIsLoading(true)
         addMessage({ role: 'user', content: message })
-        const recentHistory = messages.slice(-5)
+        const recentHistory = messages.slice(-3)
         const chatHistory = [...recentHistory, { role: 'user', content: message } as ChatMessage]
 
         const result = await chatMessage(message, chatHistory)
@@ -131,7 +132,7 @@ export const ChatWidget = () => {
                     <div>
                         <h4 className="text-xl font-bold mb-1">Chat with me</h4>
                         <p className="text-xs font-mono text-neutral-500">
-                            Personal RAG Chatbot
+                            Personal Chatbot
                             {isActive ? 
                                 <span className="ms-2 text-green-500"><span className="size-2 rounded-full bg-green-500 inline-block" /> Online</span> : 
                                 <span className="ms-2 text-red-500"><span className="size-2 rounded-full bg-red-500 inline-block" /> Offline</span>
@@ -153,7 +154,7 @@ export const ChatWidget = () => {
                                 <span className="size-[5px] bg-neutral-300 rounded-full animate-bounce [animation-delay:250ms] [animation-duration:0.5s]" />
                                 <span className="size-[5px] bg-neutral-300 rounded-full animate-bounce [animation-delay:500ms] [animation-duration:0.5s]" />
                             </div>
-                            <div className="size-9 rounded-full bg-neutral-700 flex items-center justify-center"><ChatbotIcon className="h-6"/></div>
+                            <div className="size-9 rounded-full bg-neutral-700 flex items-center justify-center"><ChatbotIcon className="h-5"/></div>
                         </div>
                     ) : null}
 
@@ -206,7 +207,7 @@ export const ChatWidget = () => {
             </div>
 
             <button className={cn("rounded-xl size-12 lg:size-14 flex items-center justify-center cursor-pointer transition-all duration-300 group", 
-                "fixed bottom-6 right-6 bg-linear-to-bl from-sky-400 to-emerald-400 text-white",
+                "fixed bottom-6 right-6 bg-linear-to-bl from-sky-400 to-emerald-400 text-white z-80",
                 "before:absolute before:inset-0 before:bg-linear-to-bl before:from-sky-400 before:to-emerald-400 before:blur-lg ",
                 "before:-z-10 before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-200",
                 isOpen ? "invisible opacity-0" : "visible opacity-100")} 
@@ -232,12 +233,14 @@ const ChatBubble = ({ message, ...props }: { message: ChatMessage  } & React.HTM
         <div className={cn("p-2 flex gap-2 items-end w-11/12", isAssistant ? "ms-auto" : "")} {...props}>
             {isAssistant ? (
                 <>
-                    <p className={cn("flex-1 rounded-xl rounded-br-xs py-3 px-4 bg-neutral-700 text-sm")}>{message.content}</p>
-                    <div className="size-9 rounded-full bg-neutral-700 flex items-center justify-center"><ChatbotIcon className="size-5"/></div>
+                    <div className={cn("flex-1 rounded-xl rounded-br-xs py-3 px-4 bg-neutral-700 text-sm")}>
+                        <MarkdownRenderer content={message.content} />
+                    </div>
+                    <div className="size-9 flex-shrink-0 rounded-full bg-neutral-700 flex items-center justify-center"><ChatbotIcon className="size-5"/></div>
                 </>
             ) : (
                 <>
-                    <div className="size-9 rounded-full bg-teal-600 flex items-center justify-center"><User size={18}/></div>
+                    <div className="size-9 flex-shrink-0 rounded-full bg-teal-600 flex items-center justify-center"><User size={18}/></div>
                     <p className={cn("flex-1 rounded-xl rounded-bl-xs py-3 px-4 bg-teal-600 text-sm")}>{message.content}</p>
                 </>
             )}
