@@ -1,11 +1,11 @@
 
 
-import TextScroll from "@/components/Home/TextScroll"
+import TextScroll from "@/components/home/TextScroll"
 import { getCurriculumData } from "@/data/curriculum"
-import { Hero } from "@/components/Home/Hero"
-import { WorkSection } from "@/components/Home/WorkSection"
-import { FeaturedSection } from "@/components/Home/FeaturedSection"
-import { AboutIntro } from "@/components/Home/AboutIntro"
+import { Hero } from "@/components/home/Hero"
+import { WorkSection } from "@/components/home/WorkSection"
+import { FeaturedSection } from "@/components/home/FeaturedSection"
+import { AboutIntro } from "@/components/home/AboutIntro"
 import { SectionTitle } from "@/components/shared/titles"
 import { ContactCard } from "@/components/contact/ContactCard"
 import { ContactIcons } from "@/components/icons/brandIcons"

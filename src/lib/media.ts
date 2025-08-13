@@ -12,9 +12,8 @@ export const featuredCovers: Record<string, ProjectCover> = {
         src: `${pub.BUCKET_URL}/projects/video-bayasfreire-web.mp4`
     },
     "midokura-rag": {
-        type: "logo",
-        background: 'bg-linear-to-br from-neutral-100 to-neutral-300',
-        src: `${pub.BUCKET_URL}/logo-midokura.svg`,
+        type: "image",
+        src: `${pub.BUCKET_URL}/projects/cover-midokura-rag.webp`,
     },
     "ingelin-website": {
         type: "video",
@@ -36,9 +35,8 @@ export const projectCovers: Record<string, ProjectCover> = {
         src: `${pub.BUCKET_URL}/projects/cover-ingelin-clients.webp`
     },
     "portfolio": {
-        type: "logo",
-        src: `${pub.BUCKET_URL}/logo-lr-dark.svg`,
-        background: 'bg-linear-to-br from-neutral-800 to-black',
+        type: "image",
+        src: `${pub.BUCKET_URL}/projects/cover-portfolio.webp`
     },
     "workhub": {
         type: "image",
@@ -49,9 +47,8 @@ export const projectCovers: Record<string, ProjectCover> = {
         src: `${pub.BUCKET_URL}/projects/cover-bayasfreire-web.webp`
     },
     "midokura-rag": {
-        type: "logo",
-        src: `${pub.BUCKET_URL}/logo-midokura.svg`,
-        background: 'bg-linear-to-br from-lime-200 to-sky-200',
+        type: "image",
+        src: `${pub.BUCKET_URL}/projects/cover-midokura-rag.webp`,
     },
     "gesture-detection": {
         type: "image",
@@ -70,9 +67,8 @@ export const projectCovers: Record<string, ProjectCover> = {
         src: `${pub.BUCKET_URL}/projects/cover-ingelin-management.webp`
     },
     "ingelin-api": {
-        type: "logo",
-        src: `${pub.BUCKET_URL}/logo-ingelin.svg`,
-        background: 'bg-linear-to-br from-teal-100 to-indigo-200',
+        type: "image",
+        src: `${pub.BUCKET_URL}/projects/cover-ingelin-api.webp`,
     },
     "aprosar-web": {
         type: "image",

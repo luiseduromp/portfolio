@@ -31,8 +31,8 @@ const RenderCover = ({id}: {id: string}) => {
             )
         case 'image':
             return (
-                <div className="flex items-center justify-center w-full aspect-12/7">
-                    <Image src={cover.src} alt={id} width={300} height={300} className="object-cover" />
+                <div className="w-full rounded-lg overflow-hidden">
+                    <Image src={cover.src} alt={id} width={1200} height={1000} className="object-cover" />
                 </div>
             )
         case 'video':

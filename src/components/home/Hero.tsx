@@ -145,11 +145,12 @@ export const Hero = ({ variant, ...props }: { variant: 'light' | 'dark' } & Reac
                         </h2>
                     </div>
 
-                    <div className="text-center lg:flex lg:justify-center text-3xl md:text-4xl xl:text-5xl">
-                        <h1 className="font-semibold mb-3 md:border-r border-neutral-500 lg:pe-4 lg:me-4">
+                    <div className="text-center lg:flex lg:justify-center lg:items-center text-3xl md:text-4xl xl:text-5xl">
+                        <h1 className="font-semibold mt-1 mb-1">
                             Luis Romero                  
                         </h1>
-                        <h2 className="text-teal-300">Full Stack Developer</h2>
+                        <div className="hidden lg:block bg-neutral-500 w-[1px] h-full ms-4 me-4" />
+                        <h2 className="text-teal-300 mt-1 mb-1">Full Stack Developer</h2>
                     </div>
 
                     <div className="flex justify-center gap-4 mt-3">
