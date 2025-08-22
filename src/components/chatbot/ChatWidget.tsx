@@ -9,10 +9,10 @@ import styles from './ChatWidget.module.css'
 import { ChatbotIcon, ChatbotOutIcon } from '@/components/icons/chatbotIcons'
 import { MarkdownRenderer } from './MarkdownRenderer'
 
-const INIT_MESSAGE = 'Hello, this is my personal chatbot, feel free to ask me anything as if it was me'
+const INIT_MESSAGE = 'Hello, this is my personal chatbot, feel free to ask me anything as if it was me.\n**I can answer in English and Spanish 😊**'
 const SAMPLE_MESSAGES = [
     'What is your latest project?',
-    'What are your strengths?',
+    'What is your favorite programming language?',
     '¿En qué universidad estudiaste?'
 ]
 
