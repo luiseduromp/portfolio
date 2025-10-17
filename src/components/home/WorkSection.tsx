@@ -25,7 +25,7 @@ const workContent = [
     {
         title: "AI & Data",
         desc: "Experienced in ML, AI and LLMs, integrating advanced processing in applications to enhance experience and productivity.",
-        stack: ["LangChain", "Vercel AI SDK", "NumPy", "Pandas", "TesorFlow", "Scikit-learn", "Ollama", "Open WebUI"]
+        stack: ["LangChain", "Vercel AI SDK", "NumPy", "Pandas", "TensorFlow", "Scikit-learn", "Ollama", "Open WebUI"]
     },
 
 ]
