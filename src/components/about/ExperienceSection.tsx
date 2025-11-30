@@ -9,6 +9,7 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from 'gsap/SplitText';
 import type { Education, Work } from '@/lib/definitions'
+import { cn } from '@/lib/utils'
 
 
 gsap.registerPlugin(useGSAP, ScrollTrigger, SplitText);
@@ -18,7 +19,7 @@ const WorkItem = ({ item, ...props }: { item: Work } & React.HTMLAttributes<HTML
 
     useGSAP(() => {
         const container = containerRef.current
-        if(!container) return
+        if (!container) return
 
         const dot = container.querySelector('.timeline-dot')
         const date = container.querySelector('.timeline-date')
@@ -35,7 +36,7 @@ const WorkItem = ({ item, ...props }: { item: Work } & React.HTMLAttributes<HTML
             }
         })
             .from(dot, {
-                scale: 0, 
+                scale: 0,
                 opacity: 0,
                 stagger: 1
             })
@@ -56,17 +57,19 @@ const WorkItem = ({ item, ...props }: { item: Work } & React.HTMLAttributes<HTML
                 opacity: 0.1
             }, '<')
 
-    }) 
+    })
 
     return (
         <div ref={containerRef} className="md:flex items-center gap-6 relative mb-12 md:mb-0" {...props}>
             <div className="timeline-dot absolute left-2 md:left-60 lg:left-80 top-16 -translate-x-1/2 size-6 bg-neutral-300 rounded-full"></div>
 
             <div className="timeline-date flex items-center py-6 px-8 md:block md:w-60 lg:w-80 md:text-center">
-                <Image src={companyLogos[item.id]} height={100} width={100} alt={item.company} className="h-16 mx-auto mb-1" />
+                <Image src={companyLogos[item.id]} height={100} width={120} alt={item.company} className="h-18 mx-auto mb-1" />
                 <div className="flex-1 px-4 lg:px-0">
-                    <h4 className="text-6xl lg:text-8xl text-neutral-500 font-light">{item.endDate.split('-')[0]}</h4>
-                    <p className="text-xl">{item.startDate.split('-')[0]} - {item.endDate.split('-')[0]}</p>                 
+                    <h4 className={cn('text-neutral-500 font-light', item.endDate.includes('-') ? "text-6xl lg:text-8xl" : "text-4xl lg:text-6xl")}>
+                        {item.endDate.split('-')[0]}
+                    </h4>
+                    <p className="text-xl">{item.startDate.split('-')[0]} - {item.endDate.split('-')[0]}</p>
                 </div>
             </div>
 
@@ -92,7 +95,7 @@ const EducationItem = ({ item, ...props }: { item: Education } & React.HTMLAttri
 
     useGSAP(() => {
         const container = containerRef.current
-        if(!container) return
+        if (!container) return
 
         const dot = container.querySelector('.timeline-dot')
         const date = container.querySelector('.timeline-date')
@@ -109,7 +112,7 @@ const EducationItem = ({ item, ...props }: { item: Education } & React.HTMLAttri
             }
         })
             .from(dot, {
-                scale: 0, 
+                scale: 0,
                 opacity: 0,
                 stagger: 1
             })
@@ -140,7 +143,7 @@ const EducationItem = ({ item, ...props }: { item: Education } & React.HTMLAttri
                 <Image src={universityLogos[item.id]} height={100} width={100} alt={item.institution} className="h-16 md:mx-auto mb-1" />
                 <div className="flex-1 px-4 lg:px-0">
                     <h4 className="text-6xl lg:text-8xl text-neutral-500 font-light">{item.endDate.split('-')[0]}</h4>
-                    <p className="text-xl">{item.startDate.split('-')[0]} - {item.endDate.split('-')[0]}</p>                 
+                    <p className="text-xl">{item.startDate.split('-')[0]} - {item.endDate.split('-')[0]}</p>
                 </div>
             </div>
 
@@ -160,7 +163,7 @@ export const ExperienceSection = ({ type, work, education }: { type: 'work' | 'e
 
     useGSAP(() => {
         const container = containerRef.current
-        if(!container) return
+        if (!container) return
 
         const line = container.querySelector('.timeline-line')
 

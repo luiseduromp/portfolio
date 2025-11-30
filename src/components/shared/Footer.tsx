@@ -6,7 +6,7 @@ import { pub } from '@/lib/config'
 import { Container } from '@/components/shared/containers'
 
 export const Footer = () => {
-    
+
     return (
         <footer className="mx-4 border-t border-neutral-800">
             <Container className="md:flex items-start justify-center px-6 py-20">
@@ -20,7 +20,7 @@ export const Footer = () => {
                             </li>
                         ))}
                     </ul>
-                    
+
                     <ul className="overflow-hidden">
                         <li className="uppercase font-bold mb-2">Contact</li>
                         {contactLinks.map((link) => (
@@ -28,7 +28,7 @@ export const Footer = () => {
                                 <Link href={link.url}>{link.label}</Link>
                                 <div className="h-[1px] w-full bg-teal-100 -translate-x-30 group-hover:translate-x-0 transition-all duration-200"></div>
                             </li>
-                        ))}                      
+                        ))}
                     </ul>
 
                     <ul className="overflow-hidden">
@@ -48,7 +48,7 @@ export const Footer = () => {
                 <div className="w-full md:w-1/2 order-last md:order-first">
                     <Logo className="h-20 mb-6" />
                     <p className="text-5xl lg:text-6xl font-bold">luiseduromp</p>
-                    <p className="text-teal-300 text-xl font-mono">Full Stack Developer</p>
+                    <p className="text-teal-300 text-xl font-mono">Full Stack and AI Engineer</p>
                 </div>
 
             </Container>

@@ -6,11 +6,11 @@ import { getCurriculumData } from "@/data/curriculum";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: `About - luiseduromp.com`,
-    description: "About Me, Experience, Education and Skills",
+  title: `About - luiseduromp.com`,
+  description: "About Me, Experience, Education and Skills",
 };
 
-const about = `Creative Full Stack Developer, with over 5 years of experience delivering robust, reliable and elegant web applications.
+const about = `Creative Full Stack and AI Engineer, with over 5 years of experience delivering robust, reliable and elegant web applications.
                 Currently focused on Web Applications and AI-integrated systems using mainly Python, TypeScript and AWS infrastructure.
                 I like to take care of all the details in a project to make it totally functional, and beautiful.`
 
@@ -27,7 +27,7 @@ export default async function About() {
           {about.split('\n').map((paragraph, index) => (
             <p key={`p-${index}`} className="mb-3 font-light text-lg lg:text-xl text-neutral-300">{paragraph}</p>
           ))}
-          
+
         </Container>
       </section>
 
@@ -44,7 +44,7 @@ export default async function About() {
           <SectionTitle>Education</SectionTitle>
         </Container>
 
-        <ExperienceSection type="education" education={profile.education} />      
+        <ExperienceSection type="education" education={profile.education} />
       </section>
 
       <section id="skills" className="py-20">
@@ -56,7 +56,7 @@ export default async function About() {
 
 
       </section>
-  
+
     </main>
   );
 }
