@@ -47,7 +47,7 @@ export interface IconType {
 export const icons: Record<string, IconType> = {
     angularjs: { name: "AngularJS", category: "framework", baseColor: "#c4473a", logo: AngularjsLogo, img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angularjs/angularjs-original.svg" },
     arduino: { name: "Arduino", category: "hardware", baseColor: "#00979c", logo: ArduinoLogo },
-    aws: { name: "AWS", category: "software", baseColor: "#252f3e", logo: AwsLogo, img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"},
+    aws: { name: "AWS", category: "software", baseColor: "#252f3e", logo: AwsLogo, img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" },
     bootstrap: { name: "Bootstrap", category: "framework", baseColor: "#6c11f4", logo: BootstrapLogo, img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" },
     chromadb: { name: "ChromaDB", category: "database", baseColor: "#ffffff" },
     css: { name: "CSS", category: "language", baseColor: "#1572b6", logo: CssLogo, img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" },
@@ -56,7 +56,7 @@ export const icons: Record<string, IconType> = {
     freertos: { name: "FreeRTOS", category: "framework", baseColor: "#87c04f" },
     git: { name: "Git", category: "software", baseColor: "#f34f29", logo: GitLogo },
     github: { name: "GitHub", category: "software", baseColor: "#181616", logo: GitHubLogo },
-    gsap: { name: "GSAP", category: "library", baseColor: "#0be44a", logo: GsapLogo},
+    gsap: { name: "GSAP", category: "library", baseColor: "#0be44a", logo: GsapLogo },
     html: { name: "HTML", category: "language", baseColor: "#e44d26", logo: HtmlLogo, img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" },
     javascript: { name: "JavaScript", category: "language", baseColor: "#f0db4f", logo: JavaScriptLogo, img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" },
     jira: { name: "Jira", category: "software", baseColor: "#2684ff", logo: JiraLogo, img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jira/jira-original.svg" },
@@ -87,6 +87,7 @@ export const icons: Record<string, IconType> = {
 }
 
 export const companyLogos: Record<string, string> = {
+    iag: `${pub.BUCKET_URL}/logo-iag.svg`,
     ingelin: `${pub.BUCKET_URL}/logo-ingelin.svg`,
     midokura: `${pub.BUCKET_URL}/logo-midokura.svg`,
     freelance: `${pub.BUCKET_URL}/logo-lr-dark.svg`,

@@ -25,7 +25,7 @@ const workContent = [
     {
         title: "AI & Data",
         desc: "Experienced in ML, AI and LLMs, integrating advanced processing in applications to enhance experience and productivity.",
-        stack: ["LangChain", "Vercel AI SDK", "NumPy", "Pandas", "TensorFlow", "Scikit-learn", "Ollama", "Open WebUI"]
+        stack: ["LangGraph", "LangChain", "Vercel AI SDK", "NumPy", "Pandas", "TensorFlow", "Scikit-learn", "Ollama", "Open WebUI"]
     },
 
 ]
@@ -36,11 +36,11 @@ export const WorkSection = () => {
     useGSAP(() => {
         const container = containerRef.current
 
-        if(!container) return
+        if (!container) return
 
         let offset = 160
         let square = 64
-        if (container.offsetWidth >= 768){ 
+        if (container.offsetWidth >= 768) {
             offset = 180
             square = 88
         }
@@ -49,9 +49,9 @@ export const WorkSection = () => {
         const frames = container.querySelectorAll('.frame')
         const [f1, f2, f3, f4] = frames
 
-        gsap.set(f2, { top: offset})
-        gsap.set(f3, { top: offset + square})
-        gsap.set(f4, { top: offset + square*2})
+        gsap.set(f2, { top: offset })
+        gsap.set(f3, { top: offset + square })
+        gsap.set(f4, { top: offset + square * 2 })
 
         gsap.timeline({
             scrollTrigger: {
@@ -72,11 +72,11 @@ export const WorkSection = () => {
     return (
         <section ref={containerRef} className="relative h-screen overflow-hidden bg-black">
             <div className="frame pt-20 pb-20 bg-black">
-                <Container className="">                    
-                    <SectionTitle>My Work</SectionTitle>               
+                <Container className="">
+                    <SectionTitle>My Work</SectionTitle>
                     <p className="text-2xl md:text-3xl text-neutral-300">
                         I design and develop full stack applications, taking care of its functionality, the design and a smooth user experience.
-                    </p>                   
+                    </p>
                 </Container>
             </div>
 
@@ -85,7 +85,7 @@ export const WorkSection = () => {
                     <div key={category.title} className={cn("frame border-t border-neutral-600 pb-30 bg-black w-full")}>
                         <Container >
                             <div className="flex gap-4 items-center mb-6">
-                                <div className="size-16 lg:size-22 font-mono bg-neutral-900 text-teal-200 flex items-center justify-center text-3xl lg:text-3xl">0{index+1}</div>
+                                <div className="size-16 lg:size-22 font-mono bg-neutral-900 text-teal-200 flex items-center justify-center text-3xl lg:text-3xl">0{index + 1}</div>
                                 <h4 className="font-bold text-3xl lg:text-4xl xl:text-5xl">{category.title}</h4>
                             </div>
 
@@ -99,7 +99,7 @@ export const WorkSection = () => {
                                         {category.stack.map((tec) => (
                                             <span key={tec} className="text-xl font-semibold text-neutral-300 hover:text-teal-300 lg:text-2xl border-b border-neutral-700 hover:border-teal-200 py-2 pe-2">{tec}</span>
                                         ))}
-                                    </div>                        
+                                    </div>
                                 </div>
                             </div>
                         </Container>
