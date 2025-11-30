@@ -5,7 +5,7 @@ import { Navbar } from "@/components/navbar/Navbar";
 import { Footer } from "@/components/shared/Footer"
 import { ChatWidget } from "@/components/chatbot/ChatWidget";
 import "@/app/globals.css";
-
+import { pub } from "@/lib/config";
 
 const raleway = Raleway({
   variable: "--font-raleway",
@@ -21,8 +21,30 @@ const inconsolata = Inconsolata({
 })
 
 export const metadata: Metadata = {
-  title: "Web Portfolio - Luis Romero ",
+  title: "Luis Romero Web Portfolio",
   description: "My personal website and portfolio",
+  openGraph: {
+    title: "Luis Romero Web Portfolio",
+    description: "Full-stack developer & AI engineer portfolio",
+    url: "https://luiseduromp.com",
+    siteName: "Luis Romero Web Portfolio",
+    images: [
+      {
+        url: `${pub.BUCKET_URL}/og-image.png`,
+        width: 1200,
+        height: 630,
+        alt: "Luis Romero Web Portfolio Preview",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Luis Romero Web Portfolio",
+    description: "Full-stack developer & AI engineer portfolio",
+    images: [`${pub.BUCKET_URL}/og-image.png`],
+  },
 };
 
 export default function RootLayout({
@@ -30,7 +52,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (      
+  return (
     <html lang="en">
       <body
         className={`${raleway.className} ${inconsolata.variable} antialiased dark`}
