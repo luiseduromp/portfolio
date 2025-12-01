@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/next";
 import { Inconsolata, Raleway } from "next/font/google";
 import { Navbar } from "@/components/navbar/Navbar";
-import { Footer } from "@/components/shared/Footer"
+import { Footer } from "@/components/shared/Footer";
 import { ChatWidget } from "@/components/chatbot/ChatWidget";
 import "@/app/globals.css";
 import { pub } from "@/lib/config";
@@ -10,15 +10,15 @@ import { pub } from "@/lib/config";
 const raleway = Raleway({
   variable: "--font-raleway",
   subsets: ["latin"],
-  display: 'swap',
+  display: "swap",
 });
 
 const inconsolata = Inconsolata({
   variable: "--font-inconsolata",
   weight: ["300", "400"],
   subsets: ["latin"],
-  display: 'swap',
-})
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Luis Romero Web Portfolio",

@@ -1,14 +1,17 @@
 {
-  "name": "portfolio",
+  "name": "luiseduromp-portfolio",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint src --ext .ts,.tsx",
+    "lint:fix": "eslint src --ext .ts,.tsx --fix",
     "prepare": "husky",
+    "format": "prettier --write .",
     "format:check": "prettier --check .",
+    "check": "pnpm lint && pnpm format:check",
     "check:deps": "depcheck",
     "typecheck": "tsc --noEmit",
     "email": "email dev --dir src/components/email"

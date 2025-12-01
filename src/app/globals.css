@@ -119,19 +119,19 @@
   body {
     @apply bg-background text-foreground;
   }
-  .grecaptcha-badge { 
+  .grecaptcha-badge {
     visibility: hidden !important;
   }
 }
 
 @layer components {
   .section-title {
-    @apply text-6xl md:text-7xl lg:text-8xl font-bold mb-12 text-center
+    @apply text-6xl md:text-7xl lg:text-8xl font-bold mb-12 text-center;
   }
   .page-title {
-    @apply text-6xl md:text-7xl lg:text-9xl font-bold text-center mb-12
+    @apply text-6xl md:text-7xl lg:text-9xl font-bold text-center mb-12;
   }
   .container {
-    @apply w-full px-4 md:px-0 mx-auto md:w-11/12 lg:w-5/6
+    @apply w-full px-4 md:px-0 mx-auto md:w-11/12 lg:w-5/6;
   }
 }

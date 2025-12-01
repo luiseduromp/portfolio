@@ -12,10 +12,10 @@ export const metadata: Metadata = {
 
 const about = `Creative Full Stack and AI Engineer, with over 5 years of experience delivering robust, reliable and elegant web applications.
                 Currently focused on Web Applications and AI-integrated systems using mainly Python, TypeScript and AWS infrastructure.
-                I like to take care of all the details in a project to make it totally functional, and beautiful.`
+                I like to take care of all the details in a project to make it totally functional, and beautiful.`;
 
 export default async function About() {
-  const profile = await getCurriculumData()
+  const profile = await getCurriculumData();
 
   return (
     <main>
@@ -23,11 +23,17 @@ export default async function About() {
 
       <section id="container">
         <Container>
-          <h3 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-center mb-8 lg:mb-12 font-bold text-teal-200">Developer/ Engineer/ Designer/</h3>
-          {about.split('\n').map((paragraph, index) => (
-            <p key={`p-${index}`} className="mb-3 font-light text-lg lg:text-xl text-neutral-300">{paragraph}</p>
+          <h3 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-center mb-8 lg:mb-12 font-bold text-teal-200">
+            Developer/ Engineer/ Designer/
+          </h3>
+          {about.split("\n").map((paragraph, index) => (
+            <p
+              key={`p-${index}`}
+              className="mb-3 font-light text-lg lg:text-xl text-neutral-300"
+            >
+              {paragraph}
+            </p>
           ))}
-
         </Container>
       </section>
 
@@ -53,10 +59,7 @@ export default async function About() {
         </Container>
 
         <SkillsSection skillset={profile.skills} />
-
-
       </section>
-
     </main>
   );
 }

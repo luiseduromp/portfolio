@@ -1,155 +1,211 @@
-'use client'
+"use client";
 
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import type { Project } from '@/lib/definitions';
-import { ProjectCard, RenderCover } from '@/components/projects/ProjectCard';
-import { cn } from '@/lib/utils';
-import { icons } from '@/lib/logos';
-import Link from 'next/link';
-import { Box, SquareArrowOutUpRight, X } from 'lucide-react';
-import { Container } from '@/components/shared/containers';
-
+import type { Project } from "@/lib/definitions";
+import { ProjectCard, RenderCover } from "@/components/projects/ProjectCard";
+import { cn } from "@/lib/utils";
+import { icons } from "@/lib/logos";
+import Link from "next/link";
+import { Box, SquareArrowOutUpRight, X } from "lucide-react";
+import { Container } from "@/components/shared/containers";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 export const ProjectsSection = ({ projects }: { projects: Project[] }) => {
-    const containerRef = useRef<HTMLDivElement>(null)
-    const dialogRef = useRef<HTMLDialogElement>(null)
-    const [openProject, setOpenProject] = useState<Project | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const dialogRef = useRef<HTMLDialogElement>(null);
+  const [openProject, setOpenProject] = useState<Project | null>(null);
 
-    const { contextSafe } = useGSAP({ scope: containerRef })
+  const { contextSafe } = useGSAP({ scope: containerRef });
 
-    const openDialog = contextSafe((project: Project) => {
-        const dialog = dialogRef.current
-        if(!dialog) return
-        setOpenProject(project)
+  const openDialog = contextSafe((project: Project) => {
+    const dialog = dialogRef.current;
+    if (!dialog) return;
+    setOpenProject(project);
 
-        gsap.to(dialog, {opacity:1, filter:'blur(0)', scale:1, yPercent:0, delay:0.1, duration:0.3, ease:'power1.inOut'})
-    })
+    gsap.to(dialog, {
+      opacity: 1,
+      filter: "blur(0)",
+      scale: 1,
+      yPercent: 0,
+      delay: 0.1,
+      duration: 0.3,
+      ease: "power1.inOut",
+    });
+  });
 
-    const closeDialog = contextSafe(() => {
-        const dialog = dialogRef.current
-        if(!dialog) return
-        gsap.to(dialog, {opacity:0, filter:'blur(10px)', scale:0.8, yPercent:100, duration:0.5, ease:'power1.inOut'})
-        setOpenProject(null)       
-    })
+  const closeDialog = contextSafe(() => {
+    const dialog = dialogRef.current;
+    if (!dialog) return;
+    gsap.to(dialog, {
+      opacity: 0,
+      filter: "blur(10px)",
+      scale: 0.8,
+      yPercent: 100,
+      duration: 0.5,
+      ease: "power1.inOut",
+    });
+    setOpenProject(null);
+  });
 
-    useGSAP(() => {
-        const dialog = dialogRef.current
-        if(!dialog) return
-        gsap.set(dialog, {opacity:0, filter:'blur(10px)', scale:0.8, yPercent:100})
-    })
+  useGSAP(() => {
+    const dialog = dialogRef.current;
+    if (!dialog) return;
+    gsap.set(dialog, {
+      opacity: 0,
+      filter: "blur(10px)",
+      scale: 0.8,
+      yPercent: 100,
+    });
+  });
 
-    useEffect(() => {
-        const dialog = dialogRef.current
-        if(!dialog) return
+  useEffect(() => {
+    const dialog = dialogRef.current;
+    if (!dialog) return;
 
-        const onOutEvent = (e: PointerEvent) => {
-            if(!dialog.contains(e.target as Node) && openProject){ 
-                closeDialog()                
-            }
-        }
+    const onOutEvent = (e: PointerEvent) => {
+      if (!dialog.contains(e.target as Node) && openProject) {
+        closeDialog();
+      }
+    };
 
-        document.addEventListener('pointerdown', onOutEvent)
+    document.addEventListener("pointerdown", onOutEvent);
 
-        return () => {
-            document.removeEventListener('pointerdown', onOutEvent)
-        }
-    }, [openProject])
+    return () => {
+      document.removeEventListener("pointerdown", onOutEvent);
+    };
+  }, [openProject]);
 
-    useGSAP(() => {
-        const container = containerRef.current
-        const cards = container?.querySelectorAll('.projectCard')
-        if (!container || !cards) return
+  useGSAP(() => {
+    const container = containerRef.current;
+    const cards = container?.querySelectorAll(".projectCard");
+    if (!container || !cards) return;
 
-        gsap.from(cards, {
-            yPercent: 50,
-            scale: 0.9,
-            opacity: 0,
-            stagger: 0.05,
-            ease: 'power1.out',
-            scrollTrigger: {
-                trigger: container,
-                start: 'top 80%',
-            }
-        })
-    })
+    gsap.from(cards, {
+      yPercent: 50,
+      scale: 0.9,
+      opacity: 0,
+      stagger: 0.05,
+      ease: "power1.out",
+      scrollTrigger: {
+        trigger: container,
+        start: "top 80%",
+      },
+    });
+  });
 
-    return (
-        <section ref={containerRef}>
-            <Container className="flex justify-center gap-6 flex-wrap py-2 md:py-8 lg:py-12">
-                {projects.map((project) => (
-                    <ProjectCard key={project.id} project={project} className="projectCard" onClick={() => {openDialog(project)}} />
-                ))}
-            </Container>
+  return (
+    <section ref={containerRef}>
+      <Container className="flex justify-center gap-6 flex-wrap py-2 md:py-8 lg:py-12">
+        {projects.map((project) => (
+          <ProjectCard
+            key={project.id}
+            project={project}
+            className="projectCard"
+            onClick={() => {
+              openDialog(project);
+            }}
+          />
+        ))}
+      </Container>
 
-            <div className={cn("fixed inset-0 bg-black/90 transition-all duration-300 flex justify-center overflow-y-scroll z-80", (openProject !== null) ? "visible opacity-100": "invisible opacity-0")}>
-                <dialog ref={dialogRef} className={cn("relative bg-neutral-900 border border-neutral-800 overflow-hidden rounded-xl w-9/10 mx-auto my-16 md:w-lg lg:w-xl")} open>
-                    <div className="h-50 mb-2 relative">
-                        <button className="absolute top-2 right-2 cursor-pointer bg-black/50 rounded-md p-[2px] group/btn" onClick={closeDialog}>
-                            <X size={28} className="text-neutral-400 group-hover/btn:text-white"/>
-                        </button>
-                        {openProject && <RenderCover id={openProject.id}/>}
-                    </div>
-                    <div className="px-5 py-5">
-                        <p className="font-mono text-xl text-teal-100 mb-1">{openProject?.type} Project</p>
-                        <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 text-white">{openProject?.name}</h3>
-                        <p className="font-mono text-lg text-teal-300 mb-6">{openProject?.year}, {openProject?.company}</p>
-                        <div className="mb-4">
-                            {openProject?.description.split(`\n`).map((paragraph, index) => (
-                                <p key={`p-${index}`} className="text-neutral-300 mb-2">{paragraph}</p>
-                            ))}
-                        </div>
-                    </div>
-
-                    <div className="px-5 py-5 border-t border-dashed border-teal-300">
-                        <ul className="flex flex-wrap gap-2 items-center justify-center">
-                            {openProject?.technologies?.map((tec) => {
-                                const technology = icons[tec]
-                                const Icon = technology.logo ? technology.logo : Box
-                                return (
-                                    <div key={`${tec}`} className="text-neutral-700 dark:text-neutral-400 px-1 py-1 relative group dark:hover:text-white">
-                                        <Icon className="h-7" />
-                                        <div className="absolute invisible opacity-0 group-hover:visible group-hover:opacity-100 text-white top-0 bg-black z-10 px-3 py-1 rounded-lg group-hover:-translate-y-8 transition-all duration-200 pointer-events-none">{technology.name}</div>
-                                    </div>
-                                )
-                            })}
-                        </ul>
-                    </div>
-
-                    <div className="flex justify-center px-5 py-5 border-t border-dashed border-teal-300 gap-2">
-                        {openProject?.infoUrl && 
-                            <Link href={openProject.infoUrl} 
-                                className="px-3 py-1 border border-teal-200 text-teal-200 rounded-full flex items-center justify-center flex-1 gap-1 hover:bg-teal-300 hover:text-black hover:border-teal-300"
-                            >
-                                More Info
-                            </Link>
-                        }
-                        {openProject?.repoUrl && 
-                            <a href={openProject.repoUrl} target="_blank"
-                                className="px-3 py-1 border border-teal-200 text-teal-200 rounded-full flex items-center justify-center flex-1 gap-1 hover:bg-teal-300 hover:text-black hover:border-teal-300"
-                            >
-                                Repository <SquareArrowOutUpRight size={12} />
-                            </a>
-                        }
-                        {openProject?.url && 
-                            <a href={openProject.url} target="_blank"
-                                className="px-3 py-1 border border-teal-200 text-teal-200 rounded-full flex items-center justify-center flex-1 gap-1 hover:bg-teal-300 hover:text-black hover:border-teal-300"
-                            >
-                                Visit Project <SquareArrowOutUpRight size={12} />
-                            </a>
-                        }
-                        
-                    </div>
-                </dialog>
-                
+      <div
+        className={cn(
+          "fixed inset-0 bg-black/90 transition-all duration-300 flex justify-center overflow-y-scroll z-80",
+          openProject !== null ? "visible opacity-100" : "invisible opacity-0",
+        )}
+      >
+        <dialog
+          ref={dialogRef}
+          className={cn(
+            "relative bg-neutral-900 border border-neutral-800 overflow-hidden rounded-xl w-9/10 mx-auto my-16 md:w-lg lg:w-xl",
+          )}
+          open
+        >
+          <div className="h-50 mb-2 relative">
+            <button
+              className="absolute top-2 right-2 cursor-pointer bg-black/50 rounded-md p-[2px] group/btn"
+              onClick={closeDialog}
+            >
+              <X
+                size={28}
+                className="text-neutral-400 group-hover/btn:text-white"
+              />
+            </button>
+            {openProject && <RenderCover id={openProject.id} />}
+          </div>
+          <div className="px-5 py-5">
+            <p className="font-mono text-xl text-teal-100 mb-1">
+              {openProject?.type} Project
+            </p>
+            <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 text-white">
+              {openProject?.name}
+            </h3>
+            <p className="font-mono text-lg text-teal-300 mb-6">
+              {openProject?.year}, {openProject?.company}
+            </p>
+            <div className="mb-4">
+              {openProject?.description.split(`\n`).map((paragraph, index) => (
+                <p key={`p-${index}`} className="text-neutral-300 mb-2">
+                  {paragraph}
+                </p>
+              ))}
             </div>
+          </div>
 
+          <div className="px-5 py-5 border-t border-dashed border-teal-300">
+            <ul className="flex flex-wrap gap-2 items-center justify-center">
+              {openProject?.technologies?.map((tec) => {
+                const technology = icons[tec];
+                const Icon = technology.logo ? technology.logo : Box;
+                return (
+                  <div
+                    key={`${tec}`}
+                    className="text-neutral-700 dark:text-neutral-400 px-1 py-1 relative group dark:hover:text-white"
+                  >
+                    <Icon className="h-7" />
+                    <div className="absolute invisible opacity-0 group-hover:visible group-hover:opacity-100 text-white top-0 bg-black z-10 px-3 py-1 rounded-lg group-hover:-translate-y-8 transition-all duration-200 pointer-events-none">
+                      {technology.name}
+                    </div>
+                  </div>
+                );
+              })}
+            </ul>
+          </div>
 
-
-        </section>
-    )
-}
+          <div className="flex justify-center px-5 py-5 border-t border-dashed border-teal-300 gap-2">
+            {openProject?.infoUrl && (
+              <Link
+                href={openProject.infoUrl}
+                className="px-3 py-1 border border-teal-200 text-teal-200 rounded-full flex items-center justify-center flex-1 gap-1 hover:bg-teal-300 hover:text-black hover:border-teal-300"
+              >
+                More Info
+              </Link>
+            )}
+            {openProject?.repoUrl && (
+              <a
+                href={openProject.repoUrl}
+                target="_blank"
+                className="px-3 py-1 border border-teal-200 text-teal-200 rounded-full flex items-center justify-center flex-1 gap-1 hover:bg-teal-300 hover:text-black hover:border-teal-300"
+              >
+                Repository <SquareArrowOutUpRight size={12} />
+              </a>
+            )}
+            {openProject?.url && (
+              <a
+                href={openProject.url}
+                target="_blank"
+                className="px-3 py-1 border border-teal-200 text-teal-200 rounded-full flex items-center justify-center flex-1 gap-1 hover:bg-teal-300 hover:text-black hover:border-teal-300"
+              >
+                Visit Project <SquareArrowOutUpRight size={12} />
+              </a>
+            )}
+          </div>
+        </dialog>
+      </div>
+    </section>
+  );
+};
