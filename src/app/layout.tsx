@@ -3,7 +3,6 @@ import { Analytics } from "@vercel/analytics/next";
 import { Inconsolata, Raleway } from "next/font/google";
 import { Navbar } from "@/components/navbar/Navbar";
 import { Footer } from "@/components/shared/Footer";
-import { ChatWidget } from "@/components/chatbot/ChatWidget";
 import "@/app/globals.css";
 import { pub } from "@/lib/config";
 
@@ -59,7 +58,6 @@ export default function RootLayout({
       >
         <Navbar />
         {children}
-        <ChatWidget />
         <Footer />
         <Analytics />
       </body>
