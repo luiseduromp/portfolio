@@ -1,13 +1,14 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
-import { MenuToggle } from "@/components/navbar/MenuToggle";
-import { navLinks, contactLinks } from "@/data/navigation";
-import Link from "next/link";
-import { cn } from "@/lib/utils";
-import { usePathname } from "next/navigation";
-import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import React, { useEffect, useRef, useState } from "react";
+
+import { MenuToggle } from "@/components/navbar/MenuToggle";
+import { contactLinks,navLinks } from "@/data/navigation";
+import { cn } from "@/lib/utils";
 
 gsap.registerPlugin(useGSAP);
 
@@ -19,9 +20,10 @@ export const NavMenu = ({
   const navRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    if (isOpen) {
-      setIsOpen(false);
-    }
+    const id = requestAnimationFrame(() => {
+      setIsOpen((open) => (open ? false : open));
+    });
+    return () => cancelAnimationFrame(id);
   }, [pathname]);
 
   useGSAP(() => {
@@ -82,6 +84,7 @@ export const NavMenu = ({
             >
               <Link
                 href={link.url}
+                onClick={() => setIsOpen(false)}
                 className={cn(
                   "text-neutral-400 group-hover:text-white block transition-all duration-300 text-nowrap mb-1 relative",
                   "",
@@ -111,6 +114,8 @@ export const NavMenu = ({
                 href={link.url}
                 className="text-neutral-400 hover:text-white transition-all duration-200 px-1"
                 target="_blank"
+                rel="noreferrer"
+                onClick={() => setIsOpen(false)}
               >
                 {link.label}
               </a>

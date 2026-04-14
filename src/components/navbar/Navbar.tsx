@@ -1,10 +1,11 @@
 "use client";
 
-import { cn } from "@/lib/utils";
 import Link from "next/link";
 import React from "react";
+
 import { Logo } from "@/components/icons/Logo";
 import { NavMenu } from "@/components/navbar/NavMenu";
+import { cn } from "@/lib/utils";
 
 export const Navbar = () => {
   return (

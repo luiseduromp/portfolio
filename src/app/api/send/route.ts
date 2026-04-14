@@ -1,10 +1,11 @@
-import {
-  EmailTemplate,
-  ContactFormInterface,
-} from "@/components/email/EmailTemplate";
 import { Resend } from "resend";
-import { env } from "@/lib/config";
+
+import {
+  ContactFormInterface,
+  EmailTemplate,
+} from "@/components/email/EmailTemplate";
 import { captchaVerify } from "@/lib/captchaVerify";
+import { env } from "@/lib/config";
 
 interface ContactRequestInterface extends ContactFormInterface {
   token?: string;

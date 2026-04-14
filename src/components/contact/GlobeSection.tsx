@@ -1,12 +1,13 @@
 "use client";
 
-import React, { useRef } from "react";
-import gsap from "gsap";
-import { MapPin } from "lucide-react";
 import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
+import { MapPin } from "lucide-react";
 import Image from "next/image";
+import React, { useRef } from "react";
+
 import { pub } from "@/lib/config";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger, SplitText);

@@ -1,0 +1,14 @@
+{
+  "pageTitle": "Sobre mi",
+  "headline": "Desarrollador/ Ingeniero/ Disenador/",
+  "bio": [
+    "Ingeniero Full Stack y de IA creativo, con mas de 5 anos de experiencia entregando aplicaciones web robustas, confiables y elegantes.",
+    "Actualmente enfocado en aplicaciones web y sistemas integrados con IA usando principalmente Python, TypeScript e infraestructura de AWS.",
+    "Me gusta cuidar todos los detalles de un proyecto para que sea totalmente funcional y visualmente atractivo."
+  ],
+  "sections": {
+    "experience": "Experiencia",
+    "education": "Educacion",
+    "skills": "Habilidades"
+  }
+}

@@ -1,10 +1,11 @@
 "use client";
 
+import { useGSAP } from "@gsap/react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import React from "react";
-import { gsap } from "gsap";
-import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 import type { Project } from "@/lib/definitions";
 import { projectCovers } from "@/lib/media";
 import { cn } from "@/lib/utils";

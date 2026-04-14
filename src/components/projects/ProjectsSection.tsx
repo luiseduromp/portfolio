@@ -1,16 +1,17 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
-import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
+import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import type { Project } from "@/lib/definitions";
-import { ProjectCard, RenderCover } from "@/components/projects/ProjectCard";
-import { cn } from "@/lib/utils";
-import { icons } from "@/lib/logos";
-import Link from "next/link";
 import { Box, SquareArrowOutUpRight, X } from "lucide-react";
+import Link from "next/link";
+import React, { useCallback, useEffect, useRef, useState } from "react";
+
+import { ProjectCard, RenderCover } from "@/components/projects/ProjectCard";
 import { Container } from "@/components/shared/containers";
+import type { Project } from "@/lib/definitions";
+import { icons } from "@/lib/logos";
+import { cn } from "@/lib/utils";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -19,9 +20,7 @@ export const ProjectsSection = ({ projects }: { projects: Project[] }) => {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [openProject, setOpenProject] = useState<Project | null>(null);
 
-  const { contextSafe } = useGSAP({ scope: containerRef });
-
-  const openDialog = contextSafe((project: Project) => {
+  const openDialog = useCallback((project: Project) => {
     const dialog = dialogRef.current;
     if (!dialog) return;
     setOpenProject(project);
@@ -35,9 +34,9 @@ export const ProjectsSection = ({ projects }: { projects: Project[] }) => {
       duration: 0.3,
       ease: "power1.inOut",
     });
-  });
+  }, []);
 
-  const closeDialog = contextSafe(() => {
+  const closeDialog = useCallback(() => {
     const dialog = dialogRef.current;
     if (!dialog) return;
     gsap.to(dialog, {
@@ -49,7 +48,7 @@ export const ProjectsSection = ({ projects }: { projects: Project[] }) => {
       ease: "power1.inOut",
     });
     setOpenProject(null);
-  });
+  }, []);
 
   useGSAP(() => {
     const dialog = dialogRef.current;
@@ -77,7 +76,7 @@ export const ProjectsSection = ({ projects }: { projects: Project[] }) => {
     return () => {
       document.removeEventListener("pointerdown", onOutEvent);
     };
-  }, [openProject]);
+  }, [openProject, closeDialog]);
 
   useGSAP(() => {
     const container = containerRef.current;

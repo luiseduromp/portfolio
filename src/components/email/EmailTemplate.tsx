@@ -1,11 +1,11 @@
 import {
-  Html,
-  Tailwind,
   Body,
   Container,
+  Heading,
+  Html,
   Img,
   Section,
-  Heading,
+  Tailwind,
   Text,
 } from "@react-email/components";
 import * as React from "react";

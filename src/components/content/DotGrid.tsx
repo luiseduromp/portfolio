@@ -1,20 +1,17 @@
 "use client";
 
-import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
-import { useGSAP } from "@gsap/react";
+import React, { useCallback, useEffect, useRef } from "react";
 
 export const DotGrid = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const dotsRef = useRef<HTMLDivElement[]>([]);
   const centresRef = useRef<{ el: HTMLDivElement; x: number; y: number }[]>([]);
 
-  const { contextSafe } = useGSAP({ scope: containerRef });
-
   const DOT_SIZE = 4;
   const GAP = 12;
 
-  const buildGrid = contextSafe(() => {
+  const buildGrid = useCallback(() => {
     const container = containerRef.current;
     if (!container) return;
 
@@ -51,16 +48,15 @@ export const DotGrid = () => {
         };
       });
     });
-  });
+  }, []);
 
   useEffect(() => {
     buildGrid();
     const ro = new ResizeObserver(buildGrid);
-    if (containerRef.current) ro.observe(containerRef.current);
+    const el = containerRef.current;
+    if (el) ro.observe(el);
     return () => ro.disconnect();
-  }, []);
-
-  useGSAP(() => {});
+  }, [buildGrid]);
 
   return (
     <div className="flex justify-center items-center w-full h-50 relative">

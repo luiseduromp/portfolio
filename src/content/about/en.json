@@ -1,0 +1,14 @@
+{
+  "pageTitle": "About Me",
+  "headline": "Developer/ Engineer/ Designer/",
+  "bio": [
+    "Creative Full Stack and AI Engineer, with over 5 years of experience delivering robust, reliable and elegant web applications.",
+    "Currently focused on Web Applications and AI-integrated systems using mainly Python, TypeScript and AWS infrastructure.",
+    "I like to take care of all the details in a project to make it totally functional, and beautiful."
+  ],
+  "sections": {
+    "experience": "Experience",
+    "education": "Education",
+    "skills": "Skills"
+  }
+}

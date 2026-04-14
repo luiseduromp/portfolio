@@ -1,6 +1,7 @@
-import { cn } from "@/lib/utils";
 import { LoaderCircle, Send } from "lucide-react";
 import React from "react";
+
+import { cn } from "@/lib/utils";
 
 interface LoadingButtonInterface extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   isLoading: boolean;

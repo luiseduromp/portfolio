@@ -1,3 +1,6 @@
+import type { Metadata } from "next";
+import { ReCaptchaProvider } from "next-recaptcha-v3";
+
 import { ContactForm } from "@/components/contact/ContactForm";
 import { GlobeSection } from "@/components/contact/GlobeSection";
 import { ContactIcons } from "@/components/icons/brandIcons";
@@ -6,8 +9,6 @@ import { PageTitle } from "@/components/shared/titles";
 import { getCurriculumData } from "@/data/curriculum";
 import { pub } from "@/lib/config";
 import { cn } from "@/lib/utils";
-import type { Metadata } from "next";
-import { ReCaptchaProvider } from "next-recaptcha-v3";
 
 export const metadata: Metadata = {
   title: `Contact - luiseduromp.com`,

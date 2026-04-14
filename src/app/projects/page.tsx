@@ -1,8 +1,9 @@
+import { Metadata } from "next";
+
 import { ProjectsSection } from "@/components/projects/ProjectsSection";
 import { Container } from "@/components/shared/containers";
 import { PageTitle } from "@/components/shared/titles";
 import { getCurriculumData } from "@/data/curriculum";
-import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: `Projects - luiseduromp.com`,

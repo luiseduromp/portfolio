@@ -1,13 +1,13 @@
-import TextScroll from "@/components/home/TextScroll";
-import { getCurriculumData } from "@/data/curriculum";
-import { Hero } from "@/components/home/Hero";
-import { WorkSection } from "@/components/home/WorkSection";
-import { FeaturedSection } from "@/components/home/FeaturedSection";
-import { AboutIntro } from "@/components/home/AboutIntro";
-import { SectionTitle } from "@/components/shared/titles";
 import { ContactCard } from "@/components/contact/ContactCard";
+import { AboutIntro } from "@/components/home/AboutIntro";
+import { FeaturedSection } from "@/components/home/FeaturedSection";
+import { Hero } from "@/components/home/Hero";
+import TextScroll from "@/components/home/TextScroll";
+import { WorkSection } from "@/components/home/WorkSection";
 import { ContactIcons } from "@/components/icons/brandIcons";
 import { Container } from "@/components/shared/containers";
+import { SectionTitle } from "@/components/shared/titles";
+import { getCurriculumData } from "@/data/curriculum";
 import { cn } from "@/lib/utils";
 
 export default async function Home() {

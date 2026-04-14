@@ -1,9 +1,12 @@
-import type { Metadata } from "next";
+import "@/app/globals.css";
+
 import { Analytics } from "@vercel/analytics/next";
+import type { Metadata } from "next";
 import { Inconsolata, Raleway } from "next/font/google";
+
+import { ChatStream } from "@/components/chatbot/ChatStream";
 import { Navbar } from "@/components/navbar/Navbar";
 import { Footer } from "@/components/shared/Footer";
-import "@/app/globals.css";
 import { pub } from "@/lib/config";
 
 const raleway = Raleway({
@@ -21,10 +24,10 @@ const inconsolata = Inconsolata({
 
 export const metadata: Metadata = {
   title: "Luis Romero Web Portfolio",
-  description: "My personal website and portfolio",
+  description: "Personal website and portfolio",
   openGraph: {
     title: "Luis Romero Web Portfolio",
-    description: "Full-stack developer & AI engineer portfolio",
+    description: "Full-stack & AI Engineer",
     url: "https://luiseduromp.com",
     siteName: "Luis Romero Web Portfolio",
     images: [
@@ -58,6 +61,7 @@ export default function RootLayout({
       >
         <Navbar />
         {children}
+        <ChatStream />
         <Footer />
         <Analytics />
       </body>

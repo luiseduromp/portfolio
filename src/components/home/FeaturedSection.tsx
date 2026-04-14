@@ -1,21 +1,22 @@
 "use client";
 
-import type { Project } from "@/lib/definitions";
-import React, { useRef } from "react";
-import { Container } from "@/components/shared/containers";
-import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
+import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
+import { Info, LinkIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { cn } from "@/lib/utils";
-import { featuredCovers } from "@/lib/media";
-import { Info, LinkIcon } from "lucide-react";
-import { useTapHover } from "@/hooks/useTapHover";
-import { GitHubLogo } from "@/components/icons/brandIcons";
+import React, { useRef } from "react";
+
 import { NavButton } from "@/components/buttons/NavButton";
+import { GitHubLogo } from "@/components/icons/brandIcons";
+import { Container } from "@/components/shared/containers";
 import { SectionTitle } from "@/components/shared/titles";
+import { useTapHover } from "@/hooks/useTapHover";
+import type { Project } from "@/lib/definitions";
+import { featuredCovers } from "@/lib/media";
+import { cn } from "@/lib/utils";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger, SplitText);
 

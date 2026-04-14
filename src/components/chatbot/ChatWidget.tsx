@@ -1,12 +1,14 @@
 "use client";
 
-import React, { useEffect, useState, useRef, useCallback } from "react";
-import { cn } from "@/lib/utils";
 import { RefreshCw, Send, User, X } from "lucide-react";
-import { ChatMessage, useChatStore } from "@/stores/chatStore";
-import { chatInit, chatMessage } from "@/lib/chatbot";
-import styles from "./ChatWidget.module.css";
+import React, { useCallback,useEffect, useRef, useState } from "react";
+
 import { ChatbotIcon, ChatbotOutIcon } from "@/components/icons/chatbotIcons";
+import { chatInit, chatMessage } from "@/lib/chatbot";
+import { cn } from "@/lib/utils";
+import { ChatMessage, useChatStore } from "@/stores/chatStore";
+
+import styles from "./ChatWidget.module.css";
 import { MarkdownRenderer } from "./MarkdownRenderer";
 
 const INIT_MESSAGE =

@@ -1,9 +1,11 @@
-import React from "react";
-import { Logo } from "../icons/Logo";
-import { contactLinks, navLinks } from "@/data/navigation";
 import Link from "next/link";
-import { pub } from "@/lib/config";
+import React from "react";
+
 import { Container } from "@/components/shared/containers";
+import { contactLinks, navLinks } from "@/data/navigation";
+import { pub } from "@/lib/config";
+
+import { Logo } from "../icons/Logo";
 
 export const Footer = () => {
   return (
@@ -40,7 +42,7 @@ export const Footer = () => {
             <li className="uppercase font-bold mb-2">Resume</li>
             <li className="md:text-lg lg:text-xl group mb-1">
               <a
-                href={`${pub.BUCKET_URL}/cv/ENG_CV_Luis_Romero_2025.pdf`}
+                href={`${pub.BUCKET_URL}/cv/ENG_CV_Luis_Romero_2026.pdf`}
                 className="text-neutral-400 hover:text-teal-100"
                 target="_blank"
               >
@@ -50,7 +52,7 @@ export const Footer = () => {
             </li>
             <li className="md:text-lg lg:text-xl group mb-1">
               <a
-                href={`${pub.BUCKET_URL}/cv/ESP_CV_Luis_Romero_2025.pdf`}
+                href={`${pub.BUCKET_URL}/cv/ESP_CV_Luis_Romero_2026.pdf`}
                 className="text-neutral-400 hover:text-teal-100"
                 target="_blank"
               >

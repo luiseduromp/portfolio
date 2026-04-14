@@ -1,14 +1,15 @@
 "use client";
 
-import React, { useRef } from "react";
-import { Container } from "@/components/shared/containers";
-import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
+import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
 import { MapPin } from "lucide-react";
-import { NavButton } from "@/components/buttons/NavButton";
 import Image from "next/image";
+import React, { useRef } from "react";
+
+import { NavButton } from "@/components/buttons/NavButton";
+import { Container } from "@/components/shared/containers";
 import { pub } from "@/lib/config";
 import { cn } from "@/lib/utils";
 

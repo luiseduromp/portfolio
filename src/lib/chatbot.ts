@@ -1,7 +1,8 @@
 "use server";
 
-import { env } from "@/lib/config";
 import { cookies } from "next/headers";
+
+import { env } from "@/lib/config";
 import { ChatMessage } from "@/stores/chatStore";
 
 export const chatInit = async () => {
@@ -95,5 +96,3 @@ export const chatMessage = async (
     return { success: false, message: "Error in chatbot message" };
   }
 };
-
-

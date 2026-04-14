@@ -1,13 +1,14 @@
 "use client";
-import React, { useRef } from "react";
-import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
+import { gsap } from "gsap";
+import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
-import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
-import { cn } from "@/lib/utils";
-import { Container } from "@/components/shared/containers";
+import React, { useRef } from "react";
+
 import { NavButton } from "@/components/buttons/NavButton";
+import { Container } from "@/components/shared/containers";
+import { cn } from "@/lib/utils";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger, SplitText, DrawSVGPlugin);
 
