@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
 
 import { MenuToggle } from "@/components/navbar/MenuToggle";
-import { contactLinks,navLinks } from "@/data/navigation";
+import { contactLinks, navLinks } from "@/data/navigation";
 import { cn } from "@/lib/utils";
 
 gsap.registerPlugin(useGSAP);

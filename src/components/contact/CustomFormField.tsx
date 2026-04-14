@@ -1,7 +1,12 @@
 "use client";
 
 import React from "react";
-import { Control, ControllerRenderProps } from "react-hook-form";
+import type {
+  Control,
+  ControllerRenderProps,
+  FieldPath,
+  FieldValues,
+} from "react-hook-form";
 
 import {
   FormControl,
@@ -11,25 +16,24 @@ import {
 } from "@/components/ui/form";
 import { cn } from "@/lib/utils";
 
-interface CustomInputProps {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  control: Control<any>;
+type CustomInputProps<TFieldValues extends FieldValues> = {
+  control: Control<TFieldValues>;
   fieldtype: "input" | "textarea";
-  name: string;
+  name: FieldPath<TFieldValues>;
   label?: string;
   placeholder?: string;
   hasError?: boolean;
   disabled?: boolean;
   children?: React.ReactNode;
-}
+};
 
-const RenderField = ({
+function RenderField<TFieldValues extends FieldValues>({
   field,
   props,
 }: {
-  field: ControllerRenderProps;
-  props: CustomInputProps;
-}) => {
+  field: ControllerRenderProps<TFieldValues, FieldPath<TFieldValues>>;
+  props: CustomInputProps<TFieldValues>;
+}) {
   const { fieldtype, placeholder } = props;
 
   switch (fieldtype) {
@@ -67,9 +71,11 @@ const RenderField = ({
         </FormControl>
       );
   }
-};
+}
 
-export const CustomFormField = (props: CustomInputProps) => {
+export const CustomFormField = <TFieldValues extends FieldValues>(
+  props: CustomInputProps<TFieldValues>,
+) => {
   const { control, name } = props;
   return (
     <FormField
@@ -77,7 +83,7 @@ export const CustomFormField = (props: CustomInputProps) => {
       name={name}
       render={({ field }) => (
         <FormItem className="mb-5">
-          <RenderField field={field} props={props} />
+          <RenderField<TFieldValues> field={field} props={props} />
           <FormMessage className="text-xs text-red-400 font-secondary" />
         </FormItem>
       )}

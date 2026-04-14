@@ -1,7 +1,7 @@
 "use client";
 
 import { RefreshCw, Send, User, X } from "lucide-react";
-import React, { useCallback,useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 
 import { ChatbotIcon, ChatbotOutIcon } from "@/components/icons/chatbotIcons";
 import { chatInit, chatMessage } from "@/lib/chatbot";
