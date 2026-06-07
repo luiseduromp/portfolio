@@ -8,7 +8,7 @@ import { MapPin } from "lucide-react";
 import Image from "next/image";
 import React, { useRef } from "react";
 
-import { pub } from "@/lib/config";
+import { pub } from "@/lib/publicConfig";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger, SplitText);
 

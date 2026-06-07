@@ -1,6 +1,7 @@
 "use client";
 
 import { RefreshCw, Send, User, X } from "lucide-react";
+import { useTranslations } from "next-intl";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 
 import { ChatbotIcon, ChatbotOutIcon } from "@/components/icons/chatbotIcons";
@@ -11,14 +12,6 @@ import { ChatMessage, useChatStore } from "@/stores/chatStore";
 import styles from "./ChatWidget.module.css";
 import { MarkdownRenderer } from "./MarkdownRenderer";
 
-const INIT_MESSAGE =
-  "Hello, this is my personal chatbot, feel free to ask me anything as if it was me.\n**I can answer in English and Spanish 😊**";
-const SAMPLE_MESSAGES = [
-  "What is your latest project?",
-  "What is your favorite programming language?",
-  "¿En qué universidad estudiaste?",
-];
-
 export const ChatWidget = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -26,6 +19,7 @@ export const ChatWidget = () => {
   const { messages, addMessage, clearHistory } = useChatStore();
   const chatEndRef = useRef<HTMLDivElement>(null);
   const chatExpRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const t = useTranslations("chatbot");
 
   const init = useCallback(async () => {
     if (isActive) return;
@@ -34,13 +28,12 @@ export const ChatWidget = () => {
     try {
       const result = await chatInit();
       if (!result.success) {
-        // TODO: Show error message
         console.log("Chatbot initialization failed", result.message);
         return;
       }
 
       console.log("Authenticated. Chat session started");
-      addMessage({ role: "assistant", content: INIT_MESSAGE });
+      addMessage({ role: "assistant", content: t("initMessage") });
       setIsActive(true);
 
       if (chatExpRef.current) {
@@ -60,7 +53,7 @@ export const ChatWidget = () => {
       console.log("Stop loading");
       setIsLoading(false);
     }
-  }, [addMessage, isActive]);
+  }, [addMessage, isActive, t]);
 
   useEffect(() => {
     if (isOpen) {
@@ -81,7 +74,7 @@ export const ChatWidget = () => {
 
   const handleClear = () => {
     clearHistory();
-    addMessage({ role: "assistant", content: INIT_MESSAGE });
+    addMessage({ role: "assistant", content: t("initMessage") });
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -161,18 +154,18 @@ export const ChatWidget = () => {
             )}
           </div>
           <div>
-            <h4 className="text-xl font-bold mb-1">Chat with me</h4>
+            <h4 className="text-xl font-bold mb-1">{t("header")}</h4>
             <p className="text-xs font-mono text-neutral-500">
-              Personal Chatbot
+              {t("subtitle")}
               {isActive ? (
                 <span className="ms-2 text-green-500">
                   <span className="size-2 rounded-full bg-green-500 inline-block" />{" "}
-                  Online
+                  {t("online")}
                 </span>
               ) : (
                 <span className="ms-2 text-red-500">
                   <span className="size-2 rounded-full bg-red-500 inline-block" />{" "}
-                  Offline
+                  {t("offline")}
                 </span>
               )}
             </p>
@@ -208,7 +201,7 @@ export const ChatWidget = () => {
 
           {messages.length < 2 && isActive ? (
             <div className={cn("mt-2")}>
-              {SAMPLE_MESSAGES.map((message, index) => {
+              {(t.raw("sampleMessages") as string[]).map((message, index) => {
                 return (
                   <button
                     key={index}
@@ -231,12 +224,12 @@ export const ChatWidget = () => {
                   "flex-1 rounded-xl rounded-br-xs py-3 px-4 bg-neutral-700 text-sm",
                 )}
               >
-                The session has expired. Do you want to
+                {t("sessionExpired")}{" "}
                 <button
                   onClick={() => init()}
                   className="text-neutral-400 hover:text-white cursor-pointer ms-1"
                 >
-                  Restore the session?
+                  {t("restoreSession")}
                 </button>
               </div>
               <div className="size-9 rounded-full bg-red-500 flex items-center justify-center">
@@ -260,7 +253,7 @@ export const ChatWidget = () => {
               "text-white flex-1 resize-none overflow-auto focus:outline-none focus:ring-0 focus:border-none focus:shadow-none lg:text-sm",
               isActive ? "opacity-100" : "opacity-60 cursor-not-allowed",
             )}
-            placeholder="Ask me anything"
+            placeholder={t("placeholder")}
             rows={2}
             onKeyDown={(e) => handleEnter(e)}
           />
@@ -293,7 +286,7 @@ export const ChatWidget = () => {
             "px-3 py-1 rounded-full group-hover:opacity-100 opacity-0 transition-opacity duration-200 group-hover:delay-1000 delay-200",
           )}
         >
-          Chat with Me
+          {t("openButton")}
         </span>
       </button>
     </>

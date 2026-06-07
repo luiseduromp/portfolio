@@ -78,6 +78,8 @@ export const GlobeCard = ({ lat, lng }: { lat: number; lng: number }) => {
       globe.destroy();
       window.removeEventListener("resize", onResize);
     };
+    // lat/lng are static props; globe initializes once on mount intentionally
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const PIN_OFFSET = 60;

@@ -2,7 +2,7 @@
 
 import { cookies } from "next/headers";
 
-import { env } from "@/lib/config";
+import { env } from "@/lib/backendConfig";
 import { ChatMessage } from "@/stores/chatStore";
 
 export const chatInit = async () => {

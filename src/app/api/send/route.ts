@@ -4,8 +4,8 @@ import {
   ContactFormInterface,
   EmailTemplate,
 } from "@/components/email/EmailTemplate";
+import { env } from "@/lib/backendConfig";
 import { captchaVerify } from "@/lib/captchaVerify";
-import { env } from "@/lib/config";
 
 interface ContactRequestInterface extends ContactFormInterface {
   token?: string;

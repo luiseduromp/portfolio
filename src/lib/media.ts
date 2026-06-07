@@ -1,4 +1,4 @@
-import { pub } from "@/lib/config";
+import { pub } from "@/lib/publicConfig";
 
 export interface ProjectCover {
   type: "image" | "video" | "logo";

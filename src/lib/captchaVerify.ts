@@ -1,6 +1,6 @@
 "use server";
 
-import { env } from "@/lib/config";
+import { env } from "@/lib/backendConfig";
 
 interface Response {
   success: boolean;

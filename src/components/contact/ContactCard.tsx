@@ -10,7 +10,7 @@ import React, { useRef } from "react";
 
 import { NavButton } from "@/components/buttons/NavButton";
 import { Container } from "@/components/shared/containers";
-import { pub } from "@/lib/config";
+import { pub } from "@/lib/publicConfig";
 import { cn } from "@/lib/utils";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger, SplitText);

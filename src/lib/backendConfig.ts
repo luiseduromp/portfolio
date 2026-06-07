@@ -1,3 +1,5 @@
+import "server-only";
+
 export const env = {
   RECAPTCHA_SECRET: process.env.RECAPTCHA_SECRET!,
   RECAPTCHA_URL: process.env.RECAPTCHA_URL!,
@@ -7,9 +9,4 @@ export const env = {
   CHATBOT_URL: process.env.CHATBOT_URL!,
   CHATBOT_USERNAME: process.env.CHATBOT_USERNAME!,
   CHATBOT_PASSWORD: process.env.CHATBOT_PASSWORD!,
-};
-
-export const pub = {
-  BUCKET_URL: process.env.NEXT_PUBLIC_BUCKET_URL!,
-  RECAPTCHA_SITE_KEY: process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!,
 };

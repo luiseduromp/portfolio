@@ -34,7 +34,7 @@ import {
   VercelLogo,
   ViteLogo,
 } from "@/components/icons/brandIcons";
-import { pub } from "@/lib/config";
+import { pub } from "@/lib/publicConfig";
 
 export interface IconType {
   name: string;

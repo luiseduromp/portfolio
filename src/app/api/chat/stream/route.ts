@@ -1,7 +1,7 @@
 import { cookies } from "next/headers";
 import { NextRequest } from "next/server";
 
-import { env } from "@/lib/config";
+import { env } from "@/lib/backendConfig";
 
 export async function POST(req: NextRequest) {
   const cookieStore = await cookies();
