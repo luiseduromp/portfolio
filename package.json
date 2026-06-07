@@ -17,7 +17,11 @@
     "email": "email dev --dir src/components/email"
   },
   "lint-staged": {
-    "*.{js,ts,tsx}": "eslint --fix"
+    "*.{js,ts,tsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.{json,css,md,yaml,yml}": "prettier --write"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
@@ -32,12 +36,15 @@
     "gsap": "^3.15.0",
     "lucide-react": "^0.510.0",
     "next": "^16.2.3",
+    "next-intl": "^4.9.1",
     "next-recaptcha-v3": "^1.5.3",
+    "radix-ui": "^1.5.0",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
     "react-hook-form": "^7.72.1",
     "react-markdown": "^10.1.0",
     "resend": "^4.8.0",
+    "server-only": "^0.0.1",
     "tailwind-merge": "^3.5.0",
     "zod": "^3.25.76",
     "zustand": "^5.0.12"
