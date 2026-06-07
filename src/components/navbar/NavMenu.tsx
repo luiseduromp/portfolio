@@ -2,12 +2,14 @@
 
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
 import React, { useEffect, useRef, useState } from "react";
 
+import { LocaleSwitcher } from "@/components/navbar/LocaleSwitcher";
 import { MenuToggle } from "@/components/navbar/MenuToggle";
-import { contactLinks, navLinks } from "@/data/navigation";
+import { contactLinks } from "@/data/navigation";
+import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 
 gsap.registerPlugin(useGSAP);
@@ -18,6 +20,14 @@ export const NavMenu = ({
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
   const navRef = useRef<HTMLElement>(null);
+  const t = useTranslations("nav");
+
+  const navLinks = [
+    { label: t("home"), url: "/" as const },
+    { label: t("about"), url: "/about" as const },
+    { label: t("projects"), url: "/projects" as const },
+    { label: t("contact"), url: "/contact" as const },
+  ];
 
   useEffect(() => {
     const id = requestAnimationFrame(() => {
@@ -31,7 +41,6 @@ export const NavMenu = ({
     if (!nav) return;
 
     if (isOpen) {
-      console.log("Trigger Animation");
       gsap.from(nav.querySelectorAll(".nav-link"), {
         opacity: 0,
         xPercent: 50,
@@ -122,6 +131,14 @@ export const NavMenu = ({
             </li>
           ))}
         </ul>
+        <div
+          className={cn(
+            "mt-3 flex items-center justify-center",
+            isOpen ? "opacity-100" : "opacity-0",
+          )}
+        >
+          <LocaleSwitcher />
+        </div>
       </div>
     </nav>
   );

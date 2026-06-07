@@ -1,3 +1,6 @@
+import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
+
 import { ContactCard } from "@/components/contact/ContactCard";
 import { AboutIntro } from "@/components/home/AboutIntro";
 import { FeaturedSection } from "@/components/home/FeaturedSection";
@@ -8,9 +11,24 @@ import { ContactIcons } from "@/components/icons/brandIcons";
 import { Container } from "@/components/shared/containers";
 import { SectionTitle } from "@/components/shared/titles";
 import { getCurriculumData } from "@/data/curriculum";
+import { getPageAlternates } from "@/lib/metadata";
 import { cn } from "@/lib/utils";
 
-export default async function Home() {
+type HomeProps = {
+  params: Promise<{ locale: string }>;
+};
+
+export async function generateMetadata({
+  params,
+}: HomeProps): Promise<Metadata> {
+  const { locale } = await params;
+  return { alternates: getPageAlternates("", locale) };
+}
+
+export default async function Home({ params }: HomeProps) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "homeContact" });
+
   const profile = await getCurriculumData();
   const featured = [
     "bayas-freire-website",
@@ -28,10 +46,7 @@ export default async function Home() {
 
       <WorkSection />
 
-      <TextScroll className="py-20">
-        I take care of every detail in my projects to deliver high quality web
-        applications with flawless designs and user experience.
-      </TextScroll>
+      <TextScroll className="py-20" />
 
       <FeaturedSection projects={featuredProjects} />
 
@@ -39,12 +54,12 @@ export default async function Home() {
 
       <section className="py-20">
         <Container>
-          <SectionTitle>Contact</SectionTitle>
+          <SectionTitle>{t("sectionTitle")}</SectionTitle>
           <p className="text-xl lg:text-2xl text-center text-neutral-300 mb-1">
-            I can help with your projects or ideas
+            {t("helpText")}
           </p>
           <p className="text-xl lg:text-2xl text-center text-neutral-300 mb-8">
-            Write me an Email, or Contact me on Social Media
+            {t("socialText")}
           </p>
 
           <div className="flex items-center justify-center gap-4 mb-8 flex-wrap">

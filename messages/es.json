@@ -1,0 +1,139 @@
+{
+  "metadata": {
+    "title": "Luis Romero – Ingeniero Full Stack e IA",
+    "description": "Portfolio de Luis Romero, Ingeniero Full Stack e IA con más de 5 años desarrollando aplicaciones web en Next.js, Python, TypeScript y AWS.",
+    "ogTitle": "Luis Romero – Ingeniero Full Stack e IA",
+    "ogDescription": "Ingeniero Full Stack e IA especializado en aplicaciones web, LLMs y sistemas RAG. Basado en Barcelona.",
+    "twitterDescription": "Portfolio de Ingeniero Full Stack e IA – Next.js, Python, TypeScript, AWS, LLMs."
+  },
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "projects": "Proyectos",
+    "contact": "Contacto",
+    "switchLocale": "EN"
+  },
+  "footer": {
+    "links": "Navegación",
+    "contact": "Contacto",
+    "resume": "Currículum",
+    "cvEnglish": "CV Inglés",
+    "cvSpanish": "CV Español",
+    "tagline": "Ingeniero Full Stack e IA",
+    "switchLocale": "EN",
+    "switchLocaleLabel": "Cambiar a Inglés"
+  },
+  "hero": {
+    "welcome": "Bienvenido al Portfolio de Luis Romero",
+    "scrollDown": "[ Desplázate ]",
+    "title1": "Calidad y Diseño",
+    "title2": "En Aplicaciones Web",
+    "name": "Luis Romero",
+    "role": "Ingeniero Full Stack e IA",
+    "projectsBtn": "Proyectos",
+    "contactBtn": "Contacto"
+  },
+  "aboutIntro": {
+    "sectionTitle": "Sobre mí",
+    "titles": ["Desarrollador", "Ingeniero", "Diseñador"],
+    "bio": [
+      "Ingeniero Full Stack y de IA creativo, con más de 5 años de experiencia entregando aplicaciones web robustas, fiables y elegantes.",
+      "Actualmente enfocado en aplicaciones web y sistemas integrados con IA usando principalmente Python, TypeScript e infraestructura de AWS.",
+      "Me gusta cuidar todos los detalles de un proyecto para que sea totalmente funcional y visualmente atractivo."
+    ],
+    "moreInfo": "Más información"
+  },
+  "work": {
+    "sectionTitle": "Mi Trabajo",
+    "intro": "Mi Trabajo",
+    "description": "Diseño y desarrollo aplicaciones full stack, cuidando su funcionalidad, el diseño y una experiencia de usuario fluida.",
+    "mainTech": "Tecnologías Principales",
+    "fullStack": {
+      "title": "Full Stack",
+      "desc": "Experimentado en el desarrollo de aplicaciones web personalizadas, desde Sitios Web e Interfaces de Usuario con integraciones de servicios completas, hasta APIs y servicios backend."
+    },
+    "uxui": {
+      "title": "UX/UI Design",
+      "desc": "Me ocupo de cada detalle para entregar el mejor resultado posible, de modo que la aplicación cumpla sus expectativas de funcionalidad con un diseño sobresaliente."
+    },
+    "aiData": {
+      "title": "IA y Datos",
+      "desc": "Experimentado en ML, IA y LLMs, integrando procesamiento avanzado en aplicaciones para mejorar la experiencia y la productividad."
+    }
+  },
+  "featured": {
+    "sectionTitle": "Proyectos Destacados",
+    "allProjectsBtn": "Todos los Proyectos"
+  },
+  "textScroll": "Me ocupo de cada detalle en mis proyectos para entregar aplicaciones web de alta calidad con diseños impecables y una gran experiencia de usuario.",
+  "homeContact": {
+    "sectionTitle": "Contacto",
+    "helpText": "Puedo ayudarte con tus proyectos e ideas",
+    "socialText": "Escríbeme un Email, o Contacta conmigo en Redes Sociales"
+  },
+  "about": {
+    "pageTitle": "Sobre mí",
+    "metaTitle": "Sobre Luis Romero – Ingeniero Full Stack e IA",
+    "metaDescription": "Conoce a Luis Romero: más de 5 años en desarrollo full stack, sistemas de IA/LLM y diseño UX/UI. Experiencia laboral, formación y habilidades.",
+    "headline": "Desarrollador/ Ingeniero/ Diseñador/",
+    "bio": [
+      "Ingeniero Full Stack y de IA creativo, con más de 5 años de experiencia entregando aplicaciones web robustas, fiables y elegantes.",
+      "Actualmente enfocado en aplicaciones web y sistemas integrados con IA usando principalmente Python, TypeScript e infraestructura de AWS.",
+      "Me gusta cuidar todos los detalles de un proyecto para que sea totalmente funcional y visualmente atractivo."
+    ],
+    "experience": "Experiencia",
+    "education": "Educación",
+    "skills": "Habilidades"
+  },
+  "projects": {
+    "pageTitle": "Proyectos",
+    "metaTitle": "Proyectos – Luis Romero Ingeniero Full Stack e IA",
+    "metaDescription": "Explora el portfolio de Luis Romero: aplicaciones web full stack, sistemas RAG e interfaces modernas con Next.js, Python y TypeScript.",
+    "description": "Una selección de mis proyectos más recientes y relevantes"
+  },
+  "contact": {
+    "pageTitle": "Contacto",
+    "metaTitle": "Contacto – Luis Romero Ingeniero Full Stack e IA",
+    "metaDescription": "Contacta con Luis Romero para proyectos de desarrollo web full stack, integración de IA o trabajo freelance.",
+    "heading1": "¿Tienes una idea en mente?",
+    "heading2": "Construyámosla juntos",
+    "body1": "¿Tienes una idea o proyecto con el que necesitas ayuda?",
+    "body2": "Contáctame y hagamos realidad tus ideas.",
+    "socialText": "Escríbeme un Email, o Contacta conmigo en Redes Sociales"
+  },
+  "contactForm": {
+    "title": "Contáctame",
+    "subtitle": "Deja tu email y me pondré en contacto contigo.",
+    "nameLabel": "Nombre",
+    "emailLabel": "Email",
+    "messageLabel": "Mensaje",
+    "namePlaceholder": "Nombre",
+    "emailPlaceholder": "Email",
+    "messagePlaceholder": "Mensaje",
+    "send": "Enviar",
+    "success": "¡Gracias! Tu mensaje fue enviado.",
+    "error": "Algo salió mal. Por favor intenta de nuevo.",
+    "nameValidation": "Tu nombre debe tener al menos 2 caracteres",
+    "emailValidation": "Proporciona una dirección de email válida",
+    "recaptchaPrefix": "Este sitio está protegido por reCAPTCHA y se aplican la",
+    "privacyPolicy": "Política de Privacidad",
+    "termsOfService": "Términos de Servicio",
+    "recaptchaSuffix": "de Google."
+  },
+  "chatbot": {
+    "initMessage": "Hola, este es mi chatbot personal, siéntete libre de preguntarme cualquier cosa como si fuera yo mismo.\n**Puedo responder en Inglés y Español 😊**",
+    "sampleMessages": [
+      "¿Cuál es tu proyecto más reciente?",
+      "¿Cuál es tu lenguaje de programación favorito?",
+      "¿En qué universidad estudiaste?"
+    ],
+    "header": "Chat conmigo",
+    "subtitle": "Chatbot Personal",
+    "online": "En línea",
+    "offline": "Desconectado",
+    "sessionExpired": "La sesión ha expirado. ¿Deseas",
+    "restoreSession": "Restaurar la sesión?",
+    "placeholder": "Pregúntame lo que quieras",
+    "openButton": "Chat conmigo"
+  }
+}

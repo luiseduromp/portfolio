@@ -3,6 +3,7 @@
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useTranslations } from "next-intl";
 import React, { useRef } from "react";
 
 import { NavButton } from "@/components/buttons/NavButton";
@@ -11,19 +12,17 @@ import { SectionTitle } from "@/components/shared/titles";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
-const titles = ["Developer", "Engineer", "Designer"];
-const about = `Creative Full Stack and AI Engineer, with over 5 years of experience delivering robust, reliable and elegant web applications.
-                Currently focused on Web Applications and AI-integrated systems using mainly Python, TypeScript and AWS infrastructure.
-                I like to take care of all the details in a project to make it totally functional, and beautiful.`;
-
 export const AboutIntro = () => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const t = useTranslations("aboutIntro");
+  const titles = t.raw("titles") as string[];
+  const bio = t.raw("bio") as string[];
 
   useGSAP(() => {
     const container = containerRef.current;
     if (!container) return;
 
-    const titles = container.querySelectorAll(".about-title");
+    const titleEls = container.querySelectorAll(".about-title");
     const descriptions = container.querySelectorAll(".about-description");
 
     gsap
@@ -34,7 +33,7 @@ export const AboutIntro = () => {
           toggleActions: "play none none reverse",
         },
       })
-      .from(titles, {
+      .from(titleEls, {
         xPercent: -100,
         stagger: 0.2,
         mask: "lines",
@@ -55,7 +54,7 @@ export const AboutIntro = () => {
   return (
     <section id="projects" className="py-20">
       <Container>
-        <SectionTitle>About Me</SectionTitle>
+        <SectionTitle>{t("sectionTitle")}</SectionTitle>
 
         <div
           ref={containerRef}
@@ -73,7 +72,7 @@ export const AboutIntro = () => {
           </div>
 
           <div className="w-full md:flex-1">
-            {about.split("\n").map((paragraph, index) => (
+            {bio.map((paragraph, index) => (
               <p
                 key={`par-${index}`}
                 className="about-description mb-4 text-lg lg:text-xl xl:text-2xl text-neutral-300"
@@ -85,7 +84,7 @@ export const AboutIntro = () => {
         </div>
 
         <div className="flex items-center justify-center mt-16">
-          <NavButton href="about">More Info</NavButton>
+          <NavButton href="/about">{t("moreInfo")}</NavButton>
         </div>
       </Container>
     </section>

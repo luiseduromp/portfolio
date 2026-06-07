@@ -4,6 +4,7 @@ import { gsap } from "gsap";
 import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
+import { useTranslations } from "next-intl";
 import React, { useRef } from "react";
 
 import { NavButton } from "@/components/buttons/NavButton";
@@ -16,6 +17,7 @@ export const Hero = ({
   variant,
   ...props
 }: { variant: "light" | "dark" } & React.HTMLAttributes<HTMLDivElement>) => {
+  const t = useTranslations("hero");
   const col = {
     light: {
       l: "#444",
@@ -145,11 +147,8 @@ export const Hero = ({
         id="intro"
         className="absolute left-0 top-0 right-0 h-screen flex flex-col justify-center items-center pointer-events-none perspective-normal opacity-0 blur-sm scale-80"
       >
-        <h3 className="text-center lg:text-2xl">
-          Welcome to <span className="font-bold">Luis Romero&apos;s</span>{" "}
-          Portfolio
-        </h3>
-        <p className="text-teal-300 font-mono">[ Scroll Down ]</p>
+        <h3 className="text-center lg:text-2xl">{t("welcome")}</h3>
+        <p className="text-teal-300 font-mono">{t("scrollDown")}</p>
       </div>
 
       <div className="absolute inset-0 flex items-center justify-center">
@@ -405,24 +404,22 @@ export const Hero = ({
           <div className="text-center">
             <h2 className="text-6xl/18 md:text-7xl/22 lg:text-8xl/30 2xl:text-9xl/38 font-bold">
               <span className="bg-gradient-to-br from-sky-300 via-teal-300 to-violet-300 inline-block mx-auto text-transparent bg-clip-text">
-                Quality and Design
+                {t("title1")}
               </span>
               <br />
-              <span>In Web Apps</span>
+              <span>{t("title2")}</span>
             </h2>
           </div>
 
           <div className="text-center lg:flex lg:justify-center lg:items-center text-3xl md:text-4xl xl:text-5xl">
-            <h1 className="font-semibold mt-1 mb-1">Luis Romero</h1>
+            <h1 className="font-semibold mt-1 mb-1">{t("name")}</h1>
             <div className="hidden lg:block bg-neutral-500 w-[1px] h-full ms-4 me-4" />
-            <h2 className="text-teal-300 mt-1 mb-1">
-              Full Stack and AI Engineer
-            </h2>
+            <h2 className="text-teal-300 mt-1 mb-1">{t("role")}</h2>
           </div>
 
           <div className="flex justify-center gap-4 mt-3">
-            <NavButton href="/projects">Projects</NavButton>
-            <NavButton href="/contact">Contact</NavButton>
+            <NavButton href="/projects">{t("projectsBtn")}</NavButton>
+            <NavButton href="/contact">{t("contactBtn")}</NavButton>
           </div>
         </Container>
       </header>

@@ -3,6 +3,7 @@
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useTranslations } from "next-intl";
 import React, { useRef } from "react";
 
 import { Container } from "@/components/shared/containers";
@@ -11,10 +12,9 @@ import { cn } from "@/lib/utils";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
-const workContent = [
+const workCategories = [
   {
-    title: "Full Stack",
-    desc: "Experienced in development of custom web applications, from Websites and User Interfaces with complete service integrations, to APIs and backend services.",
+    key: "fullStack" as const,
     stack: [
       "TypeScript",
       "JavaScript",
@@ -34,8 +34,7 @@ const workContent = [
     ],
   },
   {
-    title: "UX/UI Design",
-    desc: "I take care of every detail to deliver the best outcome possible, so that the application meets its functionality expectations with an outstanding design.",
+    key: "uxui" as const,
     stack: [
       "HTML",
       "CSS",
@@ -49,8 +48,7 @@ const workContent = [
     ],
   },
   {
-    title: "AI & Data",
-    desc: "Experienced in ML, AI and LLMs, integrating advanced processing in applications to enhance experience and productivity.",
+    key: "aiData" as const,
     stack: [
       "LangGraph",
       "LangChain",
@@ -67,6 +65,7 @@ const workContent = [
 
 export const WorkSection = () => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const t = useTranslations("work");
 
   useGSAP(() => {
     const container = containerRef.current;
@@ -112,18 +111,17 @@ export const WorkSection = () => {
     >
       <div className="frame pt-20 pb-20 bg-black">
         <Container className="">
-          <SectionTitle>My Work</SectionTitle>
+          <SectionTitle>{t("sectionTitle")}</SectionTitle>
           <p className="text-2xl md:text-3xl text-neutral-300">
-            I design and develop full stack applications, taking care of its
-            functionality, the design and a smooth user experience.
+            {t("description")}
           </p>
         </Container>
       </div>
 
-      {workContent.map((category, index) => {
+      {workCategories.map((category, index) => {
         return (
           <div
-            key={category.title}
+            key={category.key}
             className={cn(
               "frame border-t border-neutral-600 pb-30 bg-black w-full",
             )}
@@ -134,17 +132,17 @@ export const WorkSection = () => {
                   0{index + 1}
                 </div>
                 <h4 className="font-bold text-3xl lg:text-4xl xl:text-5xl">
-                  {category.title}
+                  {t(`${category.key}.title`)}
                 </h4>
               </div>
 
               <div className="md:flex gap-8">
                 <p className="md:w-1/2 mb-4 text-xl text-neutral-300">
-                  {category.desc}
+                  {t(`${category.key}.desc`)}
                 </p>
                 <div className="md:flex-1">
                   <p className="font-bold mb-2 uppercase text-neutral-500">
-                    Main Technologies
+                    {t("mainTech")}
                   </p>
                   <div className="flex flex-wrap">
                     {category.stack.map((tec) => (

@@ -6,7 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
 import { Info, LinkIcon } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
 import React, { useRef } from "react";
 
 import { NavButton } from "@/components/buttons/NavButton";
@@ -14,6 +14,7 @@ import { GitHubLogo } from "@/components/icons/brandIcons";
 import { Container } from "@/components/shared/containers";
 import { SectionTitle } from "@/components/shared/titles";
 import { useTapHover } from "@/hooks/useTapHover";
+import { Link } from "@/i18n/navigation";
 import type { Project } from "@/lib/definitions";
 import { featuredCovers } from "@/lib/media";
 import { cn } from "@/lib/utils";
@@ -172,10 +173,12 @@ const ProjectItem = ({
 };
 
 export const FeaturedSection = ({ projects }: { projects: Project[] }) => {
+  const t = useTranslations("featured");
+
   return (
     <section className="py-20">
       <Container>
-        <SectionTitle>Featured Projects</SectionTitle>
+        <SectionTitle>{t("sectionTitle")}</SectionTitle>
       </Container>
 
       <Container>
@@ -185,7 +188,7 @@ export const FeaturedSection = ({ projects }: { projects: Project[] }) => {
       </Container>
 
       <Container className="flex justify-center">
-        <NavButton href="/projects">All Projects</NavButton>
+        <NavButton href="/projects">{t("allProjectsBtn")}</NavButton>
       </Container>
     </section>
   );

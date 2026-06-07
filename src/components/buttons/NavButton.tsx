@@ -1,14 +1,18 @@
 import { ChevronRight } from "lucide-react";
-import Link, { LinkProps } from "next/link";
 import React from "react";
 
-export const NavButton: React.FC<
-  LinkProps & React.HTMLProps<HTMLAnchorElement>
-> = ({ children, href }) => {
+import { Link } from "@/i18n/navigation";
+
+export const NavButton: React.FC<React.ComponentProps<typeof Link>> = ({
+  children,
+  href,
+  ...props
+}) => {
   return (
     <Link
       href={href}
       className="lg:text-lg border border-teal-100 rounded-full px-6 py-3 flex items-center group text-teal-100 hover:bg-teal-300 hover:border-teal-300 hover:text-black transition-colors duration-200"
+      {...props}
     >
       {children}
       <ChevronRight

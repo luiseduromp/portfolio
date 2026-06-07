@@ -1,0 +1,139 @@
+{
+  "metadata": {
+    "title": "Luis Romero – Full Stack & AI Engineer",
+    "description": "Portfolio of Luis Romero, Full Stack and AI Engineer with 5+ years building production web applications in Next.js, Python, TypeScript, and AWS.",
+    "ogTitle": "Luis Romero – Full Stack & AI Engineer",
+    "ogDescription": "Full Stack and AI Engineer specialized in web applications, LLMs, and RAG systems. Based in Barcelona.",
+    "twitterDescription": "Full Stack and AI Engineer portfolio – Next.js, Python, TypeScript, AWS, LLMs."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact",
+    "switchLocale": "ES"
+  },
+  "footer": {
+    "links": "Links",
+    "contact": "Contact",
+    "resume": "Resume",
+    "cvEnglish": "CV English",
+    "cvSpanish": "CV Spanish",
+    "tagline": "Full Stack and AI Engineer",
+    "switchLocale": "ES",
+    "switchLocaleLabel": "Switch to Spanish"
+  },
+  "hero": {
+    "welcome": "Welcome to Luis Romero's Portfolio",
+    "scrollDown": "[ Scroll Down ]",
+    "title1": "Quality and Design",
+    "title2": "In Web Apps",
+    "name": "Luis Romero",
+    "role": "Full Stack and AI Engineer",
+    "projectsBtn": "Projects",
+    "contactBtn": "Contact"
+  },
+  "aboutIntro": {
+    "sectionTitle": "About Me",
+    "titles": ["Developer", "Engineer", "Designer"],
+    "bio": [
+      "Creative Full Stack and AI Engineer, with over 5 years of experience delivering robust, reliable and elegant web applications.",
+      "Currently focused on Web Applications and AI-integrated systems using mainly Python, TypeScript and AWS infrastructure.",
+      "I like to take care of all the details in a project to make it totally functional, and beautiful."
+    ],
+    "moreInfo": "More Info"
+  },
+  "work": {
+    "sectionTitle": "My Work",
+    "intro": "My Work",
+    "description": "I design and develop full stack applications, taking care of its functionality, the design and a smooth user experience.",
+    "mainTech": "Main Technologies",
+    "fullStack": {
+      "title": "Full Stack",
+      "desc": "Experienced in development of custom web applications, from Websites and User Interfaces with complete service integrations, to APIs and backend services."
+    },
+    "uxui": {
+      "title": "UX/UI Design",
+      "desc": "I take care of every detail to deliver the best outcome possible, so that the application meets its functionality expectations with an outstanding design."
+    },
+    "aiData": {
+      "title": "AI & Data",
+      "desc": "Experienced in ML, AI and LLMs, integrating advanced processing in applications to enhance experience and productivity."
+    }
+  },
+  "featured": {
+    "sectionTitle": "Featured Projects",
+    "allProjectsBtn": "All Projects"
+  },
+  "textScroll": "I take care of every detail in my projects to deliver high quality web applications with flawless designs and user experience.",
+  "homeContact": {
+    "sectionTitle": "Contact",
+    "helpText": "I can help with your projects or ideas",
+    "socialText": "Write me an Email, or Contact me on Social Media"
+  },
+  "about": {
+    "pageTitle": "About Me",
+    "metaTitle": "About Luis Romero – Full Stack & AI Engineer",
+    "metaDescription": "Luis Romero's background: 5+ years in full stack development, AI/LLM systems, and UX/UI design. Work experience, education, and skills.",
+    "headline": "Developer/ Engineer/ Designer/",
+    "bio": [
+      "Creative Full Stack and AI Engineer, with over 5 years of experience delivering robust, reliable and elegant web applications.",
+      "Currently focused on Web Applications and AI-integrated systems using mainly Python, TypeScript and AWS infrastructure.",
+      "I like to take care of all the details in a project to make it totally functional, and beautiful."
+    ],
+    "experience": "Experience",
+    "education": "Education",
+    "skills": "Skills"
+  },
+  "projects": {
+    "pageTitle": "Projects",
+    "metaTitle": "Projects – Luis Romero Full Stack & AI Engineer",
+    "metaDescription": "Browse Luis Romero's portfolio: full stack web applications, RAG systems, and AI-integrated products built with Next.js, Python, and TypeScript.",
+    "description": "A selection of my most recent and relevant projects"
+  },
+  "contact": {
+    "pageTitle": "Contact",
+    "metaTitle": "Contact Luis Romero – Full Stack & AI Engineer",
+    "metaDescription": "Get in touch with Luis Romero for full stack web development, AI integration projects, or freelance work.",
+    "heading1": "Have an idea in Mind?",
+    "heading2": "Let's build it together",
+    "body1": "Do you have an idea or project that you need help with?",
+    "body2": "Contact me and let's make your ideas come to life.",
+    "socialText": "Write me an Email, or Contact me on Social Media"
+  },
+  "contactForm": {
+    "title": "Contact Me",
+    "subtitle": "Leave your email and I will contact you.",
+    "nameLabel": "Name",
+    "emailLabel": "Email",
+    "messageLabel": "Message",
+    "namePlaceholder": "Name",
+    "emailPlaceholder": "Email",
+    "messagePlaceholder": "Message",
+    "send": "Send",
+    "success": "Thanks! Your Message was sent.",
+    "error": "Something wrong. Please try again.",
+    "nameValidation": "Your name should be at least 2 characters long",
+    "emailValidation": "Provide a valid email address",
+    "recaptchaPrefix": "This site is protected by reCAPTCHA and the Google",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "recaptchaSuffix": "apply."
+  },
+  "chatbot": {
+    "initMessage": "Hello, this is my personal chatbot, feel free to ask me anything as if it was me.\n**I can answer in English and Spanish 😊**",
+    "sampleMessages": [
+      "What is your latest project?",
+      "What is your favorite programming language?",
+      "¿En qué universidad estudiaste?"
+    ],
+    "header": "Chat with me",
+    "subtitle": "Personal Chatbot",
+    "online": "Online",
+    "offline": "Offline",
+    "sessionExpired": "The session has expired. Do you want to",
+    "restoreSession": "Restore the session?",
+    "placeholder": "Ask me anything",
+    "openButton": "Chat with Me"
+  }
+}

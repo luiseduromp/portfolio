@@ -4,6 +4,7 @@ import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
+import { useTranslations } from "next-intl";
 import React, { useRef } from "react";
 
 import { Container } from "@/components/shared/containers";
@@ -12,11 +13,11 @@ import { cn } from "@/lib/utils";
 gsap.registerPlugin(useGSAP, ScrollTrigger, SplitText);
 
 const TextScroll = ({
-  children,
   className,
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const t = useTranslations();
 
   useGSAP(() => {
     const container = containerRef.current;
@@ -49,10 +50,10 @@ const TextScroll = ({
       {...props}
     >
       <h4 className="text-teal-400 font-mono uppercase text-xl lg:text-3xl">
-        My Work
+        {t("work.intro")}
       </h4>
       <p className="pe-20 text-4xl md:text-5xl lg:text-7xl font-semibold">
-        {children}
+        {t("textScroll")}
       </p>
     </Container>
   );

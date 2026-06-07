@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 import { ReCaptchaProvider } from "next-recaptcha-v3";
 
 import { ContactForm } from "@/components/contact/ContactForm";
@@ -7,37 +8,48 @@ import { ContactIcons } from "@/components/icons/brandIcons";
 import { Container } from "@/components/shared/containers";
 import { PageTitle } from "@/components/shared/titles";
 import { getCurriculumData } from "@/data/curriculum";
-import { pub } from "@/lib/config";
+import { getPageAlternates } from "@/lib/metadata";
+import { pub } from "@/lib/publicConfig";
 import { cn } from "@/lib/utils";
 
-export const metadata: Metadata = {
-  title: `Contact - luiseduromp.com`,
-  description: "Have an idea in mind? Let's build it together",
+type ContactPageProps = {
+  params: Promise<{ locale: string }>;
 };
 
-export default async function Contact() {
+export async function generateMetadata({
+  params,
+}: ContactPageProps): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "contact" });
+
+  return {
+    title: t("metaTitle"),
+    description: t("metaDescription"),
+    alternates: getPageAlternates("/contact", locale),
+  };
+}
+
+export default async function Contact({ params }: ContactPageProps) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "contact" });
   const profile = await getCurriculumData();
 
   return (
     <ReCaptchaProvider reCaptchaKey={pub.RECAPTCHA_SITE_KEY}>
       <main id="smooth-content">
-        <PageTitle>Contact</PageTitle>
+        <PageTitle>{t("pageTitle")}</PageTitle>
 
         <section>
           <Container className="lg:flex gap-6 items-center py-12">
             <div className="mb-12 text-center lg:text-start lg:mb-0 w-full sm:w-sm lg:w-1/2 mx-auto lg:pe-12">
               <p className="text-neutral-300 font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">
-                Have an idea in Mind?
+                {t("heading1")}
               </p>
               <p className="text-neutral-300 font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl mb-6">
-                Let&apos;s build it together
+                {t("heading2")}
               </p>
-              <p className="text-xl text-neutral-300 mb-2">
-                Do you have an idea or project that you need help with?
-              </p>
-              <p className="text-xl text-neutral-300">
-                Contact me and let&apos;s make your ideas come to life.
-              </p>
+              <p className="text-xl text-neutral-300 mb-2">{t("body1")}</p>
+              <p className="text-xl text-neutral-300">{t("body2")}</p>
             </div>
             <div className="flex-1">
               <ContactForm className="w-sm mx-auto w-full sm:w-sm lg:w-md" />
@@ -48,7 +60,7 @@ export default async function Contact() {
         <section className="mt-20">
           <Container>
             <p className="text-xl lg:text-3xl text-center text-neutral-300 mb-12">
-              Write me an Email, or Contact me on Social Media
+              {t("socialText")}
             </p>
 
             <div className="flex items-center justify-center gap-4 mb-6 flex-wrap">

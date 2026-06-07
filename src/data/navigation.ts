@@ -1,9 +1,4 @@
-export const navLinks = [
-  { label: "Home", url: "/" },
-  { label: "About", url: "/about" },
-  { label: "Projects", url: "/projects" },
-  { label: "Contact", url: "/contact" },
-];
+export const navPaths = ["/", "/about", "/projects", "/contact"] as const;
 
 export const contactLinks = [
   { label: "LinkedIn", url: "https://www.linkedin.com/in/luiseduromp/" },

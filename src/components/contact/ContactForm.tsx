@@ -2,6 +2,7 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Check, CircleX } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { useReCaptcha } from "next-recaptcha-v3";
 import React, { useCallback, useState } from "react";
 import { useForm } from "react-hook-form";
@@ -13,20 +14,19 @@ import { cn } from "@/lib/utils";
 
 import { LoadingButton } from "../buttons/LoadingButton";
 
-const formSchema = z.object({
-  name: z
-    .string()
-    .min(2, { message: "Your name should be at least 2 characters long" }),
-  email: z.string().email({ message: "Provide a valid email address" }),
-  message: z.string(),
-});
-
 export const ContactForm = ({
   className,
 }: React.HTMLAttributes<HTMLDivElement>) => {
   const [isLoading, setIsLoading] = useState(false);
   const [formStatus, setFormStatus] = useState<"sent" | "error" | null>(null);
   const { executeRecaptcha } = useReCaptcha();
+  const t = useTranslations("contactForm");
+
+  const formSchema = z.object({
+    name: z.string().min(2, { message: t("nameValidation") }),
+    email: z.string().email({ message: t("emailValidation") }),
+    message: z.string(),
+  });
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -37,35 +37,28 @@ export const ContactForm = ({
     },
   });
 
-  async function sendEmail(values: z.infer<typeof formSchema>, token: string) {
-    setIsLoading(true);
-
-    try {
-      await fetch("/api/send", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ ...values, token }),
-      });
-
-      setFormStatus("sent");
-      form.reset();
-    } catch {
-      console.log("Error");
-      setFormStatus("error");
-    } finally {
-      setIsLoading(false);
-    }
-  }
-
   const onSubmit = useCallback(
     async (values: z.infer<typeof formSchema>) => {
       const token = await executeRecaptcha("contact_form");
       if (!token) return;
-      sendEmail(values, token);
+
+      setIsLoading(true);
+      try {
+        await fetch("/api/send", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ ...values, token }),
+        });
+        setFormStatus("sent");
+        form.reset();
+      } catch {
+        console.log("Error");
+        setFormStatus("error");
+      } finally {
+        setIsLoading(false);
+      }
     },
-    [executeRecaptcha],
+    [executeRecaptcha, form],
   );
 
   return (
@@ -78,34 +71,34 @@ export const ContactForm = ({
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)}>
           <h3 className="text-center mb-4 text-xl md:text-2xl lg:text-4xl font-bold">
-            Contact Me
+            {t("title")}
           </h3>
           <p className="text-neutral-300 text-lg lg:text-xl mb-6 text-center">
-            Leave your email and I will contact you.
+            {t("subtitle")}
           </p>
 
           <CustomFormField
             control={form.control}
             fieldtype="input"
             name="name"
-            label="Name"
-            placeholder="Name"
+            label={t("nameLabel")}
+            placeholder={t("namePlaceholder")}
           />
 
           <CustomFormField
             control={form.control}
             fieldtype="input"
             name="email"
-            label="Email"
-            placeholder="Email"
+            label={t("emailLabel")}
+            placeholder={t("emailPlaceholder")}
           />
 
           <CustomFormField
             control={form.control}
             fieldtype="textarea"
             name="message"
-            label="Message"
-            placeholder="Message"
+            label={t("messageLabel")}
+            placeholder={t("messagePlaceholder")}
           />
 
           {formStatus && (
@@ -119,12 +112,11 @@ export const ContactForm = ({
             >
               {formStatus === "sent" ? (
                 <>
-                  <Check className="h-6 me-1" /> Thanks! Your Message was sent.
+                  <Check className="h-6 me-1" /> {t("success")}
                 </>
               ) : (
                 <>
-                  <CircleX className="h-6 me-1" /> Something wrong. Please try
-                  again.
+                  <CircleX className="h-6 me-1" /> {t("error")}
                 </>
               )}
             </div>
@@ -135,25 +127,25 @@ export const ContactForm = ({
             type="submit"
             className="w-full justify-center mt-8 mb-6"
           >
-            Send
+            {t("send")}
           </LoadingButton>
 
           <div className="text-neutral-400 text-xs">
-            This site is protected by reCAPTCHA and the Google&nbsp;
+            {t("recaptchaPrefix")}&nbsp;
             <a
               href="https://policies.google.com/privacy"
-              className="underline  underline-offset-2 "
+              className="underline underline-offset-2"
             >
-              Privacy Policy
+              {t("privacyPolicy")}
             </a>{" "}
             and&nbsp;
             <a
               href="https://policies.google.com/terms"
-              className="underline  underline-offset-2"
+              className="underline underline-offset-2"
             >
-              Terms of Service
+              {t("termsOfService")}
             </a>{" "}
-            apply.
+            {t("recaptchaSuffix")}
           </div>
         </form>
       </Form>
