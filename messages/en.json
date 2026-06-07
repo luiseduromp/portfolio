@@ -21,7 +21,13 @@
     "cvSpanish": "CV Spanish",
     "tagline": "Full Stack and AI Engineer",
     "switchLocale": "ES",
-    "switchLocaleLabel": "Switch to Spanish"
+    "switchLocaleLabel": "Switch to Spanish",
+    "recaptchaNotice": "Protected by reCAPTCHA —",
+    "googlePrivacy": "Privacy Policy",
+    "recaptchaAnd": "and",
+    "googleTerms": "Terms of Service",
+    "recaptchaSuffix": "apply.",
+    "privacyLink": "Privacy"
   },
   "hero": {
     "welcome": "Welcome to Luis Romero's Portfolio",
@@ -120,12 +126,45 @@
     "termsOfService": "Terms of Service",
     "recaptchaSuffix": "apply."
   },
+  "privacy": {
+    "pageTitle": "Privacy Policy",
+    "metaTitle": "Privacy Policy – luiseduromp.com",
+    "metaDescription": "How luiseduromp.com handles your data — what is collected, why, and your rights.",
+    "lastUpdated": "Last updated: June 2026",
+    "intro": "This is a personal portfolio website. It does not sell products, serve advertising, or share your data with third parties for commercial purposes.",
+    "collectedTitle": "Information collected",
+    "collectedItems": [
+      "Contact form — your name, email address, and message. Used only to reply to your inquiry. Delivered via email and not stored in any database.",
+      "AI Chatbot — messages you send are processed in real time and are not stored permanently. Sessions expire after 60 minutes.",
+      "Google reCAPTCHA v3 — runs silently when you open the chat or submit the contact form to distinguish humans from bots. Google may collect your IP address, browser details, and interaction signals.",
+      "Vercel Analytics — anonymous, aggregate page-view data. No cookies are used and no personal data is stored."
+    ],
+    "cookiesTitle": "Cookies",
+    "cookiesItems": [
+      "A session cookie (1-hour expiry) is set when you start a chat. It contains only an authentication token, not personal data.",
+      "Google reCAPTCHA may set cookies from Google's domain as part of its bot-detection process.",
+      "No advertising, tracking, or profiling cookies are used."
+    ],
+    "thirdPartyTitle": "Third-party services",
+    "thirdPartyItems": [
+      "Resend — email delivery for contact form messages.",
+      "Vercel Analytics — privacy-first, cookieless analytics."
+    ],
+    "thirdPartyRecaptcha": "Google reCAPTCHA — bot protection governed by Google's",
+    "thirdPartyPrivacy": "Privacy Policy",
+    "thirdPartyAnd": "and",
+    "thirdPartyTerms": "Terms of Service",
+    "rightsTitle": "Your rights (GDPR)",
+    "rightsBody": "If you are in the European Union, you have the right to access, correct, or request deletion of any personal data submitted through this site. To exercise these rights, contact:",
+    "contactTitle": "Contact",
+    "contactBody": "For any privacy-related questions:"
+  },
   "chatbot": {
     "initMessage": "Hello, this is my personal chatbot, feel free to ask me anything as if it was me.\n**I can answer in English and Spanish 😊**",
     "sampleMessages": [
       "What is your latest project?",
       "What is your favorite programming language?",
-      "¿En qué universidad estudiaste?"
+      "Where did you study?"
     ],
     "header": "Chat with me",
     "subtitle": "Personal Chatbot",

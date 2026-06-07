@@ -21,7 +21,13 @@
     "cvSpanish": "CV Español",
     "tagline": "Ingeniero Full Stack e IA",
     "switchLocale": "EN",
-    "switchLocaleLabel": "Cambiar a Inglés"
+    "switchLocaleLabel": "Cambiar a Inglés",
+    "recaptchaNotice": "Protegido por reCAPTCHA —",
+    "googlePrivacy": "Política de Privacidad",
+    "recaptchaAnd": "y los",
+    "googleTerms": "Términos de Servicio",
+    "recaptchaSuffix": "de Google aplican.",
+    "privacyLink": "Privacidad"
   },
   "hero": {
     "welcome": "Bienvenido al Portfolio de Luis Romero",
@@ -120,6 +126,39 @@
     "termsOfService": "Términos de Servicio",
     "recaptchaSuffix": "de Google."
   },
+  "privacy": {
+    "pageTitle": "Política de Privacidad",
+    "metaTitle": "Política de Privacidad – luiseduromp.com",
+    "metaDescription": "Cómo luiseduromp.com gestiona tus datos — qué se recopila, por qué y tus derechos.",
+    "lastUpdated": "Última actualización: junio de 2026",
+    "intro": "Este es un sitio web de portfolio personal. No vende productos, no muestra publicidad ni comparte tus datos con terceros con fines comerciales.",
+    "collectedTitle": "Información recopilada",
+    "collectedItems": [
+      "Formulario de contacto — tu nombre, dirección de correo electrónico y mensaje. Se utilizan únicamente para responder a tu consulta. Se envían por correo electrónico y no se almacenan en ninguna base de datos.",
+      "Chatbot de IA — los mensajes que envías se procesan en tiempo real y no se almacenan de forma permanente. Las sesiones expiran a los 60 minutos.",
+      "Google reCAPTCHA v3 — se ejecuta de forma silenciosa cuando abres el chat o envías el formulario de contacto para distinguir humanos de bots. Google puede recopilar tu dirección IP, datos del navegador y señales de interacción.",
+      "Vercel Analytics — datos de visitas anónimos y agregados. No se utilizan cookies ni se almacena ningún dato personal."
+    ],
+    "cookiesTitle": "Cookies",
+    "cookiesItems": [
+      "Se establece una cookie de sesión (válida 1 hora) al iniciar un chat. Contiene únicamente un token de autenticación, no datos personales.",
+      "Google reCAPTCHA puede establecer cookies desde el dominio de Google como parte de su proceso de detección de bots.",
+      "No se utilizan cookies de publicidad, seguimiento ni elaboración de perfiles."
+    ],
+    "thirdPartyTitle": "Servicios de terceros",
+    "thirdPartyItems": [
+      "Resend — envío de correos electrónicos del formulario de contacto.",
+      "Vercel Analytics — analítica sin cookies y respetuosa con la privacidad."
+    ],
+    "thirdPartyRecaptcha": "Google reCAPTCHA — protección contra bots, sujeta a la",
+    "thirdPartyPrivacy": "Política de Privacidad",
+    "thirdPartyAnd": "y los",
+    "thirdPartyTerms": "Términos de Servicio",
+    "rightsTitle": "Tus derechos (RGPD)",
+    "rightsBody": "Si te encuentras en la Unión Europea, tienes derecho a acceder, corregir o solicitar la eliminación de cualquier dato personal enviado a través de este sitio. Para ejercer estos derechos, contacta en:",
+    "contactTitle": "Contacto",
+    "contactBody": "Para cualquier consulta relacionada con la privacidad:"
+  },
   "chatbot": {
     "initMessage": "Hola, este es mi chatbot personal, siéntete libre de preguntarme cualquier cosa como si fuera yo mismo.\n**Puedo responder en Inglés y Español 😊**",
     "sampleMessages": [
@@ -127,13 +166,13 @@
       "¿Cuál es tu lenguaje de programación favorito?",
       "¿En qué universidad estudiaste?"
     ],
-    "header": "Chat conmigo",
+    "header": "Chatea conmigo",
     "subtitle": "Chatbot Personal",
     "online": "En línea",
     "offline": "Desconectado",
     "sessionExpired": "La sesión ha expirado. ¿Deseas",
     "restoreSession": "Restaurar la sesión?",
     "placeholder": "Pregúntame lo que quieras",
-    "openButton": "Chat conmigo"
+    "openButton": "Chatea conmigo"
   }
 }

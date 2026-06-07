@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import { Inconsolata, Raleway } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations } from "next-intl/server";
+import { ReCaptchaProvider } from "next-recaptcha-v3";
 
 import { ChatStream } from "@/components/chatbot/ChatStream";
 import { Navbar } from "@/components/navbar/Navbar";
@@ -113,12 +114,14 @@ export default async function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <NextIntlClientProvider messages={messages}>
-          <Navbar />
-          {children}
-          <ChatStream />
-          <Footer />
-        </NextIntlClientProvider>
+        <ReCaptchaProvider reCaptchaKey={pub.RECAPTCHA_SITE_KEY}>
+          <NextIntlClientProvider messages={messages}>
+            <Navbar />
+            {children}
+            <ChatStream />
+            <Footer />
+          </NextIntlClientProvider>
+        </ReCaptchaProvider>
         <Analytics />
       </body>
     </html>

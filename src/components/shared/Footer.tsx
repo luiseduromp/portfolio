@@ -88,8 +88,38 @@ export const Footer = () => {
           </div>
         </div>
       </Container>
-      <div className="py-4 text-center text-sm text-neutral-500 border-t border-neutral-800">
-        {new Date().getFullYear()} - luiseduromp.com
+      <div className="py-4 border-t border-neutral-800 space-y-1 text-center">
+        <p className="text-sm text-neutral-500">
+          {new Date().getFullYear()} - luiseduromp.com
+        </p>
+        <p className="text-xs text-neutral-600">
+          {t("recaptchaNotice")}{" "}
+          <a
+            href="https://policies.google.com/privacy"
+            target="_blank"
+            rel="noreferrer"
+            className="hover:text-neutral-400 underline underline-offset-2"
+          >
+            {t("googlePrivacy")}
+          </a>{" "}
+          {t("recaptchaAnd")}{" "}
+          <a
+            href="https://policies.google.com/terms"
+            target="_blank"
+            rel="noreferrer"
+            className="hover:text-neutral-400 underline underline-offset-2"
+          >
+            {t("googleTerms")}
+          </a>{" "}
+          {t("recaptchaSuffix")}
+          <span className="mx-2">·</span>
+          <Link
+            href="/privacy"
+            className="hover:text-neutral-400 underline underline-offset-2"
+          >
+            {t("privacyLink")}
+          </Link>
+        </p>
       </div>
     </footer>
   );

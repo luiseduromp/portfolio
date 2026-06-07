@@ -3,9 +3,15 @@
 import { cookies } from "next/headers";
 
 import { env } from "@/lib/backendConfig";
+import { captchaVerify } from "@/lib/captchaVerify";
 import { ChatMessage } from "@/stores/chatStore";
 
-export const chatInit = async () => {
+export const chatInit = async (captchaToken: string) => {
+  const captcha = await captchaVerify(captchaToken);
+  if (!captcha.success) {
+    return { success: false, message: "reCAPTCHA verification failed" };
+  }
+
   try {
     const response = await fetch(env.CHATBOT_URL + "/token", {
       method: "POST",

@@ -1,6 +1,8 @@
 "use client";
 
 import { RefreshCw, Send, User, X } from "lucide-react";
+import { useTranslations } from "next-intl";
+import { useReCaptcha } from "next-recaptcha-v3";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 
 import { ChatbotIcon, ChatbotOutIcon } from "@/components/icons/chatbotIcons";
@@ -12,19 +14,13 @@ import { ChatMessage, useChatStore } from "@/stores/chatStore";
 import styles from "./ChatWidget.module.css";
 import { MarkdownRenderer } from "./MarkdownRenderer";
 
-const INIT_MESSAGE =
-  "Hello, this is my personal chatbot, feel free to ask me anything as if it was me.";
-const SAMPLE_MESSAGES = [
-  "What is your latest project?",
-  "What is your current role?",
-  "¿Cuales son tus estudios más recientes?",
-];
-
 export const ChatStream = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [isActive, setIsActive] = useState(false);
 
+  const t = useTranslations("chatbot");
+  const { executeRecaptcha } = useReCaptcha();
   const { messages, addMessage, clearHistory } = useChatStore();
   const [streamingAnswer, setStreamingAnswer] = useState<string | null>(null);
   // const [isStreaming, setIsStreaming] = useState(false);
@@ -40,7 +36,8 @@ export const ChatStream = () => {
 
     setIsLoading(true);
     try {
-      const result = await chatInit();
+      const captchaToken = await executeRecaptcha("chat_init");
+      const result = await chatInit(captchaToken);
       if (!result.success) {
         // TODO: Show error message
         console.log("Chatbot initialization failed", result.message);
@@ -48,7 +45,7 @@ export const ChatStream = () => {
       }
 
       console.log("Authenticated. Chat session started");
-      addMessage({ role: "assistant", content: INIT_MESSAGE });
+      addMessage({ role: "assistant", content: t("initMessage") });
       setIsActive(true);
 
       if (chatExpRef.current) {
@@ -68,7 +65,7 @@ export const ChatStream = () => {
       console.log("Stop loading");
       setIsLoading(false);
     }
-  }, [addMessage, isActive]);
+  }, [addMessage, executeRecaptcha, isActive, t]);
 
   useEffect(() => {
     if (isOpen) {
@@ -89,7 +86,7 @@ export const ChatStream = () => {
 
   const handleClear = () => {
     clearHistory();
-    addMessage({ role: "assistant", content: INIT_MESSAGE });
+    addMessage({ role: "assistant", content: t("initMessage") });
   };
 
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
@@ -204,18 +201,18 @@ export const ChatStream = () => {
             )}
           </div>
           <div>
-            <h4 className="text-xl font-bold mb-1">Chat with me</h4>
+            <h4 className="text-xl font-bold mb-1">{t("header")}</h4>
             <p className="text-xs font-mono text-neutral-500">
-              Personal Chatbot
+              {t("subtitle")}
               {isActive ? (
                 <span className="ms-2 text-green-500">
                   <span className="size-2 rounded-full bg-green-500 inline-block" />{" "}
-                  Online
+                  {t("online")}
                 </span>
               ) : (
                 <span className="ms-2 text-red-500">
                   <span className="size-2 rounded-full bg-red-500 inline-block" />{" "}
-                  Offline
+                  {t("offline")}
                 </span>
               )}
             </p>
@@ -260,7 +257,7 @@ export const ChatStream = () => {
 
           {messages.length < 2 && isActive ? (
             <div className={cn("mt-2")}>
-              {SAMPLE_MESSAGES.map((message, index) => {
+              {(t.raw("sampleMessages") as string[]).map((message, index) => {
                 return (
                   <button
                     key={index}
@@ -283,12 +280,12 @@ export const ChatStream = () => {
                   "flex-1 rounded-xl rounded-br-xs py-3 px-4 bg-neutral-700 text-sm",
                 )}
               >
-                The session has expired. Do you want to
+                {t("sessionExpired")}{" "}
                 <button
                   onClick={() => init()}
                   className="text-neutral-400 hover:text-white cursor-pointer ms-1"
                 >
-                  Restore the session?
+                  {t("restoreSession")}
                 </button>
               </div>
               <div className="size-9 rounded-full bg-red-500 flex items-center justify-center">
@@ -312,7 +309,7 @@ export const ChatStream = () => {
               "text-white flex-1 resize-none overflow-auto focus:outline-none focus:ring-0 focus:border-none focus:shadow-none lg:text-sm",
               isActive ? "opacity-100" : "opacity-60 cursor-not-allowed",
             )}
-            placeholder="Ask me anything"
+            placeholder={t("placeholder")}
             rows={2}
             onKeyDown={(e) => handleEnter(e)}
           />
@@ -345,7 +342,7 @@ export const ChatStream = () => {
             "px-3 py-1 rounded-full group-hover:opacity-100 opacity-0 transition-opacity duration-200 group-hover:delay-1000 delay-200",
           )}
         >
-          Chat with Me
+          {t("openButton")}
         </span>
       </button>
     </>

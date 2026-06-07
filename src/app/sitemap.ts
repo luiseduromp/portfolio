@@ -7,6 +7,7 @@ const routes = [
   { path: "/about", priority: 0.8 },
   { path: "/projects", priority: 0.8 },
   { path: "/contact", priority: 0.7 },
+  { path: "/privacy", priority: 0.3 },
 ] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {

@@ -2,6 +2,7 @@
 
 import { RefreshCw, Send, User, X } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { useReCaptcha } from "next-recaptcha-v3";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 
 import { ChatbotIcon, ChatbotOutIcon } from "@/components/icons/chatbotIcons";
@@ -16,6 +17,7 @@ export const ChatWidget = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [isActive, setIsActive] = useState(false);
+  const { executeRecaptcha } = useReCaptcha();
   const { messages, addMessage, clearHistory } = useChatStore();
   const chatEndRef = useRef<HTMLDivElement>(null);
   const chatExpRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -26,7 +28,8 @@ export const ChatWidget = () => {
 
     setIsLoading(true);
     try {
-      const result = await chatInit();
+      const captchaToken = await executeRecaptcha("chat_init");
+      const result = await chatInit(captchaToken);
       if (!result.success) {
         console.log("Chatbot initialization failed", result.message);
         return;
@@ -53,7 +56,7 @@ export const ChatWidget = () => {
       console.log("Stop loading");
       setIsLoading(false);
     }
-  }, [addMessage, isActive, t]);
+  }, [addMessage, executeRecaptcha, isActive, t]);
 
   useEffect(() => {
     if (isOpen) {
